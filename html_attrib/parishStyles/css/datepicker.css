@@ -1,0 +1,17 @@
+.datepicker
+{
+top:550px;
+left: 495px;
+position: absolute;
+background-color: #fff;
+color: #222;
+border: 1px solid #aaa;
+border-radius: 0.00em;
+-moz-border-radius: 0.00em;
+-webkit-border-radius: 0.00em;
+font-family: Arial,Helvetica,Sans-serif;
+font-size: 90%;
+width: 35%;
+
+}
+

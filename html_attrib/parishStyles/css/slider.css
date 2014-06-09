@@ -1,0 +1,24 @@
+.slider_container
+{
+		border-bottom: 1px #111111 solid;
+		margin: 20px auto;
+		overflow: hidden;
+		
+
+}
+
+
+.slider
+	{
+		border: 1px #111111 solid;
+		margin: 20px auto;
+		overflow: hidden;
+	}
+
+
+.slider img
+{
+	width:550px;
+	height:300px;
+	display: none;
+}

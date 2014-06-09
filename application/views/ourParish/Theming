@@ -1,0 +1,23 @@
+Theming
+
+The datepicker widget uses the jQuery UI CSS framework to style its look and feel. If datepicker specific styling is needed, the following CSS class names can be used:
+
+ui-datepicker: The outer container of the datepicker. If the datepicker is inline, this element will additionally have a ui-datepicker-inline class. If the isRTL option is set, this element will additionally have a class of ui-datepicker-rtl.
+ui-datepicker-header: The container for the datepicker's header.
+ui-datepicker-prev: The control used to select previous months.
+ui-datepicker-next: The control used to select subsequent months.
+ui-datepicker-title: The container for the datepicker's title containing the month and year.
+ui-datepicker-month: The textual display of the month or a <select> element if the changeMonth option is set.
+ui-datepicker-year: The textual display of the year or a <select> element if the changeYear option is set.
+ui-datepicker-calendar: The table that contains the calendar itself.
+ui-datepicker-week-end: Cells containing weekend days.
+ui-datepicker-other-month: Cells containing days that occur in a month other than the currently selected month.
+ui-datepicker-unselectable: Cells containing days that are not selectable by the user.
+ui-datepicker-current-day: The cell containing the selected day.
+ui-datepicker-today: The cell containing today's date.
+ui-datepicker-buttonpane: The buttonpane that is used when the showButtonPanel option is set.
+ui-datepicker-current: The button used to select today's date.
+If the numberOfMonths option is used to display multiple months at once, a number of additional classes are used:
+
+ui-datepicker-multi: The outermost container of a multiple month datepicker. This element can additionally have a ui-datepicker-multi-2, ui-datepicker-multi-3, or ui-datepicker-multi-4 class name depending on the number of months to display.
+ui-datepicker-group: Individual pickers within the group. This element will additionally have a ui-datepicker-group-first, ui-datepicker-group-middle, or ui-datepicker-group-last class name depending on its position within the group.

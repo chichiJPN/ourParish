@@ -1,0 +1,368 @@
+[Sat Mar 22 16:56:12 2014] [error] [client 192.168.1.103] File does not exist: /var/www/pos.com/htdocs/favicon.ico
+[Sat Mar 22 17:51:46 2014] [error] [client 192.168.1.107] File does not exist: /var/www/pos.com/htdocs/favicon.ico
+[Sun Mar 30 21:38:50 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/favicon.ico
+[Sun Mar 30 21:42:11 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos.com
+[Sun Mar 30 21:54:59 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 21:56:08 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/htdocs
+[Sun Mar 30 21:56:13 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 21:58:36 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 21:59:06 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 21:59:12 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 21:59:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 21:59:52 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos.com
+[Sun Mar 30 22:11:52 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/test
+[Sun Mar 30 22:25:22 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 22:25:26 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 22:41:02 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 22:41:13 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Sun Mar 30 22:41:19 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/master_record_view.php' not found or unable to stat
+[Sun Mar 30 22:41:33 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos.com
+[Sun Mar 30 22:42:54 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Sun Mar 30 22:43:34 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Sun Mar 30 22:43:56 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Sun Mar 30 22:44:04 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Sun Mar 30 22:45:40 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Sun Mar 30 22:50:36 2014] [error] [client 192.168.1.102] Directory index forbidden by Options directive: /var/www/pos.com/htdocs/
+[Sun Mar 30 22:51:48 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos
+[Sun Mar 30 22:51:56 2014] [error] [client 192.168.1.102] Directory index forbidden by Options directive: /var/www/pos.com/htdocs/
+[Sun Mar 30 22:52:13 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/var
+[Sun Mar 30 22:52:31 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/var
+[Sun Mar 30 22:52:37 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/var
+[Sun Mar 30 22:52:47 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/var
+[Sun Mar 30 22:52:53 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/var
+[Sun Mar 30 22:53:53 2014] [error] [client 192.168.1.102] Directory index forbidden by Options directive: /var/www/pos.com/htdocs/
+[Sun Mar 30 23:06:54 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Sun Mar 30 23:14:40 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/tester
+[Sun Mar 30 23:20:24 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Sun Mar 30 23:45:45 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/phpmyadmin
+[Mon Mar 31 19:17:27 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/phpMyAdmin
+[Mon Mar 31 19:17:27 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/favicon.ico
+[Mon Mar 31 19:17:32 2014] [error] [client 192.168.1.102] Directory index forbidden by Options directive: /var/www/pos.com/htdocs/
+[Mon Mar 31 19:18:41 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/phpmyadmin
+[Mon Mar 31 19:18:54 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/phpMyAdmin
+[Mon Mar 31 19:19:03 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/phpMyAdmin
+[Mon Mar 31 19:19:07 2014] [error] [client 192.168.1.102] Directory index forbidden by Options directive: /var/www/pos.com/htdocs/
+[Mon Mar 31 19:44:39 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/phpmyadmin
+[Mon Mar 31 19:44:46 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/phpMyAdmin
+[Mon Mar 31 19:45:13 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/phpmyadmin
+[Mon Mar 31 19:46:21 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos
+[Mon Mar 31 19:53:55 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 19:54:08 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 19:54:13 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Mon Mar 31 19:54:33 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Mon Mar 31 19:58:45 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Mon Mar 31 19:58:49 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 19:59:00 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:00 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:01 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:01 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:01 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:01 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:02 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:02 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:02 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:00:31 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:01:35 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/front_view
+[Mon Mar 31 20:01:54 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/front_view
+[Mon Mar 31 20:53:26 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Mon Mar 31 20:53:32 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:53:54 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:54:03 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:54:21 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 20:54:26 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Mon Mar 31 20:54:32 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Mon Mar 31 20:54:44 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:54:49 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/welcome.php' not found or unable to stat
+[Mon Mar 31 20:56:31 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:56:34 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/welcome.php' not found or unable to stat
+[Mon Mar 31 20:56:37 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:56:54 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:56:55 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:56:55 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:56:56 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:01 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:02 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:02 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:02 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:02 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:02 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:49 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:50 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:50 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:57:50 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:58:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:58:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:58:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:58:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:58:24 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:58:27 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:59:17 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 20:59:53 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/welcome
+[Mon Mar 31 21:00:17 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 21:00:30 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 21:00:36 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/master_record_view.php' not found or unable to stat
+[Mon Mar 31 21:00:51 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:32 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:32 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:33 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:33 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:33 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:33 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:34 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:34 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:34 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/localhost
+[Mon Mar 31 21:01:40 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/POS/master_record_view.php' not found or unable to stat
+[Mon Mar 31 21:01:45 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Mon Mar 31 21:04:46 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/POS/master_record_view
+[Mon Mar 31 21:16:56 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:17:01 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:20:40 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:21:12 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/test
+[Mon Mar 31 21:21:27 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/master_record_view.php' not found or unable to stat
+[Mon Mar 31 21:22:11 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/customer.php' not found or unable to stat
+[Mon Mar 31 21:22:14 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/customer
+[Mon Mar 31 21:22:45 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/customer
+[Mon Mar 31 21:23:09 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:23:12 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:24:01 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:24:02 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:24:03 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:24:04 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:24:17 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:24:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:24:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:24:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:24:18 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:24:52 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:46 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:46 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:47 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:47 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:47 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:47 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:47 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:48 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:48 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:48 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:49 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:49 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:49 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:25:49 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:26:57 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:26:57 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:26:58 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:26:58 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:26:58 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:27:09 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos
+[Mon Mar 31 21:27:32 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos
+[Mon Mar 31 21:27:37 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos
+[Mon Mar 31 21:27:43 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/pos
+[Mon Mar 31 21:30:07 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:31:23 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:31:33 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:31:36 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:31:42 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:32:50 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:32:52 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:33:44 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:33:51 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:36:13 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:36:14 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:37:32 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:41:50 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:41:50 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:41:51 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:41:51 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:42:40 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:42:48 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:42:52 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:44:43 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:47:11 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:51:31 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 21:51:38 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:51:57 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:52:14 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 21:52:27 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:52:59 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:54:03 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:54:04 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:54:11 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:54:41 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:54:41 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:54:42 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:54:42 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:56:04 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:56:24 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:56:47 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:57:24 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:57:25 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:57:25 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:57:25 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:57:25 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:57:26 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 21:57:26 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:02:44 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/index
+[Mon Mar 31 22:07:58 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/index
+[Mon Mar 31 22:07:58 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/index
+[Mon Mar 31 22:07:58 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/index
+[Mon Mar 31 22:07:59 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/index
+[Mon Mar 31 22:07:59 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/index
+[Mon Mar 31 22:08:01 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:08:54 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:08:55 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:08:55 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:08:55 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:08:56 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:08:58 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:08:58 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:08:58 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:09:00 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:09:17 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:14:52 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:14:53 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/master_record_view
+[Mon Mar 31 22:16:17 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 22:17:21 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 22:21:36 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 22:22:32 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/index
+[Mon Mar 31 22:30:19 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 22:32:28 2014] [error] [client 192.168.1.102] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 22:32:32 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 22:58:29 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 22:58:30 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 22:58:30 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:00:49 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:00:55 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:02:34 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:02:36 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:06:15 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:08:39 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:08:39 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:08:39 2014] [error] [client 192.168.1.102] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:18:33 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:18:33 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:18:34 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:19:54 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:23:36 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:23:36 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:23:36 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:32:15 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:35:58 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:38:34 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:38:35 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:38:35 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:38:36 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:39:07 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:39:10 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:39:13 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:41:40 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:41:40 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:41:40 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:41:41 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:41:41 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:27 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:27 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:28 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:28 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:28 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:28 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:28 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:29 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:29 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:29 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:29 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:29 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:30 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:42:58 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:43:48 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:43:54 2014] [error] [client 192.168.1.101] script '/var/www/pos.com/htdocs/tester.php' not found or unable to stat
+[Mon Mar 31 23:43:56 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:46:32 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:46:33 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:46:33 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:46:33 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:46:33 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:46:33 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:46:34 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:46:34 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/tester
+[Mon Mar 31 23:53:17 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Mon Mar 31 23:53:24 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Mon Mar 31 23:53:26 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Mon Mar 31 23:54:46 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Mon Mar 31 23:57:15 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Mon Mar 31 23:58:52 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:00:21 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:05:28 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:05:31 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpeg
+[Tue Apr 01 00:05:34 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.png
+[Tue Apr 01 00:05:39 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon
+[Tue Apr 01 00:05:46 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:06:34 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Tue Apr 01 00:06:44 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Tue Apr 01 00:07:11 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Tue Apr 01 00:07:54 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:08:52 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Tue Apr 01 00:09:58 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Tue Apr 01 00:10:40 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Tue Apr 01 00:11:27 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Tue Apr 01 00:12:26 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:15:01 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:17:59 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:18:02 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.png
+[Tue Apr 01 00:18:05 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.PNG
+[Tue Apr 01 00:18:59 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.PNG
+[Tue Apr 01 00:19:04 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.gif
+[Tue Apr 01 00:19:07 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.GIF
+[Tue Apr 01 00:19:45 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.GIF
+[Tue Apr 01 00:19:46 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.GIF
+[Tue Apr 01 00:19:46 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.GIF
+[Tue Apr 01 00:19:50 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:21:25 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg, referer: http://192.168.1.14/master_record_view/cashier_view
+[Tue Apr 01 00:21:33 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:21:57 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:21:58 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:21:58 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:21:58 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:21:58 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:21:58 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:21:59 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:26:00 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:26:01 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:26:01 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:26:01 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:27:23 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:27:24 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:27:24 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:33:01 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:35:24 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:35:37 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:35:37 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:35:37 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:35:37 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:36:19 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:36:19 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:36:19 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:36:19 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:38:25 2014] [alert] [client 192.168.1.101] /var/www/pos.com/htdocs/.htaccess: RewriteMap not allowed here
+[Tue Apr 01 00:38:29 2014] [alert] [client 192.168.1.101] /var/www/pos.com/htdocs/.htaccess: RewriteMap not allowed here
+[Tue Apr 01 00:38:48 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:39:01 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 00:40:39 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon
+[Tue Apr 01 00:40:42 2014] [error] [client 192.168.1.101] File does not exist: /var/www/pos.com/htdocs/POS/assets/uploaded/bonelesslechon.jpg
+[Tue Apr 01 17:04:13 2014] [error] [client 192.168.1.109] PHP Fatal error:  require(): Failed opening required 'application/third_party/HMVC/Router.php' (include_path='.:/usr/share/pear:/usr/share/php') in /var/www/pos.com/htdocs/application/core/MY_Router.php on line 5
+[Tue Apr 01 18:19:42 2014] [error] [client 192.168.1.109] PHP Parse error:  syntax error, unexpected T_VARIABLE in /var/www/pos.com/htdocs/application/config/config.php on line 373
+[Tue Apr 01 18:45:00 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function view() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 6
+[Tue Apr 01 20:40:00 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function user_firstname() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 10
+[Tue Apr 01 20:40:15 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function user_firstname() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 10
+[Tue Apr 01 20:41:29 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to a member function helper() on a non-object in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 6
+[Tue Apr 01 20:42:01 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to a member function helper() on a non-object in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 14
+[Tue Apr 01 20:42:09 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to a member function helper() on a non-object in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 14
+[Tue Apr 01 20:42:31 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to a member function helper() on a non-object in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 15
+[Tue Apr 01 20:43:44 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to a member function helper() on a non-object in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 7
+[Thu Apr 03 22:38:19 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function generateResponse() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 23
+[Thu Apr 03 22:38:28 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function generateResponse() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 23
+[Thu Apr 03 22:38:37 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function generateResponse() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 23
+[Thu Apr 03 22:39:12 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function generateResponse() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 23
+[Thu Apr 03 22:40:38 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function generateResponse() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 23
+[Thu Apr 03 22:40:39 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function generateResponse() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 23
+[Thu Apr 03 22:40:40 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function generateResponse() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 23
+[Thu Apr 03 22:40:45 2014] [error] [client 192.168.1.101] PHP Fatal error:  Call to undefined function generateResponse() in /var/www/pos.com/htdocs/application/modules/master_records/controllers/master_records.php on line 23

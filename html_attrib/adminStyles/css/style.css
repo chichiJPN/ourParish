@@ -1,0 +1,172 @@
+		body{
+            background: url(../images/background.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover
+        }
+        
+        .div_header{
+            background-color: black;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: 5%;
+            min-height: 40px;
+            min-width: 650px;
+            -moz-border-radius-topleft: 32px;
+            -moz-border-radius-topright:8px;
+            -moz-border-radius-bottomleft:8px;
+            -moz-border-radius-bottomright:8px;
+            -webkit-border-top-left-radius:32px;
+            -webkit-border-top-right-radius:8px;
+            -webkit-border-bottom-left-radius:8px;
+            -webkit-border-bottom-right-radius:8px;
+            }
+
+        
+
+        .div_admin{
+            margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            height: 6%;
+            min-height: 8%;
+            }   
+
+        .fontstyle{
+                margin-top: auto;
+                margin-right: auto;
+                margin-bottom: auto;
+                font-style: normal;
+                font-size: 30px; 
+                color: gray;   
+            }
+
+    
+        .uppertable{
+            border: 20px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            min-width: 650px;
+            -moz-border-radius-topleft: 16px;
+            -moz-border-radius-topright:16px;
+            -moz-border-radius-bottomleft:0px;
+            -moz-border-radius-bottomright:0px;
+            -webkit-border-top-left-radius:16px;
+            -webkit-border-top-right-radius:16px;
+            -webkit-border-bottom-left-radius:0px;
+            -webkit-border-bottom-right-radius:0px;
+        }
+
+        .tableadmin{
+            background-color: #CCCCCC;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            width: 50%;
+            min-width: 650px;
+            height: 70%;
+            min-height: 500px;
+            overflow: scroll;
+        }
+
+        .tableheader{
+            width: 98%;
+            height: 4%;
+        }
+
+        .divborder{
+            border: 2px solid black;
+            min-width: 597px;
+        }
+
+        .tablemanage{
+            margin-left: 150px;
+            margin-right:auto;
+            min-width: 450px;
+        }
+
+        .modal_managesched{
+            min-height: 350px;
+            height: 350px;
+            width: 898px;
+            min-width: 898px;
+        }
+
+        .modal_width{
+            width: 898px;
+            min-width: 898px;
+        }
+
+        .tabledata {
+            margin-top: 10px;
+            min-width: 600px;
+            min-height: 50px;  
+
+        }
+
+        .modalbody_update{
+            overflow: scroll;
+            height: 250px;
+            min-height: 250px;
+        }
+
+        .changesched{
+            height:100px;
+            min-height: 100px;
+            margin-left: 60px;
+        }
+
+        table{border-collapse:collapse;}
+        tr.row td{
+            border-width:1px 0;
+            border-style:solid;
+            border-color:black;
+        }
+        tr.row td.left{
+            border-width:1px 0 1px 1px;
+        }
+        tr.row td.right{
+            border-width:1px 1px 1px 0;
+        }
+
+        .fontparish{
+            font-size: 15px;
+            color: black;
+
+        }  
+
+        .tdparish{
+            min-width: 200px;
+            background-color: gray;
+        } 
+
+        .tdmanage{
+            background-color:;
+        }
+
+        .row-highlight
+        {
+            background-color: skyblue;
+        }
+
+        .modal_bheader{
+            background-color: black; 
+        }
+        .modal_background{
+            background-color: #CCCCCC;
+        }
+
+        .modal_bparish{
+            min-height: 10px;
+        }
+
+        .modal_bfooter{
+            background-color: #CCCCCC;
+            min-height: 60px;
+        }

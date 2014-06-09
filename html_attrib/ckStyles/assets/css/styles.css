@@ -1,0 +1,137 @@
+header 
+{
+width: 950px;
+margin: 0px auto;
+padding-top: 27px;
+position: relative;
+}
+/*Division Styles for HomePage*/
+.main_container 
+{
+    border-radius: 6px;
+    border: 1px #7d8992 solid;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    height: 100%;
+    width: 60%;
+    min-height: 100%; 
+    top: 30px;
+    position:relative; 
+   
+    width:900px;
+    height:900px;
+    margin:0 auto; 
+    
+    overflow:hidden;
+    background: #ffffff;
+    margin-bottom: 40px;
+}
+
+.introduction_header
+{
+    border-bottom: #d6d6d6 1px solid;
+    padding-bottom: 5px;
+    width: 580px;
+}
+h2, .h2 {
+font-size: 30px;
+text-align: left;
+left:20px;
+top:400px;
+position: absolute;
+
+}
+
+h1, h2, h3 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+font-family: 'Times New Roman',Times,serif;
+font-weight: 500;
+line-height: 1.1;
+color: #878787;;
+font-style: italic;
+
+}
+
+
+.introduction_container
+{
+    left: 20px;
+    position: relative;
+    width: 600px;
+    height:300px;
+    top:275px;
+}
+
+.text-indent 
+{
+text-indent: 4em;
+}
+.text-second-indent
+{
+
+text-indent: 18em;
+}
+
+p {
+margin: 23px ;
+color:#878787;
+}
+
+.calendar_container
+{
+    left: 620px;
+    position: relative;
+    border: 2px #111111 solid;
+    width: 250px;
+    height:250px;
+}
+/*Parish Header Design*/
+.church_header_container
+
+{
+margin: 10px auto;
+position: relative;
+width: 1000px;
+height:50px;
+top: 220px;
+}
+.parishes
+{
+
+font-family: 'Times New Roman',Times, serif;
+color: #006dcc;
+font-weight: 600;
+font-size: 24px;
+position: absolute;
+left: 409px;
+font-style: italic;
+left: 390px;
+top:-5px;
+}
+/*end of Parish Header Design*/
+
+/*End of Division Styles for HomePage*/
+
+
+/*Navbar*/
+.navbar-default {
+background-color: #f8f8f8;
+border-color: #e7e7e7;
+height: 10px;
+}
+
+/*End of Navbar*/
+
+.html 
+{ 
+    background: url(http://localhost/ci_intro/design/images/OurParish.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
