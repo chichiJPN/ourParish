@@ -20,6 +20,8 @@ class admin extends CI_Controller {
  }
  
  function homePage() {
+ 
+   $this->load->view('admin/Header');
    $this->load->view('admin/Admin_Homepage');
  }
  
