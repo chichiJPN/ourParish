@@ -5,6 +5,12 @@ $(document).ready(function(){
 	loadLocations();
   });
   
+  $("#editNews10").submit(function(){
+	alert('asf');
+	console.log('asdfsd');
+	return false;
+  });
+  
   $("#editDescForm").submit(function() {
 
 	$.ajax({

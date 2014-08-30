@@ -207,6 +207,7 @@ $(document).ready(function(){
 			  }
 	});
   }
+
   
   $("#adminAddForm").submit(function(){
 	var parish_id = $("#adminAddForm_PID").attr('value');

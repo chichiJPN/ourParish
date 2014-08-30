@@ -63,8 +63,9 @@
                             
                           <div id= "container_body3">
                           <hr>
-                            <iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/months/january" height="420" width="660"  frameBorder="0"></iframe>
-                         
+                          <!-- height = 420 -->
+                            <iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/months/january" width="660" frameBorder="0"></iframe>
+                            <script>test.hook()</script>
                           </div>
                             <hr/>
                     </div>

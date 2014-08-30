@@ -129,7 +129,7 @@ font-style: italic;
 .block-3
 {
 background: url(../images/block-3.png) center 0 no-repeat;
-margin-top: -60px;
+margin-top: -220px;
 overflow: hidden;
 padding-top: 22px;
 }
@@ -193,4 +193,16 @@ text-indent: 14px;
     left:25px;
     top:-5px;
  }
+.schedule
+{
 
+width: 358px;
+top: -341px;
+height: 209px;
+position: relative;
+left: 595px;
+border: 1px solid #bebebe;
+
+
+
+}

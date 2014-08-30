@@ -696,6 +696,11 @@ function MonthSwitcher()
 		'<link rel="stylesheet" type="text/css" href="'+ base_url +'html_attrib/parishStyles/css/newStyle.css" media="screen"></style>';
 	};
 
+	this.initIframeSize = function(obj)
+	{
+	    obj.style.height =  obj.contentWindow.document.body.scrollHeight + 'px';
+	}
+
 	var closure = function(ref, key)
 	{
 		return function()
@@ -703,6 +708,40 @@ function MonthSwitcher()
 			document.getElementById("myframe").src = base_url + ref.months[key];		
 		};
 	};
+
+	this.hook = function()
+	{
+		var $myIframe = $('#myframe');
+		var myIframe = $myIframe[0];
+
+		var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+		var resizeIframe = function()
+		{
+			$myIframe.height('auto');
+			var newHeight = $('html', myIframe.contentDocument).height();
+			$myIframe.height(newHeight);
+		}
+
+		myIframe.addEventListener('load', function() {
+			resizeIframe();
+
+  			var target = myIframe.contentDocument.body;
+
+			var observer = new MutationObserver(function(mutations) {
+				resizeIframe();
+			});
+
+		 	var config = {
+			    attributes: true,
+			    childList: true,
+			    characterData: true,
+			    subtree: true
+			};
+			
+			observer.observe(target, config);
+		});
+	}
 
 	this.getMonths = function()
 	{

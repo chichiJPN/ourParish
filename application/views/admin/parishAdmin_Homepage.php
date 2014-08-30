@@ -61,6 +61,9 @@
 						<td>
 							<a style="margin-left:5px;" data-toggle="modal" data-backdrop="static" data-target="#managesched" data-id="<?php echo $parish_id; ?>" id="editSchedules">Schedule</a>
 						</td>
+						<td>
+							<a style="margin-left:5px;" data-toggle="modal" data-backdrop="static" data-target="#news" data-id="<?php echo $parish_id; ?>" id="editNews">News</a>
+						</td>
 					
 					</tr>
 			</table>
@@ -193,6 +196,69 @@
   </div>
 </div>   
 
+<!-- Start of Edit News modal-->
+<div class="modal fade" id="news" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal_background">
+      <div class="modal-header modal_bheader">
+        <h4 class="modal-title" id="myModalLabel">EDIT NEWS</h4>
+      </div>
+	  
+		<form id="editNews10">	
+			<div class="modal-body" style="margin-bottom:3px;">
+				<div class="form-group">
+					<label for="labelfortnumber">Title</label>
+					<input type="text" class="form-control" id="title" name="title" placeholder="Enter News Title">
+				</div>
+				<div class="form-group">
+					<label for="labelfortnumber">Content</label>
+					<textarea class="form-control textarea_edit" rows="5" name="content"></textarea>
+				</div>
+				 
+				  <table>
+			
+					<tr>
+						<td>
+							<h4 style="margin-bottom:10px;">Date</h4>
+						</td>	
+						<td>
+							<input type="date" name="bday">
+						</td>
+					</tr>			
+				</table>
+			</div>
+			<div class="modal-footer modal_bfooter">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  <input type="submit" data-toggle="modal" data-target="#notiedit" class="btn btn-primary" value="Save Changes">
+			</div>
+		</form>
+    </div>    
+  </div>
+</div>  
+
+<!--End of Edit description modal -->
+
+<!--notification para edit location -->
+<div class="modal fade" id="notiedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal_noti modal_notisizesw">
+    <div class="modal-content modal_background">
+      <div class="modal-header modal_bheader" style="height:35px;">
+        <font class="modal-title" id="myModalLabel">STATUS</font>
+      </div>
+ 
+          <div class="modal-body modal_background modal_notisizeh" style="margin-bottom:3px;">
+            <font style="margin-left:55px;">SAVED</font>
+          </div>
+      
+
+    </div>
+  </div>
+</div>   
+
+
+<!--End of Edit News modal -->
+
 </body>
 </html>
 
+   

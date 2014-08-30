@@ -50,6 +50,16 @@
 			Feel free to contact us wherever you prefer- Facebook, Twitter, or support@ourparish.org
 		</p>
 	</div> 
+	<div class = "schedule"> 
+		<h2 style = "top: -3px;
+text-align: center;"> Looking for Schedules?</h2>
+<ul class = "list-group">
+<li class = "list-group-item"><a>Mass Schedule</a>
+	<li class = "list-group-item"><a>Readings</a>
+		<li class = "list-group-item"><a>Baptism Schedules</a>
+			<li class = "list-group-item"><a>Confession Schedules</a>
+</ul>
+	</div>
 	
 	<div class ="block-3">
 		<p class = "parishes"  >Parishes</p>
