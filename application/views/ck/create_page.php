@@ -24,7 +24,7 @@
           data: "page=" + p,
           success:
               function(data) {
-                console.log(data);
+                alert(data);
 
                 $("#editor1").html('');
                 $.each( data, function( key, value ) { 
@@ -43,7 +43,7 @@
               },
                   
           error: function(data){
-                console.log(data);
+                alert(data);
 				 $("#editor1").html('');
               }
         });
@@ -64,12 +64,12 @@
           data: "page=" + p + "&keyword=<?php echo $keyword[0]->keyword; ?>",
           success:
               function(data) {
-                console.log(data);
+                alert(data);
   
               },
                   
           error: function(data){
-                console.log(data);
+                alert(data);
               }
         });
       }
@@ -87,12 +87,12 @@
           data: "page="+ p,
           success:
               function(data) {
-				console.log('delete succesful');
+				alert('delete succesful');
                 showHeader();
               },
                   
           error: function(data){
-                console.log(data);
+                alert(data);
               }
         });
         return false;
@@ -145,7 +145,7 @@
               },
                   
           error: function(data){
-                console.log(data);
+                alert(data);
               }
         });
         return false;
@@ -364,7 +364,7 @@
           showHeader();          
         },          
     error: function(data){
-        console.log(data);          
+        alert(data);          
         }
   });
       return false;
@@ -441,7 +441,7 @@
             },
                       
           error: function(data){
-                console.log(data);
+                alert(data);
               }
         });
         return true;
@@ -458,11 +458,11 @@
 	
     success:
         function(data) {
-          console.log(data);
+          alert(data);
         },          
     error: 
         function(data){
-          console.log(data);          
+          alert(data);          
         }
   });
       return false;
@@ -481,7 +481,7 @@
         },          
     error: 
         function(data){
-          console.log(data);          
+          alert(data);          
         }
   });
       return false;
