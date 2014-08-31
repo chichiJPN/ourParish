@@ -6,8 +6,23 @@ $(document).ready(function(){
   });
   
   $("#editNews10").submit(function(){
-	alert('asf');
-	console.log('asdfsd');
+
+	console.log(	$(this).serialize());
+	$.ajax({
+		type: "POST",
+		url: base_url + "index.php/parishadmin/editNews",
+		dataType: "json",
+		data:  $(this).serialize(),
+		success:
+			  function(data) {
+					alert(data);			
+			  },
+						
+		error: function(data){
+					alert('an error has occurred');
+			  }
+	});
+	
 	return false;
   });
   
@@ -28,7 +43,7 @@ $(document).ready(function(){
 			  }
 	});
 	
-	return false;  
+	return false;
   });
   
   $("#uploadForm").submit(function(e){

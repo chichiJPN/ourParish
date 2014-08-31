@@ -26,6 +26,44 @@ class ck_db extends CI_Model
 		return $query->result();
 	}
 	
+	function model_verifyNewsTab() {
+		$this->db->select('*');
+		$this->db->from('page');
+		$this->db->where('id_parish', $this->session->userdata['user_data']['id_parish']); 
+		$this->db->where('page_name', 'News');
+		$query = $this->db->get();
+		
+		if($query->num_rows() == 0)
+		{
+			$this->db->insert('page', array(
+				'id_parish' => $this->session->userdata['user_data']['id_parish'],
+				'page_name' => 'News', 
+				'description' => ''
+				)
+			);
+			 
+			return $this->db->affected_rows() > 0;
+		}
+		
+		return true;
+	}
+	
+	function model_getNews() {
+		$this->db->select('title');
+		$this->db->from('news');
+		$this->db->where('id_parish', $this->session->userdata['user_data']['id_parish']); 
+
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0)
+		{
+			return $query->result();
+		}
+		
+		return false;
+	}
+	
+	
 	function getDescription($id,$page_name)
 	{
 		$query = $this->db->query("SELECT description, id_page FROM page where id_parish='$id' and page_name='$page_name'");
@@ -69,6 +107,14 @@ class ck_db extends CI_Model
 		return $this->db->affected_rows() > 0;
 	}	
 	
+	function model_updateDescription2($title_page,$description, $id_parish)
+	{
+		
+		$this->db->where('page_name', $title_page);
+		$this->db->where('id_parish', $id_parish);
+		$this->db->update('page', $description); 
+		return $this->db->affected_rows() > 0;
+	}	
 }
 
 ?>

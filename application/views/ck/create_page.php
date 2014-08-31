@@ -24,26 +24,25 @@
           data: "page=" + p,
           success:
               function(data) {
-                alert(data);
+                console.log(data);
 
                 $("#editor1").html('');
                 $.each( data, function( key, value ) { 
-                  CKEDITOR.instances.editor1.setData(value.description);
-                  console.log(value.id_page);
-                
-                $("#div_CK").html('');
-                var a = document.createElement('input');
-                a.setAttribute("type","hidden");
-                a.setAttribute("name","activepage");
-                a.setAttribute("value",value.id_page);
-                document.getElementById("div_CK").appendChild(a);
-                document.getElementById("url").innerHTML = "<?php echo base_url(); ?>index.php/parish/index/<?php echo $keyword[0]->keyword; ?>/" + p;
-                document.getElementById("makeHome").onclick = updateHome(p);				
+					CKEDITOR.instances.editor1.setData(value.description);
+					$("#div_CK").html('');
+					var a = document.createElement('input');
+					a.setAttribute("type","hidden");
+					//a.setAttribute("name","activepage");
+					a.setAttribute("id","activePage");
+					a.setAttribute("value",value.id_page);
+					document.getElementById("div_CK").appendChild(a);
+					document.getElementById("url").innerHTML = "<?php echo base_url(); ?>index.php/parish/index/<?php echo $keyword[0]->keyword; ?>/" + p;
+					document.getElementById("makeHome").onclick = updateHome(p);				
                 });    
               },
                   
           error: function(data){
-                alert(data);
+                console.log(data);
 				 $("#editor1").html('');
               }
         });
@@ -69,7 +68,7 @@
               },
                   
           error: function(data){
-                alert(data);
+                console.log(data);
               }
         });
       }
@@ -92,7 +91,7 @@
               },
                   
           error: function(data){
-                alert(data);
+                console.log(data);
               }
         });
         return false;
@@ -145,7 +144,7 @@
               },
                   
           error: function(data){
-                alert(data);
+                console.log(data);
               }
         });
         return false;
@@ -290,9 +289,11 @@
           </div>
       <div class = "main_container">
         <br>
-  
+
+
         <div style="right:2%; position: absolute;">
           <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#manageModal">Manage Page</button>
+          <button type="button" class="btn btn-default navbar-btn" onClick="updateNews()">Update News</button>
         </div>
           
         <div style="left:2%; top:10%; position: relative;">
@@ -348,6 +349,24 @@
 	</body>
 
 <script type="text/javascript">
+  function updateNews() {
+	if(confirm("Are you sure you want to update News?")) {
+		  $.ajax({
+				type: "POST",
+				url: "<?php echo base_url(); ?>index.php/ck_ourparish/updateNews",
+				dataType: "json",
+				success:
+					function(data) {
+						location.reload();
+					},          
+				error: function(data){
+					console.log(data);          
+					}
+			});
+	
+	}
+  }
+
   $("makeHome").click(function() {
 	
   
@@ -364,7 +383,7 @@
           showHeader();          
         },          
     error: function(data){
-        alert(data);          
+        console.log(data);          
         }
   });
       return false;
@@ -441,20 +460,25 @@
             },
                       
           error: function(data){
-                alert(data);
+                console.log(data);
               }
         });
         return true;
     }
 
   $("#form_saveCK").submit(function(){
-  var id_page = $("#form_saveCK").serialize();
-  console.log('value is '+ id_page);
+  
+
+  var instance = CKEDITOR.instances.editor1;
+  instance.updateElement();
+  console.log('value is '+ instance.getData());
+  console.log('div ck is ' + $("#activePage").val());
+  
   $.ajax({
     type: "POST",
     url: "<?php echo base_url(); ?>index.php/ck_ourparish/updateDescription",
     dataType: "json",
-    data: id_page,
+    data: "datavalue="+instance.getData()+"&activepage="+$("#activePage").val(),
 	
     success:
         function(data) {
@@ -462,9 +486,10 @@
         },          
     error: 
         function(data){
-          alert(data);          
+          console.log(data);          
         }
   });
+
       return false;
   });
 
@@ -481,7 +506,7 @@
         },          
     error: 
         function(data){
-          alert(data);          
+          console.log(data);          
         }
   });
       return false;

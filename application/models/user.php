@@ -4,6 +4,29 @@ Class User extends CI_Model
 {
 	//gets all parish data from db
 	// note: need to edit this to be more specific
+	function model_editNews($data) {
+		$this->db->select('*');
+		$this->db->from('news');
+		$this->db->where('id_parish', $data['id_parish']); 
+		$this->db->where('title', $data['title']);
+		
+		$query = $this->db->get();
+ 
+		if($query->num_rows() > 0)
+		{
+			return 1;
+		}
+		else
+		{
+			$this->db->insert('news', $data);		
+			if($this->db->affected_rows() > 0) return 2;
+			else return 3;
+		}
+		
+	
+	
+	}
+	
 	function model_getParishData($parish_id, $database) {
 		$this->db->select('*');
 		$this->db->from($database);

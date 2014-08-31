@@ -179,22 +179,7 @@
 
 <!--End of Edit description modal -->
 
-<!--notification para edit location -->
-<div class="modal fade" id="notiedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal_noti modal_notisizesw">
-    <div class="modal-content modal_background">
-      <div class="modal-header modal_bheader" style="height:35px;">
-        <font class="modal-title" id="myModalLabel">STATUS</font>
-      </div>
- 
-          <div class="modal-body modal_background modal_notisizeh" style="margin-bottom:3px;">
-            <font style="margin-left:55px;">SAVED</font>
-          </div>
-      
 
-    </div>
-  </div>
-</div>   
 
 <!-- Start of Edit News modal-->
 <div class="modal fade" id="news" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -222,14 +207,14 @@
 							<h4 style="margin-bottom:10px;">Date</h4>
 						</td>	
 						<td>
-							<input type="date" name="bday">
+							<input type="date" name="date">
 						</td>
 					</tr>			
 				</table>
 			</div>
 			<div class="modal-footer modal_bfooter">
 			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			  <input type="submit" data-toggle="modal" data-target="#notiedit" class="btn btn-primary" value="Save Changes">
+			  <input type="submit" class="btn btn-primary" value="Save Changes">
 			</div>
 		</form>
     </div>    
@@ -237,6 +222,7 @@
 </div>  
 
 <!--End of Edit description modal -->
+
 
 <!--notification para edit location -->
 <div class="modal fade" id="notiedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

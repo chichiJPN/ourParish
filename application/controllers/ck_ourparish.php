@@ -14,11 +14,31 @@ class ck_Ourparish extends sessionController {
 	 
 	public function index()
 	{
+		
 		$this->showpage();
 	}
 	
+	//update ck news
+	function updateNews() {
+		if($this->ck_db->model_verifyNewsTab()) {
+			$data = '';
+			if($data = $this->ck_db->model_getNews()) {
+				$dataString = '';
+				foreach ($data as $value) {
+					$dataString = $dataString.'<p><a href="http://asdfsf">'.$value->title.'</a></p>';
+				}
+
+				return $this->ck_db->model_updateDescription2('News',array('description' => $dataString), $this->session->userdata['user_data']['id_parish']);
+				
+				
+			}
+		}
+	}
+	
+	
 	public function showpage()
 	{
+
 		$this->load->helper('url');
 		$id_parish = $this->session->userdata['user_data']['id_parish'];
 		
@@ -147,7 +167,6 @@ class ck_Ourparish extends sessionController {
 		}		
 	}
 	
-	//wala pa
 	function updateDescription()
 	{
 		$this->load->library('form_validation');

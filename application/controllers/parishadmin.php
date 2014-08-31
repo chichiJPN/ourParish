@@ -365,5 +365,39 @@ class parishadmin extends sessionController {
 	echo json_encode($details);		
 
  }
+ 
+ function editNews() {
+ 
+ 	$this->load->library('form_validation');
+	$this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('content', 'Content', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('date', 'Date', 'trim|required|xss_clean');
+
+	if($this->form_validation->run() == FALSE) {
+		return;
+	} else {
+		$data = array(
+			'title' => $this->input->post('title'),
+			'content' => $this->input->post('content'), 
+			'date' => $this->input->post('date'),
+			'id_parish' => $this->session->userdata['user_data']['id_parish']
+		);
+		
+		switch($this->user->model_editNews($data)) {
+			case 1:
+				echo json_encode('title already exists');
+				break;
+			case 2:
+				echo json_encode('news has been added');
+				break;
+			case 3:
+				echo json_encode('an error has occurred');
+				break;
+		
+		}
+	}
+ 
+	
+ }
 }
 ?>
