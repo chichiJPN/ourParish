@@ -22,7 +22,7 @@
 				"<?php echo $value->parish; ?>" ,
 				"<?php echo $value->barangay.', '.$value->street.' '.$value->towncity.' city'; ?>" ,
 				"<?php echo $value->description ?>",
-				"<?php echo 'Parish Page'?>",
+				"<?php echo $value->description ?>",
 				"<?php if($value->url == NULL) echo base_url().'index.php/parish/index/pageNotFound/pageNotFound'; else echo $value->url; ?>"
 			  )
 			);

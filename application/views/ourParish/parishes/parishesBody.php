@@ -32,8 +32,7 @@
      <img src = "<?php echo base_url();?>/html_attrib/parishStyles/images/header.png" style = "position:relative; top:-19px;">
      OurParish.org
      </h1>
-    </div>
-       
+    </div>       
           <ul class="nav navbar-nav nav-justified menu">
             <form class="form-inline" role="form">
               <div class="form-group"></form>
@@ -51,8 +50,7 @@
         </nav>                
                 <div class="row block-bg" style="top:-9px">
                   <h3 class="text-center" style="float:center; margin-top: 35px; padding-bottom:15px">Parishes</h3>
-                </div>
-           
+                </div>           
              <div class="col-lg-6">
 		<form id="searchForm">
 			<div class="input-group">

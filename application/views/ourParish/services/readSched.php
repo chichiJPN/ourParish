@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<div id="base_url" data-base_url="<?php echo base_url(); ?>"></div>
+<div id="base_url" data-base_url="<?php echo base_url(); ?>"></div>	
 <div class="panel-heading"><h4><span class="glyphicon glyphicon-book"></span> Reading of the Day</h4></div>
 <div class="panel-body">
 	<div class="row1">
@@ -32,14 +32,10 @@
 	</div>
 
 <div class="panel2 panel-default" style="border-color: #ddd;">
-	<div class="panel-heading1"><h4>First Reading</h4></div>
+	
 	<iframe id="onframe panel1" src="<?php echo base_url(); ?>index.php/parish_site/firstReading/1" height = "490px" width = "100%"  frameBorder="0"></iframe>
 </div>
 
-<div class="panel2 panel-default" style="border-color: #ddd; margin-top: 20px;">
-	<div class="panel-heading1"><h4>Psalm</h4></div>
-		<iframe id="onframe panel2" src="<?php echo base_url(); ?>index.php/parish_site/psalms/1" height = "375px" width = "100%"  frameBorder="0"></iframe>    
-</div>	
 </div>
 
 

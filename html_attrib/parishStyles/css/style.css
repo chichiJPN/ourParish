@@ -207,3 +207,11 @@ width: 220px;
 .ca-nav span:hover{
 	opacity:1.0;
 }
+
+#dropdown-list{
+max-height: 200px;
+ overflow: auto;
+ top: 33px;
+ position: relative;
+ left: 50px;
+}

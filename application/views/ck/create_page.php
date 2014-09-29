@@ -358,6 +358,7 @@
 				success:
 					function(data) {
 						location.reload();
+						alert('update successful!');
 					},          
 				error: function(data){
 					console.log(data);          
@@ -380,7 +381,9 @@
     data: id_page,
     success:
         function(data) {
-          showHeader();          
+		
+          showHeader();
+		  alert('add successful!');
         },          
     error: function(data){
         console.log(data);          
@@ -502,7 +505,9 @@
     data: id_page,
     success:
         function(data) {
+		
           showHeader();
+		  alert('rename successful');
         },          
     error: 
         function(data){

@@ -48,7 +48,7 @@
         </div>
         <div class="col-md-9">
           <div class="panel1 panel-default" class="text-center" style="border-color: #ddd;"> 
-            <iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/sched/read" height = "1190px" width = "100%" scrolling="no" frameBorder="0"></iframe>    
+			<iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/sched/<?php if($info != false) echo $info; else echo 'read'; ?>" height = "1190px" width = "100%" scrolling="no" frameBorder="0"></iframe>    			
           </div>
         </div>
          <div style=" margin-left: 825px; float: left; position: relative; top: 20px;" >

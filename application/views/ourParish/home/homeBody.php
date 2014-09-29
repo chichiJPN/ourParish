@@ -54,10 +54,10 @@
 		<h2 style = "top: -3px;
 text-align: center;"> Looking for Schedules?</h2>
 <ul class = "list-group">
-<li class = "list-group-item"><a>Mass Schedule</a>
-	<li class = "list-group-item"><a>Readings</a>
-		<li class = "list-group-item"><a>Baptism Schedules</a>
-			<li class = "list-group-item"><a>Confession Schedules</a>
+	<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/mass">Mass Schedule</a >
+	<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/read">Readings</a>
+	<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/bapt">Baptism Schedules</a>
+	<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/confess">Confession Schedules</a>
 </ul>
 	</div>
 	

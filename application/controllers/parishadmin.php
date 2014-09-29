@@ -366,6 +366,10 @@ class parishadmin extends sessionController {
 
  }
  
+ function getNewsContent() {
+ 
+ }
+ 
  function editNews() {
  
  	$this->load->library('form_validation');

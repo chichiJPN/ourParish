@@ -44,7 +44,7 @@ $(document).ready(function(){
   });
 });
 </script>
-<style> 
+<style>
 
 #flip
 {
@@ -93,13 +93,13 @@ min-height: 300px;
       <div class="form-group"> 
         <label class="col-sm-2 control-label">Parish</label>
         <div class= "col-sm-10">
-          <select class="form-control" name="parish">
+          <select class="form-control" name="parish" id= "dropdown-list">
             <option value="0">All</option>
 			<?php
 				foreach($parish as $value) 
 				{
 					?><option value="<?php echo $value->id_parish; ?>"><?php echo $value->parish; ?></option>
-			<?php				
+			<?php
 				}			
 			?>
           </select>
@@ -108,7 +108,7 @@ min-height: 300px;
       <div class="form-group"> 
         <label class="col-sm-2 control-label">Day</label>
         <div class= "col-sm-4">
-          <select id="days" class="form-control" name="day"></select>
+          <select id="days" class="form-control" name="day" ></select>
           <script type="text/javascript">test.listDays()</script>
         </div>
         <label class="col-sm-1 control-label">Time</label>
@@ -121,7 +121,7 @@ min-height: 300px;
       <div class="form-group"> 
         <label class="col-sm-4 control-label">Street</label>
         <div class= "col-sm-4">
-          <select class="form-control" name="street">
+          <select class="form-control" name="street" >
 			<option value="0">Any</option>
 			<?php
 				foreach($street as $value) 
@@ -136,7 +136,7 @@ min-height: 300px;
       <div class="form-group">
       <label class="col-sm-4 control-label">Barangay</label>
         <div class= "col-sm-4">
-          <select class="form-control" name="barangay">	  
+          <select class="form-control" name="barangay" >	  
 			<option value="0">Any</option>
 			<?php
 				foreach($barangay as $value) 
@@ -151,7 +151,7 @@ min-height: 300px;
       <div class="form-group">
         <label class="col-sm-4 control-label">City/Town</label>
         <div class= "col-sm-4">
-          <select class="form-control" name="towncity">
+          <select class="form-control" name="towncity" >
 			<option value="0">Any</option>
 			<?php
 				foreach($towncity as $value) 
@@ -166,8 +166,8 @@ min-height: 300px;
       <div class="form-group"> 
         <label class="col-sm-4   control-label">Language</label>
         <div id="languages" class= "col-sm-2">
-        <script type="text/javascript">test.listLanguages()</script>
-      </div>
+         <script type="text/javascript">test.listLanguages()</script>
+        </div>
       </div>
 	  
 	  </form>
@@ -180,19 +180,7 @@ min-height: 300px;
   <div id="panel"><h2 class="h2-line-3">Mass Schedules</h2>
           <div class="col-page-cont left-2">
             <div id="table_id_wrapper" class="dataTables_wrapper" role="grid">
-              <div id="table_id_length" class="dataTables_length">
-                <label>Show <select size="1" name="table_id_length" aria-controls="table_id">
-                  <option value="10" selected="selected">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                          </select> entries</label>
-              </div>
-              <div class="dataTables_filter" id="table_id_filter">
-                <label>Search: 
-                  <input type="text" aria-controls="table_id">
-                </label>
-              </div>
+
       <table id="table_id" class="display dataTable" aria-describedby="table_id_info">
         <thead>
             <tr role="row">
@@ -209,10 +197,6 @@ min-height: 300px;
         
     <tbody role="alert" aria-live="polite" aria-relevant="all" id="table">
 	
-	<!-- I will edit-->
-
-		
-     <!-- I will edit -->
                 </tbody>
               </table>
             <div class="dataTables_info" id="table_id_info">Showing 1 to 10 of 35 entries</div>

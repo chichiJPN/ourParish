@@ -25,7 +25,7 @@ class ck_Ourparish extends sessionController {
 			if($data = $this->ck_db->model_getNews()) {
 				$dataString = '';
 				foreach ($data as $value) {
-					$dataString = $dataString.'<p><a href="http://asdfsf">'.$value->title.'</a></p>';
+					$dataString = $dataString.'<p><a href="'.base_url().'/index.php/News/'.$value->title.'">'.$value->title.'</a></p>';
 				}
 
 				return $this->ck_db->model_updateDescription2('News',array('description' => $dataString), $this->session->userdata['user_data']['id_parish']);

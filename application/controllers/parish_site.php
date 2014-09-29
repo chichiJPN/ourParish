@@ -44,8 +44,10 @@ class parish_site extends CI_Controller {
   function services()
  {
 	$this->load->view('ourParish/services/servicesHeader');
-    $this->load->view('ourParish/navBar');	
-	$this->load->view('ourParish/services/servicesBody'); 
+    $this->load->view('ourParish/navBar');
+	 
+	$data['info'] = $this->uri->segment(3);
+	$this->load->view('ourParish/services/servicesBody',$data); 
 	//$this->load->view('ourParish/services/services');
  }
  
@@ -133,8 +135,9 @@ class parish_site extends CI_Controller {
 		
 	$data['readings'] = getTextData($language,'reading');
 	
+	$data['psalms'] = getTextData($language,'psalms');
 	$this->load->view('ourParish/services/firstreading', $data);
- }  
+ }
  
  function psalms()
  {
@@ -151,7 +154,10 @@ function getTextData($language, $type)
 	switch($language)
 	{
 		case 1: $yes = 'english'; break;
-		case 2: $yes = 'bisaya'; break;
+		case 2: 
+			$yes = 'bisaya'; 
+			return 'bisaya not yet supported';
+			break;
 	}
 	
 	date_default_timezone_set('Asia/Manila');

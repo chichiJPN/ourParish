@@ -9,10 +9,16 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>html_attrib/parishStyles/css/parishStyle.css" media="screen"></style>
 </head>
 <body>
-<div class="panel-body">	
-					<p class="text-center">
-							<?php echo $readings; ?>
-					</p>
+<div class="panel-body">
+	<div class="panel-heading1"><h4>First Reading</h4></div>
+	<p class="text-center">
+		<?php echo $readings; ?>
+	</p>
+	
+	<div class="panel-heading1"><h4>Psalms</h4></div>
+	<p class="text-center">
+		<?php echo $readings; ?>
+	</p>
 </div>
 
 </body>

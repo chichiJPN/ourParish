@@ -472,7 +472,7 @@ function ListManager(parishDataContainer, max)
 		a2.href = list.get(a).parish_page;
 		a2.target = 'window';
 		a2.setAttribute('class', 'ca-more');
-		a2.appendChild(document.createTextNode('More...'));
+		a2.appendChild(document.createTextNode('Link'));
 		div3.appendChild(a2);
 
 		div2.appendChild(div3);
@@ -525,7 +525,7 @@ function ListManager(parishDataContainer, max)
 		var b = document.createElement('a');
 		b.href = list.get(a).parish_page;
 		b.setAttribute('class', 'ca-more');
-		b.appendChild(document.createTextNode('More...'));
+		b.appendChild(document.createTextNode('Link'));
 		div6.appendChild(div7);
 		div6.appendChild(p1);
 		div6.appendChild(b);

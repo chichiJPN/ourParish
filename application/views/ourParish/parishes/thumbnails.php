@@ -45,7 +45,7 @@
 					 <div style="background-: url(<?php echo base_url(); ?>/html_attrib/parishStyles/images/parishcovers/<?php echo $value->filename.'.'.$value->ext; ?>);"></div>
 					  <p class="text-center"><?php echo $value->description; ?></p>
 
-					  <a href="<?php if($value->url == NULL) echo base_url().'index.php/parish/index/pageNotFound/pageNotFound'; else echo $value->url; ?>" target="window">See more</a>
+					  <a href="<?php if($value->url == NULL) echo base_url().'index.php/parish/index/pageNotFound/pageNotFound'; else echo $value->url; ?>" target="window"><?php echo 'more at '.$value->parish; ?></a>
 				  </div>
 					<div class="form-group"></div>
 				</div>
