@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="panel-body">
-	<div class="panel-heading1"><h4>First Reading</h4></div>
+<!--	<div class="panel-heading1"><h4>First Reading</h4></div>
 	<p class="text-center">
 		<?php echo $readings; ?>
 	</p>
@@ -18,7 +18,7 @@
 	<div class="panel-heading1"><h4>Psalms</h4></div>
 	<p class="text-center">
 		<?php echo $readings; ?>
-	</p>
+	</p> -->
 </div>
 
 </body>

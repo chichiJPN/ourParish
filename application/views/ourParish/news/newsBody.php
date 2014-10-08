@@ -32,7 +32,7 @@
   <!--======================End of HEADER==========================-->
   <!--======================Body Content===========================--> 
   
-    <div class="block-2 pad-1">
+  <div class="main_container">
      <div class = "design_bar">
          <h1> 
      <img src = "<?php echo base_url();?>/html_attrib/parishStyles/images/header.png" style = "position:relative; top:-19px;">
@@ -66,14 +66,15 @@
                           <!-- height = 420 -->
                             <iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/months/january" width="660" frameBorder="0"></iframe>
                             <script>test.hook()</script>
+                          </hr>  
                           </div>
-                            <hr/>
+                            
                     </div>
                 </div>
             </div>
            
-            <div style="margin-left: 700px; float: left; position: relative; top: 15px;" >
-          <a href="www.facebook.com"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconFb.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
+            <div style="margin-left: 720px; float: left; position: relative; top: 64px;" >
+              <a href="www.facebook.com"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconFb.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
                <a href="www.twitter.com"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconTwitter.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
                <a href="betterphilippines.org"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconBpim.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
           </div>
@@ -83,7 +84,7 @@
             
             <!--=========== footer ===========-->
                 <footer>
-                    <h5><center>Copyright &copy; 2014 Our Parish.org</center></h5>
+                    <h5><center>Copyright &copy; 2014 OurParish.org</center></h5>
                 </footer>
                 <!--=========== end of footer ===========-->
   </header>

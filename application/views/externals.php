@@ -59,7 +59,7 @@
       <div class = "main_container" >
           <div class = "design_bar">
              <div class = "collapse navbar-collapse navHeaderCollapse">
-            <ul class = "nav navbar-nav navbar-left">
+            <ul class = "nav navbar-nav navbar-left" id="navbarExternals">
 			<?php
 			if($pages)
 			foreach($pages as $value)

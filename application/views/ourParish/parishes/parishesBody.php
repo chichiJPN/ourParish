@@ -25,17 +25,19 @@
  <!--=========End of Logo=======-->      
  <!--======================Body Content===========================-->
 
-    <div class = "main_container">
-      <div class="block-2 pad-1">
-        <div class = "design_bar">
+<div class = "main_container">
+  
+    <div class = "design_bar">
          <h1> 
      <img src = "<?php echo base_url();?>/html_attrib/parishStyles/images/header.png" style = "position:relative; top:-19px;">
      OurParish.org
      </h1>
-    </div>       
+    </div>
+      <div class="ic"></div>
+        <div>
           <ul class="nav navbar-nav nav-justified menu">
             <form class="form-inline" role="form">
-              <div class="form-group"></form>
+        <div class="form-group"></form>
                 
                    <!-- Single button(DropDown)-->   
                 <li>
@@ -47,11 +49,11 @@
                 </li>
 						</form>   
           </ul>
-        </nav>                
-                <div class="row block-bg" style="top:-9px">
+        </div>                 
+                <div class="row block-bg">
                   <h3 class="text-center" style="float:center; margin-top: 35px; padding-bottom:15px">Parishes</h3>
                 </div>           
-             <div class="col-lg-6">
+  <div class="col-lg-6">
 		<form id="searchForm">
 			<div class="input-group">
 					<span class="input-group-btn">
@@ -66,15 +68,16 @@
           <iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/thumbnails/" height="1000" width="1000" scrolling="no"  frameBorder="0" onload='javascript:test.initIframeSize(this);'></iframe>
                 <!--============================End=========================================================-->
           
-      </div>
+     
               
-           <div style="margin-left: 825px; float: left; position: relative; top: -30px;" >
+           <div style="margin-left: 825px; float: left; position: relative; top: 20px;" >
           <a href="http://facebook.com"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconFb.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
                <a href="http://twitter.com"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconTwitter.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
                <a href="http://betterphilippines.org"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconBpim.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
           </div>
     </div>
-
+  </div>
+</div>
             <!--=========== footer ===========-->
                 <footer>
                     <h5>Copyright &copy; 2014 OurParish.org</h5>

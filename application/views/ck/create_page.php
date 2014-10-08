@@ -3,11 +3,16 @@
 	<head>
 		<meta>
     <script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/ckeditor/ckeditor.js"></script>
-		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/jquery-1.11.0.js"></script>
-		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+      CKEDITOR.config.customConfig = '<?php echo base_url(); ?>html_attrib/ckStyles/ckeditor/customConfig.js"';
+      CKEDITOR.replace(Story);
+   </script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/bootstrap.min.css"/>
 	<link href = "<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/styles.css" rel = "stylesheet">
 	<link href = "<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/modal.css" rel = "stylesheet">
+
 	</head>
 
 <script type="text/javascript">
@@ -481,15 +486,18 @@
     type: "POST",
     url: "<?php echo base_url(); ?>index.php/ck_ourparish/updateDescription",
     dataType: "json",
-    data: "datavalue="+instance.getData()+"&activepage="+$("#activePage").val(),
+    data: "datavalue="+escape(instance.getData())+"&activepage="+$("#activePage").val(),
 	
     success:
         function(data) {
-          alert(data);
+			alert(data);
         },          
     error: 
         function(data){
-          console.log(data);          
+			console.log(data);
+			alert(data);
+			alert("fail");
+		
         }
   });
 

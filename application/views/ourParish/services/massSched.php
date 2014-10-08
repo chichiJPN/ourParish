@@ -90,10 +90,10 @@ min-height: 300px;
   <div class="panel-heading"><h4><span class="glyphicon glyphicon-search"></span> Search Mass Schedule</h4></div>		
   <div class="panel-body">
     <form class="form-horizontal" role="form" method="post" id="mass_form">
-      <div class="form-group"> 
+      <div class="form-group1"> 
         <label class="col-sm-2 control-label">Parish</label>
         <div class= "col-sm-10">
-          <select class="form-control" name="parish" id= "dropdown-list">
+          <select class="form-control1" name="parish" id= "dropdown-list">
             <option value="0">All</option>
 			<?php
 				foreach($parish as $value) 
@@ -105,23 +105,22 @@ min-height: 300px;
           </select>
         </div>
       </div>
-      <div class="form-group"> 
+      <div class="form-group1"> 
         <label class="col-sm-2 control-label">Day</label>
         <div class= "col-sm-4">
-          <select id="days" class="form-control" name="day" ></select>
+          <select id="days" class="form-control1" name="day" ></select>
           <script type="text/javascript">test.listDays()</script>
         </div>
-        <label class="col-sm-1 control-label">Time</label>
+        <label class="col-sm-2 control-label">Time</label>
           <div class= "col-sm-4">
-            <select id = "schedules" class="form-control" name="time_start"></select>
+            <select id = "schedules" class="form-control1" name="time_start"></select>
             <script type="text/javascript">test.listSchedules();</script>
           </div>
       </div>
-      <div class="form-group"> </div>
-      <div class="form-group"> 
-        <label class="col-sm-4 control-label">Street</label>
+      <div class="form-group1"> 
+        <label class="col-sm-5 control-label">Street</label>
         <div class= "col-sm-4">
-          <select class="form-control" name="street" >
+          <select class="form-control1" name="street" >
 			<option value="0">Any</option>
 			<?php
 				foreach($street as $value) 
@@ -133,10 +132,10 @@ min-height: 300px;
           </select>
         </div>
       </div> 
-      <div class="form-group">
-      <label class="col-sm-4 control-label">Barangay</label>
+      <div class="form-group1">
+      <label class="col-sm-5 control-label">Barangay</label>
         <div class= "col-sm-4">
-          <select class="form-control" name="barangay" >	  
+          <select class="form-control1" name="barangay" >	  
 			<option value="0">Any</option>
 			<?php
 				foreach($barangay as $value) 
@@ -148,10 +147,10 @@ min-height: 300px;
           </select>
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-sm-4 control-label">City/Town</label>
+      <div class="form-group1">
+        <label class="col-sm-5 control-label">City/Town</label>
         <div class= "col-sm-4">
-          <select class="form-control" name="towncity" >
+          <select class="form-control1" name="towncity" >
 			<option value="0">Any</option>
 			<?php
 				foreach($towncity as $value) 
@@ -163,20 +162,40 @@ min-height: 300px;
           </select>
         </div>
       </div>
-      <div class="form-group"> 
-        <label class="col-sm-4   control-label">Language</label>
-        <div id="languages" class= "col-sm-2">
-         <script type="text/javascript">test.listLanguages()</script>
+      <!--================================================ Radio Buttons Starts Here =======================================-->
+      <div class="form-group1"> 
+        <label class="col-sm-3 control-label">Language</label>
+        <div id="languages" class="col-sm-3">
+         <!--<script type="text/javascript">test.listLanguages()</script>-->
+         <div id="temp" class="radio">
+            <label>  
+            <input type="radio" id="langButton" checked="true" name="mass-language" value="0">Any</label> 
+
+         </div>     
+        </div>
+        <div id="languages" class="col-sm-3">
+         <div id="temp" class="radio">
+            <label> 
+            <input type="radio" id="langButton" name="mass-language" value="1">English</label> 
+     
+         </div>     
+        </div>
+        <div id="languages" class="col-sm-3">
+         <div id="temp" class="radio">
+            <label> 
+            <input type="radio" id="langButton" name="mass-language" value="2">Cebuano</label> 
+           
+         </div>     
         </div>
       </div>
-	  
+	    <!--================================================ Radio Buttons Ends Here =======================================-->
 	  </form>
        <div class="col-sm-offset-4 col-sm-4">
          <div id="flip">Search Schedules</div>
       </div>
 
    <div id="container"> 
-  <div id="panel-body" style="margin-top: 70px;">
+  <div id="panel-body" style="margin-top: 100px;">
   <div id="panel"><h2 class="h2-line-3">Mass Schedules</h2>
           <div class="col-page-cont left-2">
             <div id="table_id_wrapper" class="dataTables_wrapper" role="grid">

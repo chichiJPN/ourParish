@@ -13,7 +13,7 @@
          <!--======================Note: If you add a parish/thumbnail, you must change the code.===========================-->
 
   <!----thumbnail 1---->
-  <div class="row">
+  <div class="row2">
 	<?php
 		$count = 0;
 		if($information)

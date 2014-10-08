@@ -159,7 +159,7 @@
             text-align: center;
             color: #a3a2a2;
             background: url(../images/footer-bg.png) center 0 no-repeat;
-          
+            left:35px;
         }
        .img-icon {
             border: 0;
@@ -205,6 +205,7 @@
             border-top: none !important;
             background: url(../images/block-6.jpg) center bottom no-repeat #ffffff;
             padding-bottom: 50px;
+            border-radius: 8px;
         }
 
         .panel-body {

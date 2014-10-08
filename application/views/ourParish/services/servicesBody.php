@@ -25,8 +25,9 @@
 
   <!--=========End of Logo=======-->
    <!--======================Body Content===========================--> 
-  <div id="container_body2" class="text-center">
-   <div class = "design_bar">
+ <div class= "main_container">
+
+  <div class = "design_bar">  
          <h1> 
      <img src = "<?php echo base_url();?>/html_attrib/parishStyles/images/header.png" style = "position:relative; top:-19px;">
      OurParish.org
@@ -46,18 +47,22 @@
             </div>
           </div>
         </div>
+        <!-- =============================================== MAJOR IFRAME STARTS HERE ===============================================-->
         <div class="col-md-9">
           <div class="panel1 panel-default" class="text-center" style="border-color: #ddd;"> 
-			<iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/sched/<?php if($info != false) echo $info; else echo 'read'; ?>" height = "1190px" width = "100%" scrolling="no" frameBorder="0"></iframe>    			
+			<iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/sched/<?php if($info != false) echo $info; else echo 'read'; ?>" height = "1000px" width = "100%" scrolling="no" frameBorder="0"></iframe>    			
           </div>
         </div>
+        <!-- =============================================== MAJOR IFRAME ENDS HERE ===============================================-->
          <div style=" margin-left: 825px; float: left; position: relative; top: 20px;" >
           <a href="www.facebook.com"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconFb.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
                <a href="www.twitter.com"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconTwitter.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
                <a href="betterphilippines.org"> <img src="<?php echo base_url(); ?>/html_attrib/parishStyles/images/iconBpim.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>
           </div>
-    </div> 
-  </div>
+        </div>
+        
+
+
   <!--===========end of body content==================-->
   
   <!--=========== footer ===========-->

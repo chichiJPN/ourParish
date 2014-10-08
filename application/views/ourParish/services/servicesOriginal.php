@@ -138,7 +138,7 @@
         </div>
         <div class="col-md-9">
           <div class="panel1 panel-default" class="text-center" style="border-color: #ddd;"> 
-            <iframe id="myframe" src="services/readSched.html" height = "1190px" width = "100%" scrolling="no" frameBorder="0"></iframe>    
+            <iframe id="myframe" src="services/readSched.html" height = "2130px" width = "100%" frameBorder="0"></iframe>    
           </div>
         </div>
           <a href="www.facebook.com"> <img src="images/iconFb.png" width="50" height="50" margin-left:"8%" class="img-iconMedia"></a>

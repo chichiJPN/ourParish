@@ -91,10 +91,10 @@ min-height: 300px;
   </div>
   <div class="panel-body">
     <form class="form-horizontal" role="form" method="post" id="bapt_form">
-      <div class="form-group"> 
+      <div class="form-group1"> 
         <label class="col-sm-2 control-label">Parish</label>
-        <div class= "col-sm-10">
-          <select class="form-control" name="parish_id">
+        <div class= "col-sm-101">
+          <select class="form-control1" name="parish_id">
             <option value="0">All</option>
 			<?php
 				foreach($parish as $value) 
@@ -111,7 +111,7 @@ min-height: 300px;
          <div id="flip">Search Schedules</div>
       </div>
    <div id="container"> 
-  <div id="panel-body" style="margin-top: 70px;">
+  <div id="panel-body" style="margin-top: 100px;">
   <div id="panel"><h2 class="h2-line-3">Baptism Schedules</h2>
           <div class="col-page-cont left-2">
             <div id="table_id_wrapper" class="dataTables_wrapper" role="grid">

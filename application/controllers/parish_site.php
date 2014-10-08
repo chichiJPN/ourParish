@@ -99,8 +99,9 @@ class parish_site extends CI_Controller {
    {
 		case 'read':
 			// add somethig here
-		
-			$this->load->view('ourParish/services/readSched');
+			$data['readings'] = getTextData(1,'reading');	
+			$data['psalms'] = getTextData(1,'psalms');
+			$this->load->view('ourParish/services/readSched', $data);
 
 			
 			

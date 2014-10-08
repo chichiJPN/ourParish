@@ -89,10 +89,10 @@ min-height: 300px;
   </div>
   <div class="panel-body">
     <form class="form-horizontal" role="form" method="post" id="confe_form">
-      <div class="form-group"> 
+      <div class="form-group1"> 
         <label class="col-sm-2 control-label">Parish</label>
-        <div class= "col-sm-10">
-          <select class="form-control" name="parish_id">
+        <div class= "col-sm-101">
+          <select class="form-control1" name="parish_id">
             <option value ="0">All</option>
 			<?php
 				foreach($parish as $value) 
@@ -109,23 +109,11 @@ min-height: 300px;
          <div id="flip">Search Schedules</div>
       </div>
    <div id="container"> 
-  <div id="panel-body" style="margin-top: 70px;">
+  <div id="panel-body" style="margin-top: 100px;">
   <div id="panel"><h2 class="h2-line-3">Confession Schedules</h2>
           <div class="col-page-cont left-2">
             <div id="table_id_wrapper" class="dataTables_wrapper" role="grid">
-              <div id="table_id_length" class="dataTables_length">
-                <label>Show <select size="1" name="table_id_length" aria-controls="table_id">
-                  <option value="10" selected="selected">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                          </select> entries</label>
-              </div>
-              <div class="dataTables_filter" id="table_id_filter">
-                <label>Search: 
-                  <input type="text" aria-controls="table_id">
-                </label>
-              </div>
+              
 			  <!-- Start of Parish Table-->
 			<table id="table_id" class="display dataTable" aria-describedby="table_id_info">
 				<thead>

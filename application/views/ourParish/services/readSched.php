@@ -22,7 +22,7 @@
 						<label class="col-sm-2 control-label">Language</label>
 						<div class="col-sm-3" style="float: left;">
 							
-							<select class="form-control" id="read_language" onchange="asdf();" >
+							<select class="form-control1" id="read_language" onchange="asdf();" >
 								<option value="1">English</option>
  								<option value="2">Cebuano</option>
  							</select>
@@ -31,11 +31,18 @@
  				</div>	
 	</div>
 
+<!-- =============================================== SUB IFRAME STARTS HERE ===============================================-->	
+<!-- Start of Readings -->
 <div class="panel2 panel-default" style="border-color: #ddd;">
-	
-	<iframe id="onframe panel1" src="<?php echo base_url(); ?>index.php/parish_site/firstReading/1" height = "490px" width = "100%"  frameBorder="0"></iframe>
+	<div class="panel-heading1"><h4>Readings</h4></div>
+		<p class="text-center">
+		<?php echo $readings; ?>
+		</p>
+ 
 </div>
+<!-- End of Readings -->
 
+<!-- =============================================== SUB IFRAME ENDS HERE =============================================== -->	
 </div>
 
 
