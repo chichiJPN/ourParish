@@ -3,28 +3,77 @@ $(document).ready(function(){
   $(window).load(function() {
 	base_url = $("#base_url").data('base_url');
 	loadLocations();
+	var today = new Date();
+	var month = today.getMonth()+1; //January is 0!
+	var year = today.getFullYear();
+	loadCalendar(year, month);
   });
-  
-  $("#editNews10").submit(function(){
 
-	console.log(	$(this).serialize());
-	$.ajax({
-		type: "POST",
-		url: base_url + "index.php/parishadmin/editNews",
+  function nextCalendar() {
+	var nextdate = $("#nextCalendar").data('nextdate').split("/");
+	loadCalendar(nextdate[0],nextdate[1]);	
+  }
+  
+  function prvCalendar() {
+	var nextdate = $("#prvCalendar").data('nextdate').split("/");
+	loadCalendar(nextdate[0],nextdate[1]);	
+  }
+  
+  function cellClicked(a) {
+  
+	//console.log(a.attr('value')); // jQuery's .attr() method, same but more verbose
+    $.ajax({
+		type:"POST",
+		url: base_url + "index.php/parishadmin/getCalendarCellData",
+		data:  'cellData=' + a.attr('value'),
 		dataType: "json",
-		data:  $(this).serialize(),
+		success:
+			function(data) {
+				console.log(data);
+				$("#title").val(data[0].title);
+				$("#newsContent").val(data[0].content);
+				$("#newsDate").val(data[0].date);
+			},
+			
+		error: 
+			function(data){
+				alert('error loading news data');
+			}
+	});  
+  
+  }
+  
+  function loadCalendar(year, month) {
+	
+	$.ajax({
+		type:"POST",
+		url: base_url + "index.php/parishadmin/PadminCalendar/"+year + '/' + month,
+		dataType: "json",
 		success:
 			  function(data) {
-					alert(data);			
+				
+			  	$("#calendar").html($(data.calendar).css("margin", "0 auto"));
+				
+				$("#nextCalendar").click(function() {
+					nextCalendar();
+				});
+				
+				$("#prvCalendar").click(function() {
+					prvCalendar();
+				});
+				
+				$(".calendarCell").on('click', function() {
+					cellClicked($(this));
+					// cellClicked();
+				});
 			  },
-						
+			
 		error: function(data){
-					alert('an error has occurred');
-			  }
-	});
-	
-	return false;
-  });
+			$("#calendar").html('error loading calendar');
+
+		}	
+	});  
+  }
   
   $("#editDescForm").submit(function() {
 
@@ -39,6 +88,7 @@ $(document).ready(function(){
 			  },
 						
 		error: function(data){
+			
 					console.log(data);
 			  }
 	});

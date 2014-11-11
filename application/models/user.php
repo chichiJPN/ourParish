@@ -2,31 +2,78 @@
 
 Class User extends CI_Model
 {
-	//gets all parish data from db
-	// note: need to edit this to be more specific
-	function model_editNews($data) {
-		$this->db->select('*');
+
+	function model_addNewsDate($data) {
+		$this->db->select('date');
 		$this->db->from('news');
 		$this->db->where('id_parish', $data['id_parish']); 
-		$this->db->where('title', $data['title']);
+		$this->db->where('date', $data['date']);
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			return 'Date already exists!';
+		} else {
+			$this->db->insert('news', $data);
+			if($this->db->affected_rows() > 0) return 'Add successful!';
+			else return 'An error has occurred while adding. Please try again';
+		}
+	}
+	
+	function model_deleteNews($data) {		
+		$this->db->where('id_parish', $data['id_parish']); 
+		$this->db->where('date', $data['date']);
+		// $this->db->where('title', $data['title']);
+		$this->db->delete('news'); 
+		
+		if($this->db->affected_rows() > 0) 
+			return 'Delete successful!';
+		else 
+			return 'An error has occurred while deleting. Please try again';
+	}
+	
+	function model_getCalendarCellData($date, $id_parish) {
+		$this->db->select('title, content, date');
+		$this->db->from('news');
+		$this->db->where('id_parish', $id_parish); 
+		$this->db->where('date', $date);
 		
 		$query = $this->db->get();
  
 		if($query->num_rows() > 0)
 		{
-			return 1;
+			return $query->result();
 		}
 		else
 		{
-			$this->db->insert('news', $data);		
-			if($this->db->affected_rows() > 0) return 2;
-			else return 3;
+			return 0;
 		}
-		
-	
-	
 	}
 	
+	//gets news data for specific parish and month	
+	function model_getNewsData($id_parish, $year, $month) {
+		//
+		$queryString = 'SELECT EXTRACT(DAY FROM `date`) AS day FROM `news` WHERE `id_parish` = '.$id_parish.' AND EXTRACT(MONTH FROM `date`) = '.$month.' AND EXTRACT(YEAR FROM `date`) = '.$year;
+		$query = $this->db->query($queryString);
+		if($query->num_rows() > 0)
+		{
+			foreach($query->result() as $row)
+            {
+                $data[] = $row;
+            }
+
+            foreach($data as $d)
+            {                
+                $out[$d->day] = $year.'-'.$month.'-'.$d->day;
+            }
+            return $out;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+
 	function model_getParishData($parish_id, $database) {
 		$this->db->select('*');
 		$this->db->from($database);
@@ -36,7 +83,7 @@ Class User extends CI_Model
  
 		if($query->num_rows() > 0)
 		{
-				return $query->result();
+			return $query->result();
 		}
 		else
 		{
@@ -62,7 +109,7 @@ Class User extends CI_Model
 	}
 	
 	
-	//gets all schedules from specific db
+	//gets all schedules from specific db table
 	function model_getAllSchedules($parish_id, $database)
 	{
 		$command = '';

@@ -29,6 +29,29 @@ position: relative;
     margin-bottom: 40px;
 }
 
+.main_container2
+{
+    border-radius: 6px;
+    border: 1px #7d8992 solid;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    height: 100%;
+    width: 60%;
+    min-height: 100%; 
+    top: 30px;
+    position:relative; 
+   
+    width:900px;
+    height:1100px;
+    margin:0 auto; 
+    
+    overflow:hidden;
+    background: #ffffff;
+    margin-bottom: 40px;
+}
+
 .introduction_header
 {
     border-bottom: #d6d6d6 1px solid;
@@ -134,4 +157,73 @@ height: 10px;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+div #calendar {
+	width: 236px;
+	height: 179px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#calendar table {
+	width: 235px;
+	table-layout: fixed;
+	font-family: Arial,Helvetica,Sans-serif;
+	font-size: 110%;
+	border: 1px solid black; 
+}
+
+
+#calendar tr, th {
+	text-align:center;	
+}
+
+#calendar td:hover {
+	background: #3374C2;
+	cursor:pointer;
+}
+
+
+
+#calendar th {
+	border: 0;
+}
+
+.noBorder {
+	background: #e0e0e0;
+	border-right: 0;
+	border-left: 0;}
+
+.cellHighlight {
+	background: #00FFFF;
+}
+
+.cellContent {
+	color: red;
+}
+
+.cellContent a {
+	color:red;
+}
+
+.form-control-inline {
+ width: 200px !important;
+ height:30px !important;
+ right: 2% !important;
+ left: 2% !important;
+ position: absolute;
+}
+
+.center {
+	top:265px;
+	position:absolute;
+	height: auto;
+	width:100%;
+	
+}
+
+.center input, p{
+	text-align:center;
 }

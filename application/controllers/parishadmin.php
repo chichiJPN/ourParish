@@ -27,9 +27,7 @@ class parishadmin extends sessionController {
 	$this->deleteData('mass_schedule');
  }
  
- function deleteReading() {
-	$this->deleteData('reading');
- }
+
  
  //deletes data
  function deleteData($database) {
@@ -53,29 +51,6 @@ class parishadmin extends sessionController {
 	}
  }
  
- function insertReading() {
-	$this->load->library('form_validation');
-	
-	$this->form_validation->set_rules('date', 'Date', 'trim|required|xss_clean');
-	$this->form_validation->set_rules('language', 'Language', 'trim|xss_clean');
-	
-	if($this->form_validation->run() == FALSE) {
-		echo json_encode('validation run fail');
-	} else {
-		
-		$data = array(
-			'date' => $this->input->post('date'),
-			'language' => $this->input->post('language')
-		);
-
-		if($this->user->model_insert($data, $database)) {			
-			echo json_encode('insert Successful');
-		}
-		else {
-			echo json_encode('insert fail');
-		}
-	} 
- }
   /* baptism, confession, confirmation and mass schedules have
      almost the same parameters*/
   function insertBaptism() {
@@ -366,42 +341,121 @@ class parishadmin extends sessionController {
 
  }
  
- function getNewsContent() {
  
+ 
+  function PadminCalendar() {
+ 
+	$prefs = array (
+	   'show_next_prev'  => TRUE,
+	   'next_prev_url'   => '',
+	   'day_type'     => 'short'
+	 );
+
+	$prefs['template'] = '
+
+   {table_open}<table border="1" cellpadding="0" cellspacing="0">{/table_open}
+
+   {heading_row_start}<tr>{/heading_row_start}
+
+   {heading_previous_cell}<th><a href="javascript:void(0)" title="Go to Previous Month" id="prvCalendar" data-nextdate="{previous_url}">&lt;&lt;</a></th>{/heading_previous_cell}
+   {heading_title_cell}   <th colspan="{colspan}">{heading}</th>{/heading_title_cell}
+   {heading_next_cell}    <th><a href="javascript:void(0)" title="Go to Next Month" id="nextCalendar" data-nextdate="{next_url}">&gt;&gt;</a></th>{/heading_next_cell}
+
+   {heading_row_end}</tr>{/heading_row_end}
+
+   {week_row_start}<tr>{/week_row_start}
+   {week_day_cell}<td class="noBorder">{week_day}</td>{/week_day_cell}
+   {week_row_end}</tr>{/week_row_end}
+
+   {cal_row_start}<tr>{/cal_row_start}
+   {cal_cell_start}<td>{/cal_cell_start}
+
+   {cal_cell_content}<div class="cellContent calendarCell" value="{content}">{day}</div>{/cal_cell_content}
+   {cal_cell_content_today}<div class="cellContent cellHighlight calendarCell" value="{content}">{day}</div>{/cal_cell_content_today}
+
+   {cal_cell_no_content}{day}{/cal_cell_no_content}
+   {cal_cell_no_content_today}<div class="cellHighlight">{day}</div>{/cal_cell_no_content_today}
+
+   {cal_cell_blank}&nbsp;{/cal_cell_blank}
+
+   {cal_cell_end}</td>{/cal_cell_end}
+   {cal_row_end}</tr>{/cal_row_end}
+
+   {table_close}</table>{/table_close}
+	
+	';	 
+	 
+	$this->load->library('calendar', $prefs);
+	
+	$id_parish = $this->session->userdata['user_data']['id_parish'];
+	$year      =  $this->uri->segment(3);
+	$month	   =  $this->uri->segment(4);
+	
+	$data['News'] = $this->user->model_getNewsData($id_parish, $year, $month);
+	
+	if($data['News'] == false) {	
+		$data['calendar'] =  $this->calendar->generate($year, $month);
+	} else {
+		$data['calendar'] = $this->calendar->generate($year, $month, $data['News']);
+	}
+	
+	echo json_encode($data);
  }
  
- function editNews() {
- 
- 	$this->load->library('form_validation');
-	$this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
-	$this->form_validation->set_rules('content', 'Content', 'trim|required|xss_clean');
-	$this->form_validation->set_rules('date', 'Date', 'trim|required|xss_clean');
+ function getCalendarCellData() {
+	$this->load->library('form_validation');
+	$this->form_validation->set_rules('cellData', 'CellData', 'trim|required|xss_clean');
 
 	if($this->form_validation->run() == FALSE) {
 		return;
 	} else {
+		$date = $this->input->post('cellData');
+		$id_parish = $this->session->userdata['user_data']['id_parish'];
+		
+		$data = $this->user->model_getCalendarCellData($date, $id_parish);
+		echo json_encode($data);
+	}	
+ }
+ 
+ function addNewsDate() {
+ 	$this->load->library('form_validation');
+	$this->form_validation->set_rules('modalDate', 'ModalDate', 'trim|required|xss_clean');
+
+	if($this->form_validation->run() == FALSE) {
+		echo json_encode('form validation error');
+	} else {
 		$data = array(
-			'title' => $this->input->post('title'),
-			'content' => $this->input->post('content'), 
-			'date' => $this->input->post('date'),
+			'date' => $this->input->post('modalDate'),
+			'title' => NULL,
+			'content' => NULL,
 			'id_parish' => $this->session->userdata['user_data']['id_parish']
 		);
 		
-		switch($this->user->model_editNews($data)) {
-			case 1:
-				echo json_encode('title already exists');
-				break;
-			case 2:
-				echo json_encode('news has been added');
-				break;
-			case 3:
-				echo json_encode('an error has occurred');
-				break;
+		echo json_encode($this->user->model_addNewsDate($data));
+	}
+ }
+ 
+ function deleteNews() {
+ 	$this->load->library('form_validation');
+	$this->form_validation->set_rules('date', 'Date', 'trim|required|xss_clean');
+	// $this->form_validation->set_rules('title', 'Title', 'trim|xss_clean');
+	if($this->form_validation->run() == FALSE) {
+		echo json_encode('form validation error');
+	} else {
+	
+		// if($this->input->post('title') == '') $title = NULL;
+		// else $title = $this->input->post('title');
 		
-		}
+		$data = array(
+			'date' => $this->input->post('date'),
+			// 'title' => $title,
+			'id_parish' => $this->session->userdata['user_data']['id_parish']
+		);
+		
+		// echo json_encode($title);
+		echo json_encode($this->user->model_deleteNews($data));
 	}
  
-	
  }
 }
 ?>

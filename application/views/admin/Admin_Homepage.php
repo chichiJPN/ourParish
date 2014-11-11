@@ -297,9 +297,9 @@
         <font class="modal-title" id="myModalLabel">STATUS</font>
       </div>
  
-          <div class="modal-body modal_background modal_notisizeh" style="margin-bottom:3px;">
-            <font style="margin-left:55px;">SAVED</font>
-          </div>
+	  <div class="modal-body modal_background modal_notisizeh" style="margin-bottom:3px;">
+		<font style="margin-left:55px;">SAVED</font>
+	  </div>
       
 
     </div>

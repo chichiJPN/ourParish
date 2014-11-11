@@ -3,10 +3,6 @@
 	<head>
 		<meta>
     <script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/ckeditor/ckeditor.js"></script>
-	<script type="text/javascript">
-      CKEDITOR.config.customConfig = '<?php echo base_url(); ?>html_attrib/ckStyles/ckeditor/customConfig.js"';
-      CKEDITOR.replace(Story);
-   </script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/bootstrap.min.css"/>
@@ -42,7 +38,7 @@
 					a.setAttribute("value",value.id_page);
 					document.getElementById("div_CK").appendChild(a);
 					document.getElementById("url").innerHTML = "<?php echo base_url(); ?>index.php/parish/index/<?php echo $keyword[0]->keyword; ?>/" + p;
-					document.getElementById("makeHome").onclick = updateHome(p);				
+					document.getElementById("makeHome").onclick = updateHome(p);
                 });    
               },
                   
@@ -171,7 +167,7 @@
         <div class = "collapse navbar-collapse navHeaderCollapse">
           <ul class = "nav navbar-nav navbar-right">
             <li>
-              <a href="<?php echo base_url(); ?>index.php/admin">back</a>
+              <a href="<?php echo base_url(); ?>index.php/admin">Back to main</a>
             </li>
 
           </ul>
@@ -298,8 +294,9 @@
 
         <div style="right:2%; position: absolute;">
           <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#manageModal">Manage Page</button>
-          <button type="button" class="btn btn-default navbar-btn" onClick="updateNews()">Update News</button>
-        </div>
+          <a href="<?php echo base_url(); ?>index.php/ck_ourparish/newsPage"><button type="button" class="btn btn-default navbar-btn" >Manage News</button></a>
+
+		</div>
           
         <div style="left:2%; top:10%; position: relative;">
             <ul id="pageheader" class="nav nav-pills">
@@ -354,29 +351,25 @@
 	</body>
 
 <script type="text/javascript">
-  function updateNews() {
-	if(confirm("Are you sure you want to update News?")) {
-		  $.ajax({
-				type: "POST",
-				url: "<?php echo base_url(); ?>index.php/ck_ourparish/updateNews",
-				dataType: "json",
-				success:
-					function(data) {
-						location.reload();
-						alert('update successful!');
-					},          
-				error: function(data){
-					console.log(data);          
-					}
-			});
-	
-	}
-  }
-
-  $("makeHome").click(function() {
-	
   
-  });
+	CKEDITOR.on('instanceReady', function(ev) {
+		ev.editor.on('resize',function(reEvent){
+			// console.log($('#cke_editor1').css('height','600px'));;
+			var editorDefaultSize = 500;
+			var containerDefaultSize = 900;
+		
+			var editor    = $('#cke_editor1');
+			var container = $('.main_container');
+			console.log(editor.height());
+			if(editor.height() > editorDefaultSize){
+				container.css('height', containerDefaultSize + (editor.height() - editorDefaultSize));
+			}
+			else container.css('height', containerDefaultSize);
+
+			 // alert( 'The editor resized' );
+		 });
+	});
+  
   $("#form_addpage").submit(function(){
   var id_page = $("#form_addpage").serialize();
   $.ajax({
@@ -479,14 +472,14 @@
 
   var instance = CKEDITOR.instances.editor1;
   instance.updateElement();
-  console.log('value is '+ instance.getData());
+  console.log('value is '+ encodeURIComponent(instance.getData()));
   console.log('div ck is ' + $("#activePage").val());
   
   $.ajax({
     type: "POST",
     url: "<?php echo base_url(); ?>index.php/ck_ourparish/updateDescription",
     dataType: "json",
-    data: "datavalue="+escape(instance.getData())+"&activepage="+$("#activePage").val(),
+    data: "datavalue="+encodeURIComponent(instance.getData())+"&activepage="+$("#activePage").val(),
 	
     success:
         function(data) {

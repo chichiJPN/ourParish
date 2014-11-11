@@ -1,21 +1,25 @@
+<html>
+<head>
+<!--Backgroound-->
+  <style>
+    .html 
+    {
+    background: url(<?php echo base_url(); ?>html_attrib/parishStyles/images/bckg1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+  </style>
+<!--End ofBackgroound-->
+
+</head>
+<body>  
   <div id="init" data-base_url="<?php echo base_url(); ?>"></div>
   <script type="text/javascript">
     var test = new ServiceSwitcher();
     test.init();
   </script>
-<!--Backgroound-->
-  <style>
-    .html 
-    {
-		background: url(<?php echo base_url(); ?>html_attrib/parishStyles/images/bckg1.jpg) no-repeat center center fixed; 
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-    }
-  </style>
-<!--End ofBackgroound-->
-  
 <!--==============LOGO===========-->
       <header class="text-center">
     <!-- Myparish Logo -->
@@ -43,14 +47,15 @@
             <div class="panel-body">
               <ul id="services" class="nav nav-pills nav-stacked ">
               </ul>
-              <script type="text/javascript">test.switch();</script>  
+              <script type="text/javascript">test.switch();</script> 
             </div>
           </div>
         </div>
         <!-- =============================================== MAJOR IFRAME STARTS HERE ===============================================-->
         <div class="col-md-9">
           <div class="panel1 panel-default" class="text-center" style="border-color: #ddd;"> 
-			<iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/sched/<?php if($info != false) echo $info; else echo 'read'; ?>" height = "1000px" width = "100%" scrolling="no" frameBorder="0"></iframe>    			
+			     <iframe id="myframe" src="<?php echo base_url(); ?>index.php/parish_site/sched/<?php if($info != false) echo $info; else echo 'read'; ?>" height = "500px" width = "100%" scrolling="no" frameBorder="0"></iframe>
+            <script type="text/javascript">test.hook1();</script> 
           </div>
         </div>
         <!-- =============================================== MAJOR IFRAME ENDS HERE ===============================================-->

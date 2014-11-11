@@ -65,6 +65,30 @@ Class model_externals extends CI_Model
 			return '<h1>Page not Found</h1>';
 		}
 	}
+	
+	function model_getNewsData($parishKey, $date, $title) {
+		$this->db->select('news.content');
+		$this->db->from('news');
+		
+		$this->db->where('parish.keyword', $parishKey); 
+		$this->db->where('news.title', $title);
+		
+		$this->db->join('parish', 'parish.id_parish = news.id_parish');
+	
+		
+		$query = $this->db->get();
+ 
+		if($query->num_rows() > 0)
+		{
+			$row = $query->row(); 
+			return $row->content;
+		}
+		else
+		{
+			return '<h1>News not Found</h1>';
+		}
+		
+	}
 
 
 }

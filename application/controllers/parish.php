@@ -6,12 +6,12 @@ class parish extends CI_Controller {
  function __construct()
  { 
    parent::__construct();
+   $this->load->model('model_externals');   
+   $this->load->helper('url');
  }
  
  function index()
  {
-   $this->load->model('model_externals');
-   $this->load->helper('url');
    
    $data = "";
    $parishKey = $this->uri->segment(3);
@@ -21,6 +21,7 @@ class parish extends CI_Controller {
 	return;
    }
    
+   //if page name is not specified.
    if($pageName === false) {
 	$link = $this->model_externals->model_getHome($parishKey);
 	
@@ -37,7 +38,27 @@ class parish extends CI_Controller {
 	$data['parishKey'] = $parishKey;
    }
    
-   $this->load->view('externals', $data);
+   $this->load->view('parishSites/parishHeader');
+   $this->load->view('parishSites/parishMainBody', $data);
+ }
+ 
+ function news() {
+   $data = "";
+   $parishKey = $this->uri->segment(3);
+   $date = $this->uri->segment(4);
+   $title = $this->uri->segment(5);
+   
+   if($parishKey == NULL || $date == NULL || $title == NULL) {
+	return;
+   }
+	
+	$data['title'] = $title;
+	$data['content'] = $this->model_externals->model_getNewsData($parishKey, $date, $title);
+	
+   
+   $this->load->view('parishSites/parishHeader');
+   $this->load->view('parishSites/parishNewsBody', $data);;
+ 
  }
 
 }

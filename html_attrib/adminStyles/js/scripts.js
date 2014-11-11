@@ -4,7 +4,10 @@ $(document).ready(function(){
 	base_url = $("#base_url").data('base_url');
     loadParishData();
 	loadLocations();
+
   });
+  
+
   
   $("#editDescForm").submit(function() {
 	var parish_id = $("#editDesc_PID").attr('value');	
@@ -15,8 +18,7 @@ $(document).ready(function(){
 		data:  $(this).serialize() + '&parish_id=' + parish_id ,
 		success:
 			  function(data) {
-					console.log(data);
-					
+					console.log(data);					
 			  },
 						
 		error: function(data){

@@ -779,27 +779,64 @@ function ServiceSwitcher()
 {
 	this.urls = {};
 	var base_url = $("#init").data('base_url');
-	this.urls["Reading of the Day"] = "index.php/parish_site/sched/read";
-	this.urls["Mass Schedule"] = "index.php/parish_site/sched/mass";
-	this.urls["Baptism"] = "index.php/parish_site/sched/bapt";
-	this.urls["Confession"] = "index.php/parish_site/sched/confess";
-	this.urls["Confirmation"] = "index.php/parish_site/sched/confirm";
+	
+	this.urls["Reading of the Day"] = base_url + "index.php/parish_site/sched/read"; //goes to readsched.php
+	this.urls["Mass Schedule"] = base_url + "index.php/parish_site/sched/mass"; //goes to massSched.php
+	this.urls["Baptism"] = base_url + "index.php/parish_site/sched/bapt"; //goes to baptSched.php
+	this.urls["Confession"] = base_url + "index.php/parish_site/sched/confess"; //goes to confessSched.php
+	this.urls["Confirmation"] = base_url + "index.php/parish_site/sched/confirm"; //goes to ConfirmSched.php
 
 	this.init = function()
 	{
 		document.getElementById("init").innerHTML = '<meta name ="viewport" content = "width=device-width, initial-scale = 1.0">'+
-		'<link href = "'+ base_url +'html_attrib/parishStyles/css/bootstrap_2.css" rel = "stylesheet">' +
-		'<link href = "'+base_url+'html_attrib/parishStyles/css/bootstrap.css" rel = "stylesheet">' +
-		'<link href = "'+ base_url +'html_attrib/parishStyles/css/styles.css" rel = "stylesheet">'+
-		'<link href = "'+ base_url +'html_attrib/parishStyles/css/newStyle.css" rel = "stylesheet">'+
-		'</style><link rel="stylesheet" type="text/css" href="'+ base_url +'html_attrib/parishStyles/css/parishStyle.css" media="screen"></style>';
+		'<link href = "'+base_url+'html_attrib/parishStyles/css/bootstrap_2.css" rel = "stylesheet">'+ '<link href = "'+base_url+'html_attrib/parishStyles/css/bootstrap.css" rel = "stylesheet">'+ '<link href = "'+base_url+'html_attrib/parishStyles/css/styles.css" rel = "stylesheet">'+
+		'</style><link rel="stylesheet" type="text/css" href="'+base_url+'html_attrib/parishStyles/css/parishStyle.css" media="screen"></style>';
+	};
+
+	this.initIframeSize = function(obj)
+	{
+	    obj.style.height =  obj.contentWindow.document.body.scrollHeight + 'px';
+	};
+
+	this.hook1 = function()
+	{
+		var $myIframe = $('#myframe');
+		var myIframe = $myIframe[0];
+
+		var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+		var resizeIframe = function()
+		{
+			$myIframe.height('auto');
+			var newHeight = $('html', myIframe.contentDocument).height();
+			$myIframe.height(newHeight);
+		};
+
+		myIframe.addEventListener('load', function() {
+			resizeIframe();
+
+  			var target = myIframe.contentDocument.body;
+
+			var observer = new MutationObserver(function(mutations) {
+				resizeIframe();
+			});
+
+		 	var config = {
+			    attributes: true,
+			    childList: true,
+			    characterData: true,
+			    subtree: true
+			};
+			
+			observer.observe(target, config);
+		});
 	};
 
 	var closure = function(ref, key)
 	{
 		return function()
 		{
-			document.getElementById("myframe").src = base_url + ref.urls[key];		
+			document.getElementById("myframe").src = ref.urls[key];
 		};
 	};
 

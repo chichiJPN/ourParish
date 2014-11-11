@@ -18,23 +18,17 @@ class ck_Ourparish extends sessionController {
 		$this->showpage();
 	}
 	
-	//update ck news
-	function updateNews() {
-		if($this->ck_db->model_verifyNewsTab()) {
-			$data = '';
-			if($data = $this->ck_db->model_getNews()) {
-				$dataString = '';
-				foreach ($data as $value) {
-					$dataString = $dataString.'<p><a href="'.base_url().'/index.php/News/'.$value->title.'">'.$value->title.'</a></p>';
-				}
-
-				return $this->ck_db->model_updateDescription2('News',array('description' => $dataString), $this->session->userdata['user_data']['id_parish']);
-				
-				
-			}
-		}
+	function newsPage() {
+		
+		$this->load->helper('url');
+		$id_parish = $this->session->userdata['user_data']['id_parish'];
+		
+		$data['name_parish'] = $this->ck_db->model_getParishName($id_parish);
+		$data['id_parish'] = $id_parish;
+		$data['keyword'] = $this->ck_db->model_getKeyword($id_parish);		
+		$this->load->view("ck/news_page",$data);
+		
 	}
-	
 	
 	public function showpage()
 	{
@@ -170,7 +164,7 @@ class ck_Ourparish extends sessionController {
 	function updateDescription()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('datavalue', 'Datavalue', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('datavalue', 'Datavalue', 'trim|required');
 		$this->form_validation->set_rules('activepage', 'Activepage', 'trim|required|xss_clean');
 		
 		if($this->form_validation->run() == FALSE) {
@@ -185,6 +179,32 @@ class ck_Ourparish extends sessionController {
 			$page = $this->input->post('activepage');
 			if($this->ck_db->model_updateDescription($page,$dd, $id_parish)) {
 				echo json_encode('update success');
+			}
+		}
+	}
+	
+	function updateNews()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('datavalue', 'Datavalue', 'trim|required');
+		$this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('date', 'Date', 'trim|required|xss_clean');
+		
+		if($this->form_validation->run() == FALSE) {
+			echo json_encode('validation run fail');
+		} else {
+			$data = array(
+               'content' => $this->input->post('datavalue'),
+               'title' => str_replace(" ", "", $this->input->post('title'))
+            );
+			
+			$id_parish = $this->session->userdata['user_data']['id_parish'];
+			$date = $this->input->post('date');
+
+			if ($this->ck_db->model_updateNews($date, $id_parish, $data)) {
+				echo json_encode('Update Successful!');
+			} else {
+				echo json_encode('An error has occurred while updating. Please try again.');
 			}
 		}
 	}

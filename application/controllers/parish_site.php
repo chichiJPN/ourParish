@@ -23,6 +23,7 @@ class parish_site extends CI_Controller {
    $this->load->view('ourParish/home/homeHeader'); 
    $this->load->view('ourParish/navBar');
    $this->load->view('ourParish/home/homeBody',$data);
+
    // $this->load->view('ourParish/home/homeOriginal');
  }
  
