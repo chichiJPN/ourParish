@@ -12,6 +12,5 @@
     <link href = "<?php echo base_url(); ?>html_attrib/parishStyles/css/demo_table.css" rel = "stylesheet">
     <link href = "<?php echo base_url(); ?>html_attrib/parishStyles/css/smoothness.datepick.css" rel = "stylesheet">
     <link href = "<?php echo base_url(); ?>html_attrib/parishStyles/css/bootstrap-editable.css" rel = "stylesheet">
-    <script language="javascript" type="text/javascript" src="<?php echo base_url(); ?>html_attrib/parishStyles/scripts.js"></script>
 
 </head>

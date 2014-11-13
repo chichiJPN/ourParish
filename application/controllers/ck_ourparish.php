@@ -195,7 +195,7 @@ class ck_Ourparish extends sessionController {
 		} else {
 			$data = array(
                'content' => $this->input->post('datavalue'),
-               'title' => str_replace(" ", "", $this->input->post('title'))
+               'title' => $this->input->post('title')
             );
 			
 			$id_parish = $this->session->userdata['user_data']['id_parish'];

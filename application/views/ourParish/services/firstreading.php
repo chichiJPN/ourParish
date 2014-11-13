@@ -17,7 +17,7 @@
 	
 	<div class="panel-heading1"><h4>Psalms</h4></div>
 	<p class="text-center">
-		<?php echo $readings; ?>
+		
 	</p> -->
 </div>
 

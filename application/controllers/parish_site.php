@@ -100,12 +100,8 @@ class parish_site extends CI_Controller {
    {
 		case 'read':
 			// add somethig here
-			$data['readings'] = getTextData(1,'reading');	
-			$data['psalms'] = getTextData(1,'psalms');
+			$data['readings'] = getTextData(1);	
 			$this->load->view('ourParish/services/readSched', $data);
-
-			
-			
 			break;
 		case 'mass':
 			
@@ -135,22 +131,14 @@ class parish_site extends CI_Controller {
 	$this->load->helper('url');
 	$language = $this->uri->segment(3);
 		
-	$data['readings'] = getTextData($language,'reading');
-	
-	$data['psalms'] = getTextData($language,'psalms');
+	$data['readings'] = getTextData($language);
 	$this->load->view('ourParish/services/firstreading', $data);
- }
- 
- function psalms()
- {
-	$this->load->helper('url');
-	$language = $this->uri->segment(3);
-	$data['readings'] = getTextData($language,'psalms');
-	$this->load->view('ourParish/services/psalms', $data);
- }
+ } 
+
+
 }
 
-function getTextData($language, $type)
+function getTextData($language)
 {
 	$yes = "";
 	switch($language)
@@ -174,13 +162,13 @@ function getTextData($language, $type)
 		
 		if($datediff > 730) $yes = $yes.'/yearC';				
 		else if($datediff > 365) $yes = $yes.'/yearB';		
-		else $yes = $yes.'/yearA';
-		
+		else $yes = $yes.'/yearA';		
 		$day = round($datediff / 7);	
 	}
 	else
 	{
 		$yes = $yes.'/daily';
+		
 		if($datediff > 365 && $datediff <= 730) $yes = $yes.'/odd';		
 		else $yes = $yes.'/even';
 		
@@ -188,7 +176,7 @@ function getTextData($language, $type)
 	
 	}	
 	
-	$myFile = '././html_attrib/parishStyles/readings/'.$yes.'/'.$type.'/day'.$day.'.txt';
+	$myFile = '././html_attrib/parishStyles/readings/'.$yes.'/day'.$day.'.txt';
 	$fh = fopen($myFile, 'r');
 	$theData = fread($fh, filesize($myFile));
 	fclose($fh);

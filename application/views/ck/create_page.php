@@ -37,7 +37,7 @@
 					a.setAttribute("id","activePage");
 					a.setAttribute("value",value.id_page);
 					document.getElementById("div_CK").appendChild(a);
-					document.getElementById("url").innerHTML = "<?php echo base_url(); ?>index.php/parish/index/<?php echo $keyword[0]->keyword; ?>/" + p;
+					document.getElementById("url").innerHTML = "<?php echo base_url(); ?>index.php/parish/index/<?php echo $keyword[0]->keyword; ?>/" + p.replace(/ /g, '%20');
 					document.getElementById("makeHome").onclick = updateHome(p);
                 });    
               },

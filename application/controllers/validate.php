@@ -29,7 +29,6 @@ class validate extends CI_Controller {
 	} else {
 		//redirect('admin/homePage', 'refresh');
 		redirect('admin', 'refresh');
-		
 	}
  }
  

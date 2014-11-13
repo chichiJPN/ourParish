@@ -15,7 +15,7 @@ class parish extends CI_Controller {
    
    $data = "";
    $parishKey = $this->uri->segment(3);
-   $pageName = $this->uri->segment(4);
+   $pageName = str_replace("%20"," ",$this->uri->segment(4));
    
    if($parishKey == NULL) {
 	return;
@@ -46,7 +46,7 @@ class parish extends CI_Controller {
    $data = "";
    $parishKey = $this->uri->segment(3);
    $date = $this->uri->segment(4);
-   $title = $this->uri->segment(5);
+   $title = str_replace("%20", " ", $this->uri->segment(5));
    
    if($parishKey == NULL || $date == NULL || $title == NULL) {
 	return;
