@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<meta>
-    <script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/ckeditor/ckeditor.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/jquery-1.11.0.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/bootstrap.min.css"/>
-	<link href = "<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/styles.css" rel = "stylesheet">
-	<link href = "<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/modal.css" rel = "stylesheet">
+		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/bootstrap.min.css"/>
+		<link href = "<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/styles.css" rel = "stylesheet">
+		<link href = "<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/modal.css" rel = "stylesheet">
 
 	</head>
 
@@ -295,6 +295,7 @@
         <div style="right:2%; position: absolute;">
           <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#manageModal">Manage Page</button>
           <a href="<?php echo base_url(); ?>index.php/ck_ourparish/newsPage"><button type="button" class="btn btn-default navbar-btn" >Manage News</button></a>
+          <a href="<?php echo base_url(); ?>index.php/ck_ourparish/imageDirectoryPage"><button type="button" class="btn btn-default navbar-btn" >Manage Images</button></a>
 
 		</div>
           

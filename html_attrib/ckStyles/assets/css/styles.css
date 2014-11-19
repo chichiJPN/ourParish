@@ -221,9 +221,135 @@ div #calendar {
 	position:absolute;
 	height: auto;
 	width:100%;
-	
 }
 
 .center input, p{
 	text-align:center;
+}
+
+#header_container {
+	height: 85px;
+	width:auto;
+}
+
+.image_row_container {
+	height: 260px;
+	width: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom:40px;
+}
+
+.image_row_container .image_container {
+	display: inline-block;
+	vertical-align:top;
+	width: 180px;
+	height: 260px;
+	margin-right: 15px;
+	margin-left: 15px;
+	border: 1px solid black;
+	overflow:hidden;
+}
+
+.image_row_container .image_container .top{
+	width:180px; /* you can use % */
+    height: 210px;
+}
+
+.image_row_container .image_container .top:hover, .bottom:hover {
+	cursor:pointer;
+}
+
+.image_row_container .image_container .top:hover .delete {
+	opacity: 1;
+}
+
+.image_row_container .image_container .top:hover .rename {
+	opacity: 1;
+}
+
+.image_row_container .image_container .top img {
+	max-width:180px; /* you can use % */
+	max-height:210px;
+}
+
+.image_row_container .image_container .bottom{
+
+	width:180px; /* you can use % */
+    height: 47px;
+}
+
+.image_row_container .image_container .bottom p {	
+	max-width:135px;
+	margin: 0;
+	margin-left:22px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.image_row_container2 {
+	height: 210px;
+	width: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom:40px;
+}
+
+.image_row_container2 .image_container2{
+	display: inline-block;
+	vertical-align:top;
+	width: 180px;
+	height: 210px;
+	margin-right: 15px;
+	margin-left: 15px;
+	border: 1px solid blue;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	background-position: center; 
+}
+.image_row_container2 .image_container2:hover{
+	cursor: pointer;
+}
+
+
+.image_row_container2 .image_container2:hover .delete{
+	opacity: 1;
+}
+
+
+
+
+.delete {
+	float: right;
+	margin-right:10px;
+	margin-top:5px;
+	opacity: 0;
+	height: 13px;
+	width:13px;
+	background: url('../../../parishStyles/images/parish_images/cross.png') left top;
+}
+
+.delete:hover {
+	background-position: -13px -0px;
+}
+
+.rename {
+	float: left;
+	margin-left:10px;
+	margin-top:5px;
+	opacity: 0;
+	height: 12px;
+	width:12px;
+	background: url('../../../parishStyles/images/parish_images/rename.png') left top;
+}
+
+.rename:hover {
+	background-position: -12px 0px;
+}
+
+#imgTag {
+	display:block;
+	max-width:660px;
+	margin:auto;
 }

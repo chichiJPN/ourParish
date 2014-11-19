@@ -276,9 +276,7 @@ class parishadmin extends sessionController {
 	//adds picture to folder
 	if (!$this->upload->do_upload($file_element_name)) {
 		$msg = $this->upload->display_errors('', '');
-	}
-	else
-	{
+	} else {
 		$data = $this->upload->data();
 
 		$fileArray = explode(".", $data['file_name']);
@@ -332,8 +330,7 @@ class parishadmin extends sessionController {
  function getParDetails() {
 	$data = array(
 		'parish_id' => $this->session->userdata['user_data']['id_parish']
-	);
-	
+	);	
 	
 	$details['details'] = $this->user->model_getParDetails($data);
 	//print_r($details);
