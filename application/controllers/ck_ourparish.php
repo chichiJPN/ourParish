@@ -373,23 +373,24 @@ class ck_Ourparish extends sessionController {
 		$config['upload_path'] = './html_attrib/parishStyles/images/parish_images/'.$keyword[0]->keyword.'/'.$directoryName;
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '2048';
-
+		$config['encrypt_name']	= true;
+		
 		
 		$this->load->library('upload', $config);
 
-		if (!$this->upload->do_upload($file_element_name))
-		{
-			$foo = $this->upload->display_errors();
-			// echo json_encode('./html_attrib/parishStyles/images/parish_images/'.$keyword[0]->keyword.'/'.$directoryName);
-			echo json_encode($foo);
+		if (!$this->upload->do_upload($file_element_name)) {			
+			$data['boolean'] = false;
 			// $this->load->view('upload_form', $error);
-		}
-		else
-		{
+		} else {
+			$data['boolean'] = true;
+			$data['data'] = $this->upload->data();
+			$data['directoryName'] = $directoryName;
+			$data['keyword'] = $keyword[0]->keyword;
 			//$data = array('upload_data' => $this->upload->data());
-			echo json_encode('upload success');
 			// $this->load->view('upload_success', $data);
 		}
+		
+		echo json_encode($data);
 	}
 	
 }

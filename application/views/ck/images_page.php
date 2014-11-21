@@ -5,6 +5,7 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/jquery-1.11.0.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>html_attrib/ckStyles/assets/js/imagesPage.js"></script>
 		<script src="<?php echo base_url(); ?>/html_attrib/adminStyles/js/ajaxfileupload.js"></script>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/bootstrap.min.css"/>
 		<link href = "<?php echo base_url(); ?>html_attrib/ckStyles/assets/css/styles.css" rel = "stylesheet">
@@ -38,7 +39,7 @@
 			<a style="right:7%; position:absolute;" href="<?php echo base_url(); ?>index.php/ck_ourparish/imageDirectoryPage"><button type="button" class="btn btn-default navbar-btn" >Back</button></a>
 			<button data-toggle="modal" data-target="#addImageModal" style="left:2%; position:absolute;" type="button" class="btn btn-default navbar-btn" >Add Image</button>
 		</div>
-		
+		<div id="theContainer">
 <?php
 				$x = 0;
 				foreach ($list as $value) {					
@@ -57,6 +58,7 @@
 				}
 				echo '</div>';
 ?>
+		</div>
 	</div>
 	
 	<!-- Add Image Modal -->
@@ -70,6 +72,7 @@
 		  
 		  <form id="addImagesForm" enctype="multipart/form-data">		  
 			  <div class="modal-body">
+				<p id="directoryName"><?php echo $directoryName; ?></p>
 				<input type="file" id="imageUpload" name="imageUpload" size="20" />
 			  </div>
 			  <div class="modal-footer">
@@ -92,74 +95,5 @@
 		</div>
 	  </div>
 	</div>
-	
-	<script type="text/javascript">
-		$(document).ready(function(){
-		  $(window).load(function() {
-			 
-		  });
-		  
-		  $(".image_container2").click(function() {
-			var img = this,
-			style = img.currentStyle || window.getComputedStyle(img, false),
-			bi = style.backgroundImage.slice(4, -1);
-			
-			var foo = document.getElementById("imgTag");
-			foo.src = bi;
-			console.log(bi);
-			
-		  });
-		  
-		  $(".delete").click(function(e) {
-			e.stopPropagation();
-			console.log('delete button clicked!');
-			if(confirm("Are you sure you want to delete this Image?")) {
-				var img = this.parentNode,
-				style = img.currentStyle || window.getComputedStyle(img, false),
-				bi = style.backgroundImage.slice(4, -1);			
-				console.log(bi);
-				$.ajax({
-					type: "POST",
-					url: "<?php echo base_url(); ?>index.php/ck_ourparish/deleteImage",
-					dataType: "json",
-					data: "imageURL="+bi,
-
-					success:
-						function(data) {
-							alert(data);
-						},          
-					error: 
-						function(data){
-							alert("Delete fail.");
-						}
-				});
-			}
-		  });
-
-		  $("#addImagesForm").submit(function() {
-		  
-			console.log();
-			$.ajaxFileUpload({
-				url             : '<?php echo base_url(); ?>index.php/ck_ourparish/addImage', 
-				secureuri       : false,
-				fileElementId   : 'imageUpload',
-				dataType        : 'json',
-				data            : {
-					'directoryName' : "<?php echo $directoryName; ?>"
-				},
-				success : function (data)
-				{
-					console.log(data);
-				}
-			});
-			
-			return false;			
-		  });
-
-		
-		});		  
-
-	</script>
-	
  </body>
 </html>
