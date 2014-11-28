@@ -200,7 +200,7 @@
 			dataType: "json",
 			success:
 				function(data) {
-					$("#title").val(data[0].title);
+					$("#title").val((data[0].title).replace(/%20/g,' '));
 					CKEDITOR.instances.editor1.setData(data[0].content);
 					
 					$("#date").text((new Date(data[0].date)).toString().substring(3,15));
@@ -259,7 +259,7 @@
     type: "POST",
     url: "<?php echo base_url(); ?>index.php/ck_ourparish/updateNews",
     dataType: "json",
-    data: "datavalue="+encodeURIComponent(instance.getData())+"&title="+$("#title").val()+"&date="+$("#date").val(),
+    data: "datavalue="+escape(instance.getData())+"&title="+$("#title").val()+"&date="+$("#date").val(),
 	
     success:
         function(data) {

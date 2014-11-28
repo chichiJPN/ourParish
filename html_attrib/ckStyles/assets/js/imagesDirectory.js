@@ -153,8 +153,11 @@ $(document).ready(function(){
 		data:  $(this).serialize() + "&oldFolderName=" + document.getElementById("id_folderName").value,
 		success:
 			  function(data) {
-					alert(data);
+				alert(data.message);
+				
+				if(data.booleann = true) {
 					loadDirectories();
+				}
 			  },
 						
 		error: function(data){

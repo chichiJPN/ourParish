@@ -26,6 +26,12 @@ background: url(../images/block-6.jpg) center bottom no-repeat #ffffff;
 padding-bottom: 50px;
 }
 
+.main_container .padding{
+	height: 100%;
+}
+
+
+
 .design_bar 
 {
 position: relative;
@@ -208,7 +214,27 @@ text-indent: 14px;
 #navbarExternals {
 	margin-top:9px;
 }
+
+#externalFooter {
+	height:50px;
+	overflow: hidden;
+	width:auto;
 	
+}
+
+#externalImages{
+	width: 200px;
+	float: right;
+}
+
+#copyright {
+	margin-left: 20px;
+	width: 200px;
+	border: 1px solid green;
+	float:center;
+}
+
+
 .design_bar 
 {
 position: relative;
@@ -224,5 +250,5 @@ top: -9px;
     margin:10px 0px 10px 0px;
     color: #fff;
     background-color: #3476b7;
-
 }
+

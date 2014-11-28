@@ -35,7 +35,7 @@ class ck_Ourparish extends sessionController {
 		$this->load->view("ck/create_page",$data);
 	}
 
-	function showHeader()
+	function showHeader() 
 	{
 		$id_parish = $this->session->userdata['user_data']['id_parish'];		
 		$data = $this->ck_db->getPage($id_parish);
@@ -160,15 +160,17 @@ class ck_Ourparish extends sessionController {
 		if($this->form_validation->run() == FALSE) {
 			echo json_encode('validation run fail');
 		} else {
-			$description = $this->input->post('datavalue');
-			$dd = array(
-               'description' => $description,
+			// $string = str_replace("\n","",$this->input->post('datavalue'));
+			$description = array(
+               'description' => $this->input->post('datavalue'),
             );
 			$id_parish = $this->session->userdata['user_data']['id_parish'];
 
-			$page = $this->input->post('activepage');
-			if($this->ck_db->model_updateDescription($page,$dd, $id_parish)) {
+			$id_page = $this->input->post('activepage');
+			if($this->ck_db->model_updateDescription($id_page ,$description, $id_parish)) {
 				echo json_encode('update success');
+			} else {
+				echo json_encode('an error has occurred.');
 			}
 		}
 	}
@@ -179,9 +181,11 @@ class ck_Ourparish extends sessionController {
 		$this->form_validation->set_rules('title', 'Title', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('date', 'Date', 'trim|required|xss_clean');
 		
+		
 		if($this->form_validation->run() == FALSE) {
 			echo json_encode('validation run fail');
 		} else {
+			
 			$data = array(
                'content' => $this->input->post('datavalue'),
                'title' => $this->input->post('title')
@@ -237,7 +241,10 @@ class ck_Ourparish extends sessionController {
 			echo json_encode('Invalid Data');
 		} else {
 			$oldFolderName = $this->input->post('oldFolderName');
-			$newFolderName = $this->input->post('newFolderName');
+			
+			$array = [' ','/','\\',':','*','?','"','?','<','>'];			
+			$newFolderName = str_replace($array,"_",$this->input->post('newFolderName'));
+			
 			$keyword = $this->ck_db->model_getKeyword($this->session->userdata['user_data']['id_parish']);
 			$path = "././html_attrib/parishStyles/images/parish_images/".$keyword[0]->keyword.'/';
 			

@@ -269,7 +269,7 @@ class parishadmin extends sessionController {
 	$config['upload_path'] ='./html_attrib/parishStyles/images/parishcovers/';
 	$config['allowed_types'] = 'jpg|jpeg|png|gif';
 	$config['max_size'] = 1024 * 8;
-	//$config['encrypt_name'] = TRUE; //encrypts the filename
+	$config['encrypt_name'] = TRUE; //encrypts the filename
 	
 	$this->load->library('upload', $config);
 

@@ -35,6 +35,7 @@ class parish extends CI_Controller {
    } else {
 	$data['code'] = $this->model_externals->model_getPage($parishKey, $pageName);   
 	$data['pages'] = $this->model_externals->model_getPageNames($parishKey);
+	// $data['name'] = $this->model_externals->model_getParishName($parishKey);
 	$data['parishKey'] = $parishKey;
    }
    

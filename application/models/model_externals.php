@@ -86,8 +86,24 @@ Class model_externals extends CI_Model
 		else
 		{
 			return '<h1>News not Found</h1>';
+		}		
+	}
+	
+	function model_getParishName($parishKey) {
+		$this->db->select('parish');
+		$this->db->from('parish');		
+		$this->db->where('keyword', $parishKey); 
+		$query = $this->db->get();
+ 
+		if($query->num_rows() > 0)
+		{
+			$row = $query->row(); 
+			return $row->parish;
 		}
-		
+		else
+		{
+			return '<h1>News not Found</h1>';
+		}		
 	}
 
 

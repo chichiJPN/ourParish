@@ -63,9 +63,10 @@ class ck_db extends CI_Model
 	function model_updateDescription($id_page,$description, $id_parish)
 	{
 		
-		$this->db->where('id_page', $id_page);
-		$this->db->where('id_parish', $id_parish);
-		$this->db->update('page', $description); 
+		// $this->db->where('id_page', $id_page);
+		// $this->db->where('id_parish', $id_parish);
+		// $this->db->update('page', $description); 
+		$this->db->update('page', $description, array('id_page' => $id_page, 'id_parish' => $id_parish));
 		return $this->db->affected_rows() > 0;
 	}	
 	

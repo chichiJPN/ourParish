@@ -33,7 +33,7 @@
 					<a href ="<?php echo base_url(); ?>index.php/parish_site/services">SERVICES</a>
 				</li>
 				<li>
-				<a href ="<?php echo base_url(); ?>index.php/parish_site/news">NEWS</a>
+					<a href ="<?php echo base_url(); ?>index.php/parish_site/news">NEWS</a>
 				</li>
 				<li>
 					<a href ="<?php echo base_url(); ?>index.php/parish_site/about">ABOUT</a>

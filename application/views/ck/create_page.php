@@ -17,7 +17,7 @@
       return function()
       {
         var p = page;
-		console.log('sending to controller '+ "page=" + p );
+		
         $.ajax({
           type: "POST",
           url: "<?php echo base_url(); ?>index.php/ck_ourparish/selectPage",
@@ -25,7 +25,6 @@
           data: "page=" + p,
           success:
               function(data) {
-                console.log(data);
 
                 $("#editor1").html('');
                 $.each( data, function( key, value ) { 
@@ -56,8 +55,7 @@
       return function()
       {
         var p = page;
-		console.log('sending to controller '+ "page=" + p +" <?php echo $keyword[0]->keyword; ?>");
-        $.ajax({
+		 $.ajax({
           type: "POST",
           url: "<?php echo base_url(); ?>index.php/ck_ourparish/updateUrl",
           dataType: "json",
@@ -355,7 +353,6 @@
   
 	CKEDITOR.on('instanceReady', function(ev) {
 		ev.editor.on('resize',function(reEvent){
-			// console.log($('#cke_editor1').css('height','600px'));;
 			var editorDefaultSize = 500;
 			var containerDefaultSize = 900;
 		
@@ -473,14 +470,12 @@
 
   var instance = CKEDITOR.instances.editor1;
   instance.updateElement();
-  console.log('value is '+ encodeURIComponent(instance.getData()));
-  console.log('div ck is ' + $("#activePage").val());
-  
+  console.log(escape(instance.getData()));
   $.ajax({
     type: "POST",
     url: "<?php echo base_url(); ?>index.php/ck_ourparish/updateDescription",
     dataType: "json",
-    data: "datavalue="+encodeURIComponent(instance.getData())+"&activepage="+$("#activePage").val(),
+    data: "datavalue="+escape(instance.getData())+"&activepage="+$("#activePage").val(),
 	
     success:
         function(data) {
@@ -489,7 +484,6 @@
     error: 
         function(data){
 			console.log(data);
-			alert(data);
 			alert("fail");
 		
         }
