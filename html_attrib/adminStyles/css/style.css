@@ -5,6 +5,9 @@ body{
 	-o-background-size: cover;
 	background-size: cover
 }
+a {
+	cursor: pointer;
+}
 
 .div_header{
 	background-color: black;
@@ -205,3 +208,45 @@ tr.row td.right{
 .textarea_edit{
 	resize: none;
 }
+
+div #calendar {
+	width: 236px;
+	height: 179px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#calendar table {
+	width: 235px;
+	table-layout: fixed;
+	font-family: Arial,Helvetica,Sans-serif;
+	font-size: 110%;
+	border: 1px solid black; 
+}
+
+
+#calendar tr, th {
+	text-align:center;	
+}
+
+#calendar td:hover {
+	background: #3374C2;
+	cursor:pointer;
+}
+
+
+
+#calendar th {
+	border: 0;
+}
+
+.noBorder {
+	background: #e0e0e0;
+	border-right: 0;
+	border-left: 0;}
+
+.cellHighlight {
+	background: #00FFFF;
+}
+

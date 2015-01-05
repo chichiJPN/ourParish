@@ -36,6 +36,8 @@ class admin extends sessionController {
    $this->load->helper(array('form', 'url'));
    $this->load->view('admin/Header');
    $this->load->view('admin/Admin_Homepage');
+   
+   
  }
  
  function confirmation()

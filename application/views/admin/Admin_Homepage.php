@@ -27,30 +27,28 @@
 	<div class="tableadmin">
 		<div class="col-md-12">
 			<table class="tableheader">
-			<tr>
-				<td><h4><a data-toggle="modal" data-target="#addpar" data-backdrop="static">ADD PARISH</a></td>
-        <td><h4><a href="<?php echo base_url(); ?>index.php/validate/logout" style="margin-left:390px;">LOG-OUT</a></td>
-			</tr>
+				<tr>
+					<td><h4><a data-toggle="modal" data-target="#addpar" data-backdrop="static">ADD PARISH</a></td>
+					<td><h4><a data-toggle="modal" data-target="#editread" data-backdrop="static">EDIT READINGS</a></td>
+					<td><h4><a href="<?php echo base_url(); ?>index.php/validate/logout" style="margin-left:200px;">LOG-OUT</a></td>
+				</tr>
 			</table>
 
 			<div class="col-md-12">
 				<div class="divborder"></div>
-        <div><h4 style="margin-left: 40%">PARISH LIST</h4></div>
+				<div><h4 style="margin-left: 40%">PARISH LIST</h4></div>
 				<div class="divborder"></div>
-        <div>
-          <table class="tablemanage">
-            <tr>
-            </tr> 
-          </table>
-        </div>
-			   
-         <div>
-			 <table class="tabledata" id="parish_table">
-			 
-       </table>
-         </div>
-
-      </div>	
+				<div>
+				  <table class="tablemanage">
+					<tr>
+					</tr> 
+				  </table>
+				</div>			   
+				<div>
+					<table class="tabledata" id="parish_table">			 
+					</table>
+				</div>
+			</div>	
 		</div>
 	</div>
 </div>
@@ -70,19 +68,60 @@
 		  <div class="modal-body">	  
 			   <div class="form-group">
 				    <label for="chname">Church's Name:</label>
-				      <input type="chname" class="form-control" id="chname" name="chname" placeholder="">
+				    <input type="chname" class="form-control" id="chname" name="chname" placeholder="">
 				    <br>
 					<label for="chname">Website Keyword:</label>
-				      <input type="chname" class="form-control" id="chname" name="keyword" placeholder="">
+				    <input type="chname" class="form-control" id="chname" name="keyword" placeholder="">
 		            
 	       </div>
       </div>
-     <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                   <input type="submit" data-toggle="modal" data-target="#notiaddpar" class="btn btn-primary" value="Add Parish">
-                </div>  
+	  <div class="modal-footer">
+	   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	   <input type="submit" data-toggle="modal" data-target="#notiaddpar" class="btn btn-primary" value="Add Parish">
+	  </div>  
     </form>
     </div>
+  </div>
+</div>	
+
+<!--Edit Readings-->
+
+<div class="modal fade" id="editread" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal_background">
+      <div class="modal-header modal_bheader">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">EDIT READINGS</h4>
+      </div>
+	  <div class="modal-body">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<select id="language" class="form-control">
+					<option value="1">english</option>
+					<option value="2">bisaya</option>
+				</select>
+				<br>
+				<div id="calendar">
+				</div>		
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<br>
+		<form id="form_readingUpdate">
+			<label>Date of reading: </label>
+			<label id="date_reading"></label>
+			
+			<textarea id="textarea_reading" name="data_reading" class="form-control" rows="10" cols="30">
+			</textarea>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<input type="submit" class="btn btn-primary" value="Save Changes">
+			</div>  
+		</form>
+	  </div>
+    </div>
+	
   </div>
 </div>	
 
@@ -159,8 +198,6 @@
   </div>
 </div>  
 
-<!--End of Edit Admin Modal -->
-
 <!--add admin modal -->
 
 <div class="modal fade" id="addadmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -196,6 +233,7 @@
 </div>  
 
 <!--notification para add admin -->
+
 <div class="modal fade" id="notiaddadmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal_noti modal_notisizesw">
     <div class="modal-content modal_background">
@@ -211,8 +249,6 @@
     </div>
   </div>
 </div>    
-
-<!--end of add admim modal -->
 
 
 <!-- Start of Edit Location modal-->
@@ -287,8 +323,6 @@
   </div>
 </div>  
 
-<!--End of Edit description modal -->
-
 <!--notification para edit location -->
 <div class="modal fade" id="notiedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal_noti modal_notisizesw">
@@ -296,12 +330,23 @@
       <div class="modal-header modal_bheader" style="height:35px;">
         <font class="modal-title" id="myModalLabel">STATUS</font>
       </div>
- 
 	  <div class="modal-body modal_background modal_notisizeh" style="margin-bottom:3px;">
 		<font style="margin-left:55px;">SAVED</font>
 	  </div>
-      
+    </div>
+  </div>
+</div>   
 
+<!--notification para edit location -->
+<div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal_noti modal_notisizesw">
+    <div class="modal-content modal_background">
+      <div class="modal-header modal_bheader" style="height:35px;">
+        <font class="modal-title" id="myModalLabel">STATUS</font>
+      </div>
+	  <div class="modal-body modal_background modal_notisizeh" style="margin-bottom:3px;">
+		<font style="margin-left:55px;">SAVED</font>
+	  </div>
     </div>
   </div>
 </div>   

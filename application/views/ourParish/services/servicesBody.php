@@ -77,7 +77,7 @@
   <!--=========== end of footer ===========-->
   </section>
 <!-- Latest compiled and minified JavaScript ASD-->
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>html_attrib/parishStyles/js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>html_attrib/parishStyles/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>html_attrib/parishStyles/js/bootstrap-editable.js"></script>
 

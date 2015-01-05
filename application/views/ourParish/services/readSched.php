@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>OurParish</title>
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" ></script>
+	<script src="<?php echo base_url(); ?>html_attrib/jquery-1.11.1.min.js" type="text/javascript" ></script>
+		
+<!--	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" ></script>   -->
     <meta name ="viewport" content = "width=device-width, initial-scale = 1.0">
     <link href = "<?php echo base_url(); ?>html_attrib/parishStyles/css/bootstrap.css" rel = "stylesheet">
     <link href = "<?php echo base_url(); ?>html_attrib/parishStyles/css/bootstrap_2.css" rel = "stylesheet">
@@ -16,19 +18,17 @@
 <div class="panel-heading"><h4><span class="glyphicon glyphicon-book"></span> Reading of the Day</h4></div>
 <div class="panel-body">
 	<div class="row1">
-
-				<div class="form-horizontal"  role="form" method="post">
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Language</label>
-						<div class="col-sm-3" style="float: left;">
-							
-							<select class="form-control1" id="read_language" onchange="asdf();" >
-								<option value="1">English</option>
- 								<option value="2">Cebuano</option>
- 							</select>
- 						</div>
- 					</div>
- 				</div>	
+		<div class="form-horizontal"  role="form" method="post">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Language</label>
+				<div class="col-sm-3" style="float: left;">					
+					<select class="form-control1" id="read_language">
+						<option value="1" <?php if($selected == '1') { echo 'selected';} ?>>English</option>
+						<option value="2" <?php if($selected == '2') { echo 'selected';} ?>>Cebuano</option>
+					</select>
+				</div>
+			</div>
+		</div>	
 	</div>
 
 <!-- =============================================== SUB IFRAME STARTS HERE ===============================================-->	
@@ -36,9 +36,11 @@
 <div class="panel2 panel-default" style="border-color: #ddd;">
 	<div class="panel-heading1"><h4>Readings</h4></div>
 		<p class="text-center">
-		<?php echo $readings; ?>
+			
 		</p>
- 
+		<div id="panel_reading">
+			<?php echo $readings; ?>
+		</div>
 </div>
 <!-- End of Readings -->
 

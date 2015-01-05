@@ -1,8 +1,6 @@
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-//include 'pdf2text.php';
-
 class parish_site extends CI_Controller {
 
  function __construct()
@@ -100,7 +98,17 @@ class parish_site extends CI_Controller {
    {
 		case 'read':
 			// add somethig here
-			$data['readings'] = getTextData(1);	
+			// $data['readings'] = getTextData(1);	
+			$this->load->helper('dir_helper');
+	
+			$language = '1';
+			
+			$myFile = calc_directory($language, time());		
+			$fh = fopen($myFile, 'r');
+			$data['readings'] = '<pre>'.utf8_decode(fread($fh, filesize($myFile))).'</pre>';	
+			$data['selected'] = $language;
+			fclose($fh);
+			
 			$this->load->view('ourParish/services/readSched', $data);
 			break;
 		case 'mass':
@@ -126,62 +134,24 @@ class parish_site extends CI_Controller {
    }
  }
  
- function firstReading()
+ function firstReading($language)
  {
-	$this->load->helper('url');
-	$language = $this->uri->segment(3);
-		
-	$data['readings'] = getTextData($language);
-	$this->load->view('ourParish/services/firstreading', $data);
- } 
-
-
-}
-
-function getTextData($language)
-{
-	$yes = "";
-	switch($language)
-	{
-		case 1: $yes = 'english'; break;
-		case 2: 
-			$yes = 'bisaya'; 
-			return 'bisaya not yet supported';
-			break;
-	}
+	$this->load->helper('dir_helper');
 	
-	date_default_timezone_set('Asia/Manila');
-	
-	$now = time();	
-    $firstDay = strtotime("2014-07-01");
-    $datediff = (($now - $firstDay)/(60*60*24)) % 1095;
-	$day = '';
-	if(date('D', $now) === 'Sun')
-	{
-		$yes = $yes.'/sunday';
-		
-		if($datediff > 730) $yes = $yes.'/yearC';				
-		else if($datediff > 365) $yes = $yes.'/yearB';		
-		else $yes = $yes.'/yearA';		
-		$day = round($datediff / 7);	
-	}
-	else
-	{
-		$yes = $yes.'/daily';
-		
-		if($datediff > 365 && $datediff <= 730) $yes = $yes.'/odd';		
-		else $yes = $yes.'/even';
-		
-		$day = round($datediff - $datediff / 7);	
-	
-	}	
-	
-	$myFile = '././html_attrib/parishStyles/readings/'.$yes.'/day'.$day.'.txt';
+	$myFile = calc_directory($language, time());		
 	$fh = fopen($myFile, 'r');
-	$theData = fread($fh, filesize($myFile));
+	// $data['path'] = $myFile;
+	$data['readings'] = '<pre>'.utf8_decode(fread($fh, filesize($myFile))).'</pre>';	
 	fclose($fh);
 	
-	return '<pre>'.$theData.'</pre>';
+	$data['selected'] = $language;
+	
+	// $data['readings'] = getTextData($language);
+	// echo json_encode($data);
+	// echo json_encode($data);
+	$this->load->view('ourParish/services/readSched', $data);
 }
 
+
+}
 ?>

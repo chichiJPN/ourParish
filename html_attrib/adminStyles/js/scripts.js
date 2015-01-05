@@ -4,7 +4,7 @@ $(document).ready(function(){
 	base_url = $("#base_url").data('base_url');
     loadParishData();
 	loadLocations();
-
+	updateCalendar();
   });
   
 
@@ -210,7 +210,6 @@ $(document).ready(function(){
 	});
   }
 
-  
   $("#adminAddForm").submit(function(){
 	var parish_id = $("#adminAddForm_PID").attr('value');
 	$.ajax({
@@ -514,6 +513,113 @@ $(document).ready(function(){
 			  }
 	});
   }
+
+// Calendar Functions for readings
+	
+	function updateCalendar() {
+		var today = new Date();
+		var month = today.getMonth()+1; //January is 0!
+		var year = today.getFullYear();
+		loadCalendar(year, month);		
+	}  
+
+   function loadCalendar(year, month) {
+	
+		$.ajax({
+			type:"POST",
+			url: "generaladmin/readingsCalendar/"+year + '/' + month,
+			dataType: "json",
+			success:
+				  function(data) {
+					// console.log(data.content);
+					$("#calendar").html($(data.calendar).css("margin", "0 auto"));
+					
+					$("#nextCalendar").click(function() {
+						nextCalendar();
+					});
+					
+					$("#prvCalendar").click(function() {
+						prvCalendar();
+					});
+					
+					$(".calendarCell").on('click', function() {
+						cellClicked($(this));
+						// cellClicked();
+					});
+				  },
+				
+			error: function(data){
+				console.log(data);
+				$("#calendar").html('error loading calendar');
+
+			}	
+		});  
+	}	
+	
+	  function nextCalendar() {
+		var nextdate = $("#nextCalendar").data('nextdate').split("/");
+		loadCalendar(nextdate[0],nextdate[1]);	
+	  }
+	  
+	  function prvCalendar() {
+		var nextdate = $("#prvCalendar").data('nextdate').split("/");
+		loadCalendar(nextdate[0],nextdate[1]);	
+	  }
+	  
+	  function cellClicked(a) {
+		//a.parent().css("background-color", "red");
+		//console.log(a.attr('value')); // jQuery's .attr() method, same but more verbose
+		// console.log('cellData=' + a.attr('value') + '&language=' + $("#language").val());
+		$.ajax({
+			type:"POST",
+			url: "generaladmin/getReading",
+			data:  'cellData=' + a.attr('value') + '&language=' + $("#language").val(),
+			dataType: "json",
+			success:
+				function(data) {
+					// console.log(data);
+					$("#textarea_reading").val(data.data);
+					$("#textarea_reading").text(data.data);
+					$("#date_reading").val(data.date);
+					$("#date_reading").text(data.date);
+					// $("#date").text((new Date(data[0].date)).toString().substring(3,15));
+					// $("#date").val(data[0].date);
+					// $("#url").text("<?php echo base_url(); ?>index.php/parish/news/<?php echo $keyword[0]->keyword; ?>/" + data[0].date + "/" + data[0].title);
+				},
+				
+			error: 
+				function(data){
+					// console.log(data);
+					alert('error loading reading');
+				}
+		});		
+	 }
+	 
+	 $("#form_readingUpdate").submit(function() {
+		
+		console.log('date=' +$('#date_reading').text()+ '&data_reading=' +$('#textarea_reading').val());
+		$.ajax({
+			type:"POST",
+			url: "generaladmin/updateReading",
+			data:  'date=' +$('#date_reading').text()+ '&data_reading=' +$('#textarea_reading').val()+ '&language=' +$('#language').val(),
+			dataType: "json",
+			success:
+				function(data) {
+					// console.log(data);
+					alert(data.message);
+				},
+				
+			error: 
+				function(data){
+					// console.log(data);
+					alert('error saving data');
+				}
+		});
+		return false;
+	 });
+	 
+
+  
 });
 
  

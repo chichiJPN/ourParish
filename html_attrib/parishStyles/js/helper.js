@@ -1043,12 +1043,6 @@ function MassSchedulerHelper()
 	};
 };
 
-  function asdf() {
-	var language = document.getElementById("read_language").value;
-
-	document.getElementById("onframe panel1").src = $("#base_url").data('base_url') + "index.php/parish_site/firstReading/" + language;
-	document.getElementById("onframe panel2").src = $("#base_url").data('base_url') + "index.php/parish_site/psalms/" + language;
-  };
 
 
 $(document).ready(function(){
@@ -1062,6 +1056,21 @@ $(document).ready(function(){
 	
 	return false;  
   });
+  
+  $("#read_language").change(function() {
+	asdf();
+  
+  });
+  
+	function asdf() {
+	
+		var language = document.getElementById("read_language").value;
+		console.log("/parish_site/firstReading/"+language);
+		// document.getElementById("panel_reading").src= "parish_site/firstReading/" + language;
+		window.parent.document.getElementById("myframe").src= "../parish_site/firstReading/" + language;
+		// document.getElementById("onframe panel2").src = $("#base_url").data('base_url') + "index.php/parish_site/psalms/" + language;
+	};
+
   
 
 });

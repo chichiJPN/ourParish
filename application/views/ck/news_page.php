@@ -200,7 +200,11 @@
 			dataType: "json",
 			success:
 				function(data) {
-					$("#title").val((data[0].title).replace(/%20/g,' '));
+					if(data[0].title == null) {
+						$("#title").val("");
+					} else { 
+						$("#title").val((data[0].title).replace(/%20/g,' '));
+					}
 					CKEDITOR.instances.editor1.setData(data[0].content);
 					
 					$("#date").text((new Date(data[0].date)).toString().substring(3,15));
