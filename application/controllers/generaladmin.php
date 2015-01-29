@@ -108,9 +108,13 @@ class generaladmin extends sessionController {
 	if($this->form_validation->run() == FALSE) {
 		echo json_encode('Validation run fail');
 	} else {
+	
 		$parish_id = $this->input->post('parish_id');
+		
 		$data = $this->user->model_getAdmin($parish_id, 'user');
+		
 		echo json_encode($data);
+		
 	}
  }
  

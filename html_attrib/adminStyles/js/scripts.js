@@ -11,6 +11,7 @@ $(document).ready(function(){
   
   $("#editDescForm").submit(function() {
 	var parish_id = $("#editDesc_PID").attr('value');	
+	console.log($(this).serialize() + '&parish_id=' + parish_id);
 	$.ajax({
 		type: "POST",
 		url: base_url + "index.php/parishadmin/editLocation",
@@ -18,11 +19,12 @@ $(document).ready(function(){
 		data:  $(this).serialize() + '&parish_id=' + parish_id ,
 		success:
 			  function(data) {
-					console.log(data);					
+					alert(data);
 			  },
 						
 		error: function(data){
 					console.log(data);
+					alert('An error has occured. Please try again.');
 			  }
 	});
 	
@@ -46,7 +48,7 @@ $(document).ready(function(){
 		success : function (data)
 		{
 			editLocation();
-			console.log(data);
+			alert(data);
 		}
 	});
   
@@ -62,11 +64,12 @@ $(document).ready(function(){
 		data:  $(this).serialize() ,
 		success:
 			  function(data) {
-					console.log(data);
+					alert(data);
 					loadParishData();
 				},
 						
 		error: function(data){
+					alert('An error has occurred.');
 					console.log(data);
 			  }
 	});
@@ -130,22 +133,25 @@ $(document).ready(function(){
   }
   
   function deleteParish() {
-	var parish_id = $(this).data('id');
-	$.ajax({
-		type: "POST",
-		url: base_url + "index.php/generaladmin/deleteParish",
-		dataType: "json",
-		data:  'id_parish=' + parish_id,
-		success:
-			  function(data) {
-					console.log(data);					
-					loadParishData();
-				},
-						
-		error: function(data){
-					console.log(data);
-			  }
-	});
+	if(confirm('Are you sure you want to delete?')) {
+		var parish_id = $(this).data('id');
+		
+		$.ajax({
+			type: "POST",
+			url: base_url + "index.php/generaladmin/deleteParish",
+			dataType: "json",
+			data:  'id_parish=' + parish_id,
+			success:
+				  function(data) {
+						loadParishData();
+						alert(data);					
+					},
+							
+			error: function(data){
+						console.log(data);
+				  }
+		});
+	}
   }
   
   function loadLocations() {
@@ -181,7 +187,9 @@ $(document).ready(function(){
   }
 
   function editLocation() {
+  
 	var parish_id = $("#editDesc_PID").attr('value');
+	console.log(parish_id);
 	$.ajax({
 		type: "POST",
 		url: base_url + "index.php/parishadmin/getParDetails",
@@ -189,18 +197,15 @@ $(document).ready(function(){
 		data: "parish_id=" + parish_id,
 		success:
 			  function(data) {
-					document.getElementById("thumb").src= base_url + "html_attrib/parishStyles/images/parishcovers/"+data.details[0].filename+'.'+data.details[0].ext;					
+					
+					document.getElementById("thumb").src= base_url + "html_attrib/parishStyles/images/parishcovers/"+data.details[0].filename+'.'+data.details[0].ext;
 					$("#thumb").data('id',data.details[0].image);
 					document.getElementById('street').value = data.details[0].street;
 					document.getElementById('barangay').value = data.details[0].barangay;
 					document.getElementById('towncity').value = data.details[0].towncity;
 					document.getElementById('description').value = data.details[0].description;
 					document.getElementById('tnumber').value = data.details[0].tnumber;
-					console.log('street ' +data.details[0].street);
-					console.log('barnagay ' +data.details[0].barangay);
-					console.log('towncity ' +data.details[0].towncity);
-					console.log('image id is ' + data.details[0].image);
-					console.log(data.details[0].tnumber);
+					
 					
 				},
 						
@@ -219,8 +224,8 @@ $(document).ready(function(){
 		data:  $(this).serialize() +'&id_parish=' + parish_id,
 		success:
 			  function(data) {
-					console.log(data);
 					getAdmin2(parish_id);
+					alert(data);
 				},
 						
 		error: function(data){
@@ -279,8 +284,8 @@ $(document).ready(function(){
 	data: "admin_id=" + $(this).attr('value'),
 	success:
 		  function(data) {
-				console.log(data);
 				getAdmin2(adminparish_id);
+				alert(data);
 			},
 					
 	error: function(data){
@@ -347,7 +352,7 @@ $(document).ready(function(){
   function addSched() {
 		var table =  $("#customTag").data('table_type');
 		var parish_id = $("#customTag").data('parish_id');
-		console.log($(this).serialize() + "&parish_id=" + parish_id);
+		// console.log($(this).serialize() + "&parish_id=" + parish_id);
 		$.ajax({
 		type: "POST",
 		url: base_url + "index.php/parishadmin/insert" + table,
@@ -355,12 +360,13 @@ $(document).ready(function(){
 		data: $(this).serialize() + "&parish_id=" + parish_id,
 		success:
 			  function(data) {
-					console.log(data);
 					getSchedules(parish_id, table);
+					alert(data);
 				},
 						
 		error: function(data){
 					console.log(data);
+					alert('An error has occurred.');
 			  }
 		});
 		return false;
@@ -370,7 +376,7 @@ $(document).ready(function(){
 		var table =  $("#customTag").data('table_type');
 		var parish_id = $("#customTag").data('parish_id');
 		var sched_id =  $("#update_ID").data('sched_id');
-		console.log($(this).serialize() + "&parish_id=" + parish_id + "&sched_id=" + sched_id);
+		// console.log($(this).serialize() + "&parish_id=" + parish_id + "&sched_id=" + sched_id);
 		$.ajax({
 		type: "POST",
 		url: base_url + "index.php/parishadmin/update" + table,
@@ -378,8 +384,8 @@ $(document).ready(function(){
 		data: $(this).serialize() + "&parish_id=" + parish_id + "&sched_id=" + sched_id,
 		success:
 			  function(data) {
-					console.log(data);
 					getSchedules(parish_id, table, sched_id);
+					alert(data);
 				},
 						
 		error: function(data){
@@ -494,7 +500,7 @@ $(document).ready(function(){
 	var sched =  $("#customTag").data('table_type');
 	var parish_id = $("#customTag").data('parish_id');
 	
-	console.log("parish_id=" + parish_id + "&sched_id=" + $(this).attr('value'));
+	// console.log("parish_id=" + parish_id + "&sched_id=" + $(this).attr('value'));
 	
 	$.ajax({
 		type: "POST",
@@ -504,7 +510,7 @@ $(document).ready(function(){
 		success:
 			  function(data) {
 			  
-					console.log(data);
+					alert(data);
 					getSchedules(parish_id, sched);
 				},
 						

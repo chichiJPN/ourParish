@@ -2,7 +2,7 @@
 <html>
 <head>
       <title>OurParish</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>html_attrib\parishStyles\js\ajax.googleapis.jquery.min.js"></script>
   <script language="javascript" type="text/javascript" src="<?php echo base_url(); ?>html_attrib/parishStyles/js/helper.js"></script>
   <script> 
   var a = new ParishSchedContainer();

@@ -11,38 +11,26 @@ class parishadmin extends sessionController {
    $this->load->model('user','',TRUE);
  }
  
- function deleteBaptism() {
-	$this->deleteData('baptism_schedule');
- }
- 
- function deleteConfession() {
-	$this->deleteData('confession_schedule');
- }
- 
- function deleteConfirmation() {
-	$this->deleteData('confirmation_schedule');
- }
- 
- function deleteMass() {
-	$this->deleteData('mass_schedule');
- }
- 
-
+ function deleteBaptism() { $this->deleteData('baptism_schedule'); }
+ function deleteConfession() { $this->deleteData('confession_schedule'); }
+ function deleteConfirmation() { $this->deleteData('confirmation_schedule'); }
+ function deleteMass() { $this->deleteData('mass_schedule');}
  
  //deletes data
  function deleteData($database) {
     $this->load->library('form_validation');
    
 	$this->form_validation->set_rules('sched_id', 'Sched_id', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
 	
 	if($this->form_validation->run() == FALSE) {
-		echo json_encode('Validation run fail');
+		echo json_encode(validation_errors());
     } 
 	else
 	{		
 		$data = array(
 			'id_'.$database => $this->input->post('sched_id'),
-			'id_parish' => $this->session->userdata['user_data']['id_parish']
+			'id_parish' => $this->input->post('parish_id')
 		);
 		if($this->user->model_deleteSched($database, $data))
 		{
@@ -53,22 +41,10 @@ class parishadmin extends sessionController {
  
   /* baptism, confession, confirmation and mass schedules have
      almost the same parameters*/
-  function insertBaptism() {
-	$this->insertData('baptism_schedule',false);
-
- }
- 
- function insertConfession() {
-	$this->insertData('confession_schedule',false);
- }
- 
- function insertConfirmation() {
-	$this->insertData('confirmation_schedule', false);
- }
- 
- function insertMass() {
- 	$this->insertData('mass_schedule', true);
- }
+ function insertBaptism() {$this->insertData('baptism_schedule',false);} 
+ function insertConfession() {$this->insertData('confession_schedule',false);} 
+ function insertConfirmation() {$this->insertData('confirmation_schedule', false);} 
+ function insertMass() { $this->insertData('mass_schedule', true);}
  
  //inserts data
  function insertData($database, $boolean) {
@@ -77,16 +53,17 @@ class parishadmin extends sessionController {
 	$this->form_validation->set_rules('day', 'Day', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('time_start', 'Time_start', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('time_end', 'Time_end', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
 
 	if($boolean == TRUE) {
 		$this->form_validation->set_rules('language', 'Language', 'trim|required|xss_clean');
 	}
 	
 	if($this->form_validation->run() == FALSE) {
-		echo json_encode('validation run fail');
+		echo json_encode(validation_errors());
 	} else {
 		$data = array(
-			'id_parish' => $this->session->userdata['user_data']['id_parish'],
+			'id_parish' => $this->input->post('parish_id'),
 			'day' => $this->input->post('day'),
 			'time_start' => $this->input->post('time_start'), 
 			'time_end' => $this->input->post('time_end')
@@ -102,21 +79,10 @@ class parishadmin extends sessionController {
 	}
 }
  
- function updateBaptism() {
-	$this->updateData('baptism_schedule', false); 
- }	
- 
- function updateConfession() {
-	$this->updateData('confession_schedule', false); 
- }
- 
- function updateConfirmation() {
-	$this->updateData('confirmation_schedule', false); 
- }
- 
- function updateMass() {
-	$this->updateData('mass_schedule', true);
- }
+ function updateBaptism() { $this->updateData('baptism_schedule', false); }
+ function updateConfession() { $this->updateData('confession_schedule', false); }
+ function updateConfirmation() { $this->updateData('confirmation_schedule', false); }
+ function updateMass() { $this->updateData('mass_schedule', true); }
  
  //updates data
  function updateData($database, $boolean) {
@@ -125,13 +91,14 @@ class parishadmin extends sessionController {
 	$this->form_validation->set_rules('time_start', 'Time_start', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('time_end', 'Time_end', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('sched_id', 'Sched_id', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
 
 	if($boolean == true) {
 		$this->form_validation->set_rules('language', 'Language', 'trim|required|xss_clean');		
 	}
 	
 	if($this->form_validation->run() == FALSE) {
-		echo json_encode('Validation run Fail');
+		echo json_encode(validation_errors());
 	} else {
 		$data = array(
 			'day' => $this->input->post('day'),
@@ -144,7 +111,7 @@ class parishadmin extends sessionController {
 		}
 		
 		$ids= array(
-			'parish_id' => $this->session->userdata['user_data']['id_parish'],
+			'parish_id' => $this->input->post('parish_id'),
 			'sched_id' => $this->input->post('sched_id')
 		);
 	
@@ -157,59 +124,26 @@ class parishadmin extends sessionController {
 	}
  }
  
- 
- 
- function schedulesBaptism() {
-	$this->getSchedules('baptism_schedule');
- }
-
- function schedulesConfession() {
-	$this->getSchedules('confession_schedule');
- }
-
- function schedulesConfirmation() {
-	$this->getSchedules('confirmation_schedule');
- }
-
- function schedulesMass() {
-	$this->getSchedules('mass_schedule');
- }
-
- function schedulesReading() {
-	$this->getSchedules('reading');
- }
+ function schedulesBaptism() { $this->getSchedules('baptism_schedule'); }
+ function schedulesConfession() { $this->getSchedules('confession_schedule'); }
+ function schedulesConfirmation() { $this->getSchedules('confirmation_schedule'); }
+ function schedulesMass() { $this->getSchedules('mass_schedule'); }
+ function schedulesReading() { $this->getSchedules('reading');}
 
  //gets all schedules of all parishes from specified table
  function getSchedules($database){
- 
-
-		$parish_id = $this->session->userdata['user_data']['id_parish'];
-		
+		$parish_id = $this->input->post('parish_id');		
 		$data = $this->user->model_getAllSchedules($parish_id, $database);
 		echo json_encode($data);
  }
 
  
  
- function viewBaptism() {
-	$this->viewParishData('baptism_schedule');
- }
-
- function viewConfession() {
-	$this->viewParishData('confession_schedule');
- }
-
- function viewConfirmation() {
-	$this->viewParishData('confirmation_schedule');
- }
-
- function viewMass() {
-	$this->viewParishData('mass_schedule');
- }
-
- function viewReading() {
-	$this->viewParishData('reading');
- }
+ function viewBaptism() { $this->viewParishData('baptism_schedule'); }
+ function viewConfession() { $this->viewParishData('confession_schedule');}
+ function viewConfirmation() { $this->viewParishData('confirmation_schedule');}
+ function viewMass() { $this->viewParishData('mass_schedule');}
+ function viewReading() { $this->viewParishData('reading'); }
 
  //gets all schedules of specified parish from specified table
  function viewParishData($database) {
@@ -238,6 +172,8 @@ class parishadmin extends sessionController {
 	$this->form_validation->set_rules('barangay', 'Barangay', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('town', 'Town', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('tnumber', 'Tnumber', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
 	
 	if($this->form_validation->run() == FALSE) {
 		return;
@@ -246,10 +182,11 @@ class parishadmin extends sessionController {
 			'street' => $this->input->post('street'),
 			'barangay' => $this->input->post('barangay'), 
 			'towncity' => $this->input->post('town'),
-			'Tnumber' => $this->input->post('tnumber')
+			'Tnumber' => $this->input->post('tnumber'),
+			'description' => $this->input->post('description')
 		);
 
-		$parish_id = $this->session->userdata['user_data']['id_parish'];
+		$parish_id = $this->input->post('parish_id');
 		
 		if($this->user->model_editLocation($parish_id, $data)) {
 			echo json_encode('edit successful');		
@@ -263,7 +200,7 @@ class parishadmin extends sessionController {
     $msg = "";
     $file_element_name = 'imageUpload';
 	$imageID = $_POST['imageID'];
-	$parish_id = $this->session->userdata['user_data']['id_parish'];
+	$parish_id = $_POST['parish_id'];
 	$failure = TRUE;
 
 	$config['upload_path'] ='./html_attrib/parishStyles/images/parishcovers/';
@@ -311,7 +248,8 @@ class parishadmin extends sessionController {
 				$msg = $msg.'deleted file '.$query[0]->filename.'.'.$query[0]->ext;
 				//updates name of parishes current image
 				if($this->user->model_updateImgName($fileNeim, $imageID)) {
-					$msg = $msg.' updated image ID '.$imageID.' to '.$fileArray[0].$fileArray[1].' in db function 2';
+					// $msg = $msg.' updated image ID '.$imageID.' to '.$fileArray[0].$fileArray[1].' in db function 2';
+					$msg = 'Save successful!';
 					$failure = false;
 				}
 			}			
@@ -327,15 +265,23 @@ class parishadmin extends sessionController {
     echo json_encode($msg);	
  }
 
+ 
+ //asddsasdadaas
  function getParDetails() {
-	$data = array(
-		'parish_id' => $this->session->userdata['user_data']['id_parish']
-	);	
+	$this->load->library('form_validation');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
 	
-	$details['details'] = $this->user->model_getParDetails($data);
-	//print_r($details);
-	echo json_encode($details);		
-
+	if($this->form_validation->run() == FALSE) {
+		return;
+	} else {
+		$data = array(
+			'parish_id' => $this->input->post('parish_id')
+		);
+		
+		$details['details'] = $this->user->model_getParDetails($data);
+		
+		echo json_encode($details);
+	}
  }
  
  

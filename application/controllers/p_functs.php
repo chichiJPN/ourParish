@@ -104,18 +104,27 @@ class p_functs extends CI_Controller {
 	
 	if($this->form_validation->run() == FALSE) {
 		echo json_encode('validation run fail');
-	} else {		
+	} else {				
 		
-		$this->load->helper('dir_helper');
+		
+		$this->load->helper('dir_helper');				
 		
 		$language = '1';
-		// $myFile = calc_directory($language, time());		
-		// $fh = fopen($myFile, 'r');
-		// $data = utf8_decode(fread($fh, filesize($myFile)));	
-		// fclose($fh);		
-		$data = 'afufu';
+		$now = strtotime($this->input->post('date'));		
+
+		$myFile = calc_directory($language, $now);
+		
+		$fh = fopen($myFile, 'r');
+		// $data = utf8_decode(fread($fh, filesize($myFile)));
+		$data = fread($fh, filesize($myFile));
+		// $data['path'] = $myFile;
+		// $foo = fread($fh, filesize($myFile));
+		// $data['path'] = $myFile;
+		
+		fclose($fh);
+		
 		echo $data;
-		// echo $myFile;
+		
 	}
 
  }

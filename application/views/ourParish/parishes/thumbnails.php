@@ -62,7 +62,7 @@
 	?>
 </div>
 <!-- Latest compiled and minified JavaScript -->
-    <script src="http://code.jquery.com/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>html_attrib/jquery-1.11.1.min.js" type="text/javascript" ></script>
     <script src="<?php echo base_url(); ?>/html_attrib/parishStyles/js/bootstrap.min.js"></script>
 </body>
 </html>

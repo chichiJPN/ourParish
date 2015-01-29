@@ -84,29 +84,13 @@
 </div>
  	</div>
       <div class="modal-footer modal_bfooter">
-        <button type="submit"  data-toggle="modal" data-target="#notiaddsche" class="btn btn-primary">Add Schedule</button>
+        <button type="submit" class="btn btn-primary">Add Schedule</button>
       </div>
     </div>
 	</form>
   </div>
 </div>	
 
-<!--notification para add sched -->
-<div class="modal fade" id="notiaddsche" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal_noti modal_notisizesw">
-    <div class="modal-content modal_background">
-      <div class="modal-header modal_bheader" style="height:35px;">
-        <font class="modal-title" id="myModalLabel">STATUS</font>
-      </div>
- 
-          <div class="modal-body modal_background modal_notisizeh" style="margin-bottom:3px;">
-            <font style="margin-left:20px;">SCHEDULE ADDED</font>
-          </div>
-      
-
-    </div>
-  </div>
-</div>  
 
 
 <?php
@@ -127,28 +111,12 @@
  	<div class="changesched" id="showsched"></div>
       
       <div class="modal-footer modal_bfooter">
-        <button type="submit"  data-toggle="modal" data-target="#notiupdatesched" class="btn btn-primary">Update Schedule</button>
+        <button type="submit" class="btn btn-primary">Update Schedule</button>
       </div>
 	 </form>
     </div>
   </div>
 </div>
 
-<!--notification para update sched -->
-<div class="modal fade" id="notiupdatesched" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal_noti modal_notisizesw">
-    <div class="modal-content modal_background">
-      <div class="modal-header modal_bheader" style="height:35px;">
-        <font class="modal-title" id="myModalLabel">STATUS</font>
-      </div>
- 
-          <div class="modal-body modal_background modal_notisizeh" style="margin-bottom:3px;">
-            <font style="margin-left:15px;">SCHEDULE UPDATED</font>
-          </div>
-      
-
-    </div>
-  </div>
-</div> 
 
 </html>

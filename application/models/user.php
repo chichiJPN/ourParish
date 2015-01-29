@@ -180,27 +180,45 @@ Class User extends CI_Model
 	//edits location of chosen parish
 	function model_editLocation($parish_id, $data) 
 	{
+		
+		$this->db->trans_start();
+		
 		$this->db->where('id_parish', $parish_id);
 		$this->db->update('parish', $data); 
 		
-		return $this->db->affected_rows() > 0;
+		$this->db->trans_complete();
+		
+		if ($this->db->trans_status() === FALSE) { return false; } 
+		else { return true; }		
 	}
 	
 	function model_updateSched($ids, $data, $database) 
 	{
+		
+		$this->db->trans_start();
+		
 		$this->db->where('id_parish', $ids['parish_id']);
 		$this->db->where('id_'.$database, $ids['sched_id']);
 		$this->db->update($database, $data); 
 		
-		return $this->db->affected_rows() > 0;
+		$this->db->trans_complete();
+		
+		if ($this->db->trans_status() === FALSE) { return false; } 
+		else { return true; }		
 	}
 
 	
 	function model_editDescription() {
+	
+		$this->db->trans_start();
+		
 		$this->db->where('id_parish', $parish_id);
 		$this->db->update('parish', $data); 
 		
-		return $this->db->affected_rows() > 0;		
+		$this->db->trans_complete();
+		
+		if ($this->db->trans_status() === FALSE) { return false; } 
+		else { return true; }		
 	}
 	
 	function model_getParishes()	
@@ -209,14 +227,8 @@ Class User extends CI_Model
 		$this->db->from('parish');
 		$query = $this->db->get();
  
-		if($query->num_rows() > 0)
-		{
-			return $query->result();
-		}
-		else
-		{
-			return false;
-		}
+		if($query->num_rows() > 0) { return $query->result(); }
+		else { return false; }
 	}
 	
 	function model_getLanguages() {
@@ -224,14 +236,8 @@ Class User extends CI_Model
 		$this->db->from('language');
 		$query = $this->db->get();
  
-		if($query->num_rows() > 0)
-		{
-			return $query->result();
-		}
-		else
-		{
-			return false;
-		}
+		if($query->num_rows() > 0) { return $query->result(); }
+		else { return false; }
 	}
 	
 	function model_getAdmin($parish_id) {
@@ -240,14 +246,8 @@ Class User extends CI_Model
 		$this->db->where('id_parish', $parish_id); 
 		$query = $this->db->get();
  
-		if($query->num_rows() > 0)
-		{
-			return $query->result();
-		}
-		else
-		{
-			return false;
-		}
+		if($query->num_rows() > 0) { return $query->result(); }
+		else { return false; }
 	}
 	
 	function model_deleteAdmin($data)
@@ -263,7 +263,10 @@ Class User extends CI_Model
 		return $this->db->affected_rows() > 0;
 	}
 	
-	function model_deleteParish($parish_id) {	
+	function model_deleteParish($parish_id) {
+	
+		$this->db->trans_start();
+		
 		$this->db->delete('baptism_schedule', array('id_parish' => $parish_id));
 		$this->db->delete('confession_schedule', array('id_parish' => $parish_id));
 		$this->db->delete('confirmation_schedule', array('id_parish' => $parish_id));
@@ -271,8 +274,11 @@ Class User extends CI_Model
 		$this->db->delete('news', array('id_parish' => $parish_id));
 		$this->db->delete('user', array('id_parish' => $parish_id));
 		$this->db->delete('parish', array('id_parish' => $parish_id));
+
+		$this->db->trans_complete();
 		
-		return $this->db->affected_rows() > 0;	
+		if ($this->db->trans_status() === FALSE) { return false; } 
+		else { return true; }		
 	}
 	
 	function model_insert($data, $database)
@@ -281,11 +287,6 @@ Class User extends CI_Model
 		return $this->db->affected_rows() > 0;
 	}
 
-	function model_update($data, $database)
-	{
-		
-	}
-	
 	function model_userExisting($username) {
 		$this->db->select('username');
 		$this->db->from('user');

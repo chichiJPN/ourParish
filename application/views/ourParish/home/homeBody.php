@@ -49,7 +49,7 @@
 				</div>
 			</div>
 
-
+	<!--
 			<div class = "schedule" style="top: -300px"> 
 				<h2 style = "top: -3px; text-align: center;"> Looking for Schedules?</h2>
 				<ul class = "list-group">
@@ -59,7 +59,7 @@
 					<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/confess">Confession Schedules</a>
 				</ul>
 			</div>
-
+	-->
 			<div class ="block-3">
 				<p class = "parishes">Parishes</p>
 				<div id="ca-container" class="ca-container">
@@ -168,7 +168,11 @@
 						function(data) {
 							
 							console.log(data);
-							$("#textt").text(data);
+							// data = data.replace(/\\n/g,'\n').replace(/\\t/g,'\t');
+							
+							document.getElementById('textt').innerHTML = data;
+							// console.log(data);
+							// $("#textt").text(data);
 							$("#calendarBtn").click();
 						},
 						

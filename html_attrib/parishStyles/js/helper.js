@@ -1050,7 +1050,6 @@ $(document).ready(function(){
   $("#searchForm").submit(function() {
     
 	var keyword = document.getElementById("keyword").value;
-	//i add lang ang keyword at the end of the url
 
 	document.getElementById("myframe").src = $("#init").data('base_url') + "index.php/parish_site/"+ test.getIndicator() + "/" + keyword;
 	
@@ -1066,13 +1065,8 @@ $(document).ready(function(){
 	
 		var language = document.getElementById("read_language").value;
 		console.log("/parish_site/firstReading/"+language);
-		// document.getElementById("panel_reading").src= "parish_site/firstReading/" + language;
 		window.parent.document.getElementById("myframe").src= "../parish_site/firstReading/" + language;
-		// document.getElementById("onframe panel2").src = $("#base_url").data('base_url') + "index.php/parish_site/psalms/" + language;
 	};
-
-  
-
 });
 
 // set inheritance

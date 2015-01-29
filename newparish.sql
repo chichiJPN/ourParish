@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2014 at 10:11 AM
+-- Generation Time: Jan 29, 2015 at 04:02 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `baptism_schedule` (
   KEY `parish_id` (`id_parish`),
   KEY `day_id` (`day`),
   KEY `time_id` (`time_start`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
 
 --
 -- Dumping data for table `baptism_schedule`
@@ -44,16 +44,12 @@ CREATE TABLE IF NOT EXISTS `baptism_schedule` (
 
 INSERT INTO `baptism_schedule` (`id_baptism_schedule`, `id_parish`, `day`, `time_start`, `time_end`) VALUES
 (14, 3, 1, '11:11:00', '23:21:00'),
-(51, 1, 4, '00:12:00', '00:12:00'),
 (53, 2, 1, '11:11:00', '11:11:00'),
 (54, 3, 1, '11:11:00', '11:11:00'),
 (55, 2, 6, '00:31:00', '00:12:00'),
 (56, 2, 1, '11:11:00', '11:11:00'),
-(63, 1, 4, '11:11:00', '11:11:00'),
-(65, 1, 1, '00:30:00', '11:11:00'),
-(66, 1, 1, '00:12:00', '11:11:00'),
-(67, 1, 1, '00:23:00', '00:43:00'),
-(68, 1, 1, '00:23:00', '00:43:00');
+(65, 1, 1, '23:12:00', '00:12:00'),
+(67, 1, 1, '11:11:00', '11:11:00');
 
 -- --------------------------------------------------------
 
@@ -183,11 +179,11 @@ CREATE TABLE IF NOT EXISTS `image` (
 INSERT INTO `image` (`image_id`, `filename`, `ext`) VALUES
 (1, 'default', 'jpg'),
 (2, 'pic2', 'jpg'),
-(3, 'potato7', 'jpg'),
-(4, 'pic4', 'jpg'),
+(3, 'ecb4916d5a43dd5fd29d43104ccd226e', 'jpg'),
+(4, 'b1672686e507a50f298feedaab40dc5d', 'JPG'),
 (5, 'pic5', 'jpg'),
-(7, 'potato', 'png'),
-(33, 'f4b9b2a1079ebeb038bb5a883b6cad18', 'jpg');
+(7, '99d45d7be319c38e29c36c301fc45a6f', 'jpg'),
+(33, 'efe4a2ba65d23d40b99c5f1619604911', 'JPG');
 
 -- --------------------------------------------------------
 
@@ -254,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `content` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id_news`),
   KEY `id-parish` (`id_parish`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `news`
@@ -263,7 +259,8 @@ CREATE TABLE IF NOT EXISTS `news` (
 INSERT INTO `news` (`id_news`, `id_parish`, `date`, `title`, `content`) VALUES
 (14, 1, '2014-11-12', 'Justin Bieber visits Alliance', '<p>Iring Napandol. Natagak. Nalumos. asdsa</p>'),
 (15, 1, '2014-11-03', 'Priest Scandal', '<p>Bata NAtagak sa&nbsp;bangag</p>'),
-(16, 1, '2014-11-06', 'Boy friend dead near church', '<p>Boy found dead near church</p>');
+(16, 1, '2014-11-06', 'Boy friend dead near church', '<p>Boy found dead near church</p>'),
+(17, 1, '2014-11-17', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -314,19 +311,18 @@ CREATE TABLE IF NOT EXISTS `parish` (
   KEY `id_town` (`towncity`),
   KEY `id_towncity` (`towncity`),
   KEY `image` (`image`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='		' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='		' AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `parish`
 --
 
 INSERT INTO `parish` (`id_parish`, `keyword`, `parish`, `street`, `barangay`, `towncity`, `tnumber`, `image`, `url`, `description`) VALUES
-(1, 'twohearts', 'Alliance of Two Hearts Parish', 8, 11, 2, '09228076111', 33, 'http://localhost/parishsite/index.php/parish/index/twohearts/Home', 'alliance is a very great church'),
+(1, 'twohearts', 'Alliance of Two Hearts Parish', 8, 11, 2, '09228076111', 33, 'http://localhost:8080/parishsite/index.php/parish/index/twohearts/Home', 'alliance is a very great churchs'),
 (2, 'lourdes', 'Our Lady of Lourdes Parish', 1, 1, 1, '123123123', 7, 'http://localhost/parishsite/index.php/parish/index/lourdes/afufu', 'lourdes is a place like no other'),
 (3, 'guadalupearchshrine', 'Archdiocesan Shrine of Our Lady of Guadalupe', 1, 1, 1, '123123123', 3, NULL, 'guadalupe is like no other place'),
 (4, 'sacredheart', 'Our Lady of the Sacred Heart Parish - Capitol', 1, 1, 1, '123123123', 4, NULL, 'sacred heart is so sacred'),
-(6, 'capitol', 'capitol capitan', 1, 1, 1, '123123123', 5, NULL, 'ang captain'),
-(8, 'potato', 'potato', 1, 1, 1, '12312313', 1, NULL, 'mehehehehehehehhehehe');
+(6, 'capitol', 'capitol capitan', 1, 1, 1, '123123123', 5, NULL, 'ang captain');
 
 -- --------------------------------------------------------
 
@@ -382,9 +378,9 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('44d553b58fe2d1135bf6b05b201b8f72', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 1417078970, 'a:1:{s:9:"user_data";a:3:{s:8:"username";s:5:"dummy";s:9:"id_parish";s:1:"1";s:4:"role";s:1:"2";}}'),
-('70b5e4c75db036003c13ba5c9dae67c8', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 1417090061, ''),
-('ba4ead91b9c252fdd9bf4f253e9b9866', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 1417149670, '');
+('21293caa432074e06ec5ed17b57dd09c', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36', 1422431607, 'a:1:{s:9:"user_data";a:3:{s:8:"username";s:5:"dummy";s:9:"id_parish";s:1:"1";s:4:"role";s:1:"2";}}'),
+('252ea64d80c4b6e7938d1df45781f635', '::1', 'Mozilla/5.0 (Windows; U; Windows NT 6.2; en-US; rv:1.9.1) Gecko/20090624 Firefox/3.5', 1422431093, ''),
+('b314b22287499bb125f361d69471f475', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36', 1422425713, 'a:1:{s:9:"user_data";a:3:{s:8:"username";s:5:"admin";s:9:"id_parish";s:1:"0";s:4:"role";s:1:"1";}}');
 
 -- --------------------------------------------------------
 
@@ -450,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id_user`),
   KEY `id_role` (`role`),
   KEY `id,parish` (`id_parish`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
 
 --
 -- Dumping data for table `user`
@@ -458,8 +454,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `id_parish`) VALUES
 (44, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 0),
-(45, 'dummy', '275876e34cf609db118f3d84b799a790', 2, 1),
-(46, 'lourdes', '9618df17a1d242eed1275efef4bd6681', 2, 2);
+(46, 'lourdes', '9618df17a1d242eed1275efef4bd6681', 2, 2),
+(47, 'dummy', '275876e34cf609db118f3d84b799a790', 2, 1);
 
 --
 -- Constraints for dumped tables

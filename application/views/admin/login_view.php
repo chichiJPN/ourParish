@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 <html>
 		<head>
-		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="<?php echo base_url(); ?>html_attrib/jquery-1.11.1.min.js" type="text/javascript" ></script>
 		 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/html_attrib/adminStyles/css/login_css.css" media="screen"></style>
 	</head>
 	<body>
