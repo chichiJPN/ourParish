@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2015 at 04:02 PM
+-- Generation Time: Feb 02, 2015 at 11:40 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -318,11 +318,11 @@ CREATE TABLE IF NOT EXISTS `parish` (
 --
 
 INSERT INTO `parish` (`id_parish`, `keyword`, `parish`, `street`, `barangay`, `towncity`, `tnumber`, `image`, `url`, `description`) VALUES
-(1, 'twohearts', 'Alliance of Two Hearts Parish', 8, 11, 2, '09228076111', 33, 'http://localhost:8080/parishsite/index.php/parish/index/twohearts/Home', 'alliance is a very great churchs'),
-(2, 'lourdes', 'Our Lady of Lourdes Parish', 1, 1, 1, '123123123', 7, 'http://localhost/parishsite/index.php/parish/index/lourdes/afufu', 'lourdes is a place like no other'),
-(3, 'guadalupearchshrine', 'Archdiocesan Shrine of Our Lady of Guadalupe', 1, 1, 1, '123123123', 3, NULL, 'guadalupe is like no other place'),
-(4, 'sacredheart', 'Our Lady of the Sacred Heart Parish - Capitol', 1, 1, 1, '123123123', 4, NULL, 'sacred heart is so sacred'),
-(6, 'capitol', 'capitol capitan', 1, 1, 1, '123123123', 5, NULL, 'ang captain');
+(1, 'twohearts', 'Alliance of Two Hearts Parish', 8, 11, 2, '09228076111', 33, 'http://localhost:8080/parishsite/index.php/parish/index/twohearts/Home', 'Lorem Ipsum which looks reasonable generate orem Ipsum this always free from repetition injected humour non chara teristic words sum passages more recently with desktop publishing software like pageMaker including versions randomised in words which of lpsum, you need to be sure there hidden in the middle.\n\nSure there anything in the words embarrasing hiddle nmiddle simply dummy text versions have over the years sometimes by accident, sometimes on'),
+(2, 'lourdes', 'Our Lady of Lourdes Parish', 1, 1, 1, '123123123', 7, 'http://localhost/parishsite/index.php/parish/index/lourdes/afufu', 'Lorem Ipsum which looks reasonable generate orem Ipsum this always free from repetition injected humour non chara teristic words sum passages more recently with desktop publishing software like pageMaker including versions randomised in words which of lpsum, you need to be sure there hidden in the middle.\n\nSure there anything in the words embarrasing hiddle nmiddle simply dummy text versions have over the years sometimes by accident, sometimes on'),
+(3, 'guadalupearchshrine', 'Archdiocesan Shrine of Our Lady of Guadalupe', 1, 1, 1, '123123123', 3, NULL, 'Lorem Ipsum which looks reasonable generate orem Ipsum this always free from repetition injected humour non chara teristic words sum passages more recently with desktop publishing software like pageMaker including versions randomised in words which of lpsum, you need to be sure there hidden in the middle.\n\nSure there anything in the words embarrasing hiddle nmiddle simply dummy text versions have over the years sometimes by accident, sometimes on'),
+(4, 'sacredheart', 'Our Lady of the Sacred Heart Parish - Capitol', 1, 1, 1, '123123123', 4, NULL, 'Lorem Ipsum which looks reasonable generate orem Ipsum this always free from repetition injected humour non chara teristic words sum passages more recently with desktop publishing software like pageMaker including versions randomised in words which of lpsum, you need to be sure there hidden in the middle.\n\nSure there anything in the words embarrasing hiddle nmiddle simply dummy text versions have over the years sometimes by accident, sometimes on'),
+(6, 'capitol', 'capitol capitan', 1, 1, 1, '123123123', 5, NULL, 'Lorem Ipsum which looks reasonable generate orem Ipsum this always free from repetition injected humour non chara teristic words sum passages more recently with desktop publishing software like pageMaker including versions randomised in words which of lpsum, you need to be sure there hidden in the middle.\n\nSure there anything in the words embarrasing hiddle nmiddle simply dummy text versions have over the years sometimes by accident, sometimes on');
 
 -- --------------------------------------------------------
 
@@ -378,9 +378,9 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('21293caa432074e06ec5ed17b57dd09c', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36', 1422431607, 'a:1:{s:9:"user_data";a:3:{s:8:"username";s:5:"dummy";s:9:"id_parish";s:1:"1";s:4:"role";s:1:"2";}}'),
-('252ea64d80c4b6e7938d1df45781f635', '::1', 'Mozilla/5.0 (Windows; U; Windows NT 6.2; en-US; rv:1.9.1) Gecko/20090624 Firefox/3.5', 1422431093, ''),
-('b314b22287499bb125f361d69471f475', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36', 1422425713, 'a:1:{s:9:"user_data";a:3:{s:8:"username";s:5:"admin";s:9:"id_parish";s:1:"0";s:4:"role";s:1:"1";}}');
+('0335c0bc5d921011bb8a8a6dad3dd233', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0', 1422873308, ''),
+('22cc3fe539873a10b8a62b8654eb991b', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36', 1422870558, ''),
+('e5834bd65d337d9436ed4467675229eb', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36', 1422873236, '');
 
 -- --------------------------------------------------------
 
