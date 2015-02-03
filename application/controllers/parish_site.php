@@ -64,7 +64,7 @@ class parish_site extends CI_Controller {
  	$this->load->model('model_parishsite');
 	$this->load->helper('url');
     $keyword = $this->uri->segment(3);
-	$data['information'] = $this->model_parishsite->model_getParishData($keyword);
+	$data['information'] = $this->model_parishsite->model_getParishData($keyword);	
 	$this->load->view('ourParish/parishes/list', $data);
 	
  }

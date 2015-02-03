@@ -3,8 +3,8 @@
 <head>
   <title>OurParish</title>
 	<script src="<?php echo base_url(); ?>html_attrib/jquery-1.11.1.min.js" type="text/javascript" ></script>
-  <script language="javascript" type="text/javascript" src="<?php echo base_url(); ?>/html_attrib/parishStyles/scriptsList.js"></script>
-  <script language="javascript" type="text/javascript" src="<?php echo base_url(); ?>/html_attrib/parishStyles/js/helper.js"></script>
+    <script language="javascript" type="text/javascript" src="<?php echo base_url(); ?>/html_attrib/parishStyles/js/helper.js"></script>
+	<script src="<?php echo base_url(); ?>/html_attrib/parishStyles/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -21,8 +21,8 @@
 				"<?php echo $value->filename.'.'.$value->ext; ?>" ,
 				"<?php echo $value->parish; ?>" ,
 				"<?php echo $value->barangay.', '.$value->street.' '.$value->towncity.' city'; ?>" ,
-				"<?php echo $value->description ?>",
-				"<?php echo $value->description ?>",
+				"<?php echo substr($value->description,0,80).'...'; ?>",
+				"<?php echo $value->description; ?>",
 				"<?php if($value->url == NULL) echo base_url().'index.php/parish/index/pageNotFound/pageNotFound'; else echo $value->url; ?>"
 			  )
 			);
@@ -40,8 +40,6 @@
    <script type="text/javascript">test.view("<?php echo base_url(); ?>");</script>    
       
 <!-- Latest compiled and minified JavaScript -->
-		<script src="<?php echo base_url(); ?>html_attrib/jquery-1.11.1.min.js" type="text/javascript" ></script>
-    <script src="<?php echo base_url(); ?>/html_attrib/parishStyles/js/bootstrap.min.js"></script>
 </body>
 </html>
 

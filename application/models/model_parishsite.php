@@ -62,12 +62,16 @@ Class model_parishsite extends CI_Model
 		$this->db->join('barangay', 'parish.barangay = barangay.id_barangay');
 		$this->db->join('towncity', 'parish.towncity = towncity.id_towncity');
 		$this->db->join('image', 'parish.image = image.image_id');		
+		$keyword = trim($keyword);
+		$keys = explode(" ", $keyword);
 		
-		$this->db->like('parish.parish', $keyword);
-		$this->db->or_like('street.street', $keyword); 
-		$this->db->or_like('barangay.barangay', $keyword); 
-		$this->db->or_like('towncity.towncity', $keyword); 
-	
+		foreach($keys as $key){
+			$this->db->or_like('parish.parish', $key);
+			$this->db->or_like('street.street', $key); 
+			$this->db->or_like('barangay.barangay', $key); 
+			$this->db->or_like('towncity.towncity', $key); 
+		} 
+		
 		$query = $this->db->get();
  
 		if($query->num_rows() > 0)

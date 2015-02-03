@@ -1050,7 +1050,7 @@ $(document).ready(function(){
   $("#searchForm").submit(function() {
     
 	var keyword = document.getElementById("keyword").value;
-
+	console.log(keyword);
 	document.getElementById("myframe").src = $("#init").data('base_url') + "index.php/parish_site/"+ test.getIndicator() + "/" + keyword;
 	
 	return false;  

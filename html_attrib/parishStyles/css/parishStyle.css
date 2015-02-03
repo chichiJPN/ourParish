@@ -412,14 +412,23 @@ text-align: center;
 
 
     .img-iconMedia 
-    {
+	{
       border: 0;
       margin-top: -180px;
       margin-bottom: -205px;
       margin-left: -70px;
       margin-right: 65px;
     }
-
+	
+	@-moz-document url-prefix() {
+		.img-iconMedia {
+			border: 0;
+			margin-top: -20px;
+			margin-bottom: -205px;
+			margin-left: -70px;
+			margin-right: 65px;
+		}
+	}
     .icon_container {
       position: relative;
       left: 98px;

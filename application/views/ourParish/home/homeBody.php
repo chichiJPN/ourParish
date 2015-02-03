@@ -49,17 +49,6 @@
 				</div>
 			</div>
 
-	<!--
-			<div class = "schedule" style="top: -300px"> 
-				<h2 style = "top: -3px; text-align: center;"> Looking for Schedules?</h2>
-				<ul class = "list-group">
-					<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/mass">Mass Schedule</a >
-					<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/read">Readings</a>
-					<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/bapt">Baptism Schedules</a>
-					<li class = "list-group-item"><a href="<?php echo base_url(); ?>index.php/parish_site/services/confess">Confession Schedules</a>
-				</ul>
-			</div>
-	-->
 			<div class ="block-3">
 				<p class = "parishes">Parishes</p>
 				<div id="ca-container" class="ca-container">
