@@ -200,10 +200,10 @@ class generaladmin extends sessionController {
 		$myFile = calc_directory($language, $now);
 		
 		$fh = fopen($myFile, 'r');
+		
 		$data['data'] = utf8_decode(fread($fh, filesize($myFile)));
-		$data['path'] = $myFile;
-		// $foo = fread($fh, filesize($myFile));
 		// $data['path'] = $myFile;
+
 		
 		fclose($fh);
 		

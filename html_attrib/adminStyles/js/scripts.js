@@ -583,7 +583,7 @@ $(document).ready(function(){
 			dataType: "json",
 			success:
 				function(data) {
-					// console.log(data);
+					console.log(data);
 					$("#textarea_reading").val(data.data);
 					$("#textarea_reading").text(data.data);
 					$("#date_reading").val(data.date);
@@ -595,7 +595,7 @@ $(document).ready(function(){
 				
 			error: 
 				function(data){
-					// console.log(data);
+					console.log(data);
 					alert('error loading reading');
 				}
 		});		

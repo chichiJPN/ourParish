@@ -38,7 +38,7 @@ if (!function_exists('calc_directory'))
 			else { $yes = $yes.'/even'; }
 
 			$datediff = $datediff % 365;
-			$day = round($datediff - $datediff / 7) + 1;
+			$day = $datediff - floor($datediff / 7) + 1;
 		}
 		
 		$myFile = '././html_attrib/parishStyles/readings/'.$yes.'/day'.$day.'.txt';
