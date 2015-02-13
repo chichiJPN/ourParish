@@ -14,9 +14,9 @@ $(document).ready(function(){
 	console.log($(this).serialize() + '&parish_id=' + parish_id);
 	$.ajax({
 		type: "POST",
-		url: base_url + "index.php/parishadmin/editLocation",
+		url: base_url + "index.php/generaladmin/editLocation",
 		dataType: "json",
-		data:  $(this).serialize() + '&parish_id=' + parish_id ,
+		data:  $(this).serialize() + '&parish_id=' + parish_id,
 		success:
 			  function(data) {
 					alert(data);
@@ -37,7 +37,7 @@ $(document).ready(function(){
 	console.log('image id passed is ' + $("#thumb").attr('data-id'));
 	e.preventDefault();
 	$.ajaxFileUpload({
-		url             : base_url + 'index.php/parishadmin/updateCover', 
+		url             : base_url + 'index.php/generaladmin/updateCover', 
 		secureuri       : false,
 		fileElementId   :'imageUpload',
 		dataType        : 'json',
@@ -67,7 +67,6 @@ $(document).ready(function(){
 					alert(data);
 					loadParishData();
 				},
-						
 		error: function(data){
 					alert('An error has occurred.');
 					console.log(data);
@@ -88,10 +87,10 @@ $(document).ready(function(){
 				
 				$.each( data, function( key, value ) {					
 					var tableRow = $('<tr></tr>').attr('class','row');
-					
+
 					var parishName = $('<td></td>').attr('class','left tdparish');
 					parishName.append($('<font></font>').text(value.parish).attr('class','fontparish'));
-					
+
 					var admin = $('<td></td>');
 					admin.append($('<a></a>').text('Admin').attr("data-toggle", "modal").attr("data-backdrop","static").attr("data-target", "#prior").attr("data-id",value.id_parish).on( "click", getAdmin));
 
@@ -166,11 +165,11 @@ $(document).ready(function(){
 					$("<option />", {value: value.id_barangay, text: value.barangay}).appendTo($("#barangay"));			
 				});
 				
-				$.each( data.street, function( key, value ) {
-					$("<option />", {value: value.id_street, text: value.street}).appendTo($("#street"));			
-				});
+				// $.each( data.street, function( key, value ) {
+					// $("<option />", {value: value.id_street, text: value.street}).appendTo($("#street"));			
+				// });
 				
-				$.each( data.towncity, function( key, value ) {
+				$.each( data.towncity, function(key, value ) {
 					$("<option />", {value: value.id_towncity, text: value.towncity}).appendTo($("#towncity"));			
 				});
 			  },
@@ -192,7 +191,7 @@ $(document).ready(function(){
 	console.log(parish_id);
 	$.ajax({
 		type: "POST",
-		url: base_url + "index.php/parishadmin/getParDetails",
+		url: base_url + "index.php/generaladmin/getParDetails",
 		dataType: "json",
 		data: "parish_id=" + parish_id,
 		success:
@@ -352,10 +351,10 @@ $(document).ready(function(){
   function addSched() {
 		var table =  $("#customTag").data('table_type');
 		var parish_id = $("#customTag").data('parish_id');
-		// console.log($(this).serialize() + "&parish_id=" + parish_id);
+		console.log($(this).serialize() + "&parish_id=" + parish_id);
 		$.ajax({
 		type: "POST",
-		url: base_url + "index.php/parishadmin/insert" + table,
+		url: base_url + "index.php/generaladmin/insert" + table,
 		dataType: "json",
 		data: $(this).serialize() + "&parish_id=" + parish_id,
 		success:
@@ -379,7 +378,7 @@ $(document).ready(function(){
 		// console.log($(this).serialize() + "&parish_id=" + parish_id + "&sched_id=" + sched_id);
 		$.ajax({
 		type: "POST",
-		url: base_url + "index.php/parishadmin/update" + table,
+		url: base_url + "index.php/generaladmin/update" + table,
 		dataType: "json",
 		data: $(this).serialize() + "&parish_id=" + parish_id + "&sched_id=" + sched_id,
 		success:
@@ -504,7 +503,7 @@ $(document).ready(function(){
 	
 	$.ajax({
 		type: "POST",
-		url: base_url + "index.php/parishadmin/delete" + sched,
+		url: base_url + "index.php/generaladmin/delete" + sched,
 		dataType: "json",
 		data: "parish_id=" + parish_id + "&sched_id=" + $(this).attr('value'),
 		success:

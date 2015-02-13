@@ -56,18 +56,19 @@ Class model_parishsite extends CI_Model
 	
 	function model_getParishData($keyword) {
 			
-		$this->db->select('parish.id_parish, parish.parish, street.street, barangay.barangay, towncity.towncity, image.filename, image.ext, parish.url, parish.description');
+		$this->db->select('parish.id_parish, parish.parish, parish.street, barangay.barangay, towncity.towncity, image.filename, image.ext, parish.url, parish.description');
 		$this->db->from('parish');
-		$this->db->join('street', 'parish.street = street.id_street');
+		// $this->db->join('street', 'parish.street = street.id_street');
 		$this->db->join('barangay', 'parish.barangay = barangay.id_barangay');
 		$this->db->join('towncity', 'parish.towncity = towncity.id_towncity');
 		$this->db->join('image', 'parish.image = image.image_id');		
 		$keyword = trim($keyword);
 		$keys = explode(" ", $keyword);
-		
+				
 		foreach($keys as $key){
+			$this->db->or_like('parish.street', $key);
 			$this->db->or_like('parish.parish', $key);
-			$this->db->or_like('street.street', $key); 
+			// $this->db->or_like('street.street', $key); 
 			$this->db->or_like('barangay.barangay', $key); 
 			$this->db->or_like('towncity.towncity', $key); 
 		} 
@@ -145,7 +146,7 @@ Class model_parishsite extends CI_Model
 
 	function model_searchMass($data) {
 		// $this->db->select('parish.parish, street.street, barangay.barangay, towncity.towncity, day.day, mass_schedule.time_start, language.language');
-		$this->db->select('parish.parish, parish.street, street.street,
+		$this->db->select('parish.parish, parish.street,
 						   parish.barangay, barangay.barangay, 
 						   parish.towncity, towncity.towncity,
 						   day.day, mass_schedule.time_start,
@@ -153,7 +154,6 @@ Class model_parishsite extends CI_Model
 		$this->db->from('mass_schedule');
 		
  		$this->db->join('parish', 'mass_schedule.id_parish = parish.id_parish');
- 		$this->db->join('street', 'parish.street = street.id_street');
 		$this->db->join('barangay', 'parish.barangay = barangay.id_barangay');
 		$this->db->join('towncity', 'parish.towncity = towncity.id_towncity');
 		$this->db->join('day', 'mass_schedule.day = day.id_day');
@@ -168,8 +168,8 @@ Class model_parishsite extends CI_Model
 		if($data['time_start'] != '0')
 			$this->db->where('mass_schedule.time_start', $data['time_start']);
 			
-		if($data['street'] != '0')
-			$this->db->where('parish.street', $data['street']);
+		if($data['street'] != '')
+			$this->db->where('parish.street', $data['street'],'after');
 			
 		if($data['barangay'] != '0')
 			$this->db->where('parish.barangay', $data['barangay']);
@@ -193,14 +193,14 @@ Class model_parishsite extends CI_Model
 	}
 	
 	function model_searchBapt($data) {
-		$this->db->select('parish.parish, parish.street, street.street,
+		$this->db->select('parish.parish, parish.street,
 						   parish.barangay, barangay.barangay, 
 						   parish.towncity, towncity.towncity,
 						   day.day, baptism_schedule.time_start');
 		$this->db->from('baptism_schedule');
 		
  		$this->db->join('parish', 'baptism_schedule.id_parish = parish.id_parish');
- 		$this->db->join('street', 'parish.street = street.id_street');
+ 		// $this->db->join('street', 'parish.street = street.id_street');
 		$this->db->join('barangay', 'parish.barangay = barangay.id_barangay');
 		$this->db->join('towncity', 'parish.towncity = towncity.id_towncity');
 		$this->db->join('day', 'baptism_schedule.day = day.id_day');
@@ -221,14 +221,14 @@ Class model_parishsite extends CI_Model
 	}
 	
 	function model_searchConfe($data) {
-		$this->db->select('parish.parish, parish.street, street.street,
+		$this->db->select('parish.parish, parish.street,
 						   parish.barangay, barangay.barangay, 
 						   parish.towncity, towncity.towncity,
 						   day.day, confession_schedule.time_start');
 		$this->db->from('confession_schedule');
 		
  		$this->db->join('parish', 'confession_schedule.id_parish = parish.id_parish');
- 		$this->db->join('street', 'parish.street = street.id_street');
+ 		// $this->db->join('street', 'parish.street = street.id_street');
 		$this->db->join('barangay', 'parish.barangay = barangay.id_barangay');
 		$this->db->join('towncity', 'parish.towncity = towncity.id_towncity');
 		$this->db->join('day', 'confession_schedule.day = day.id_day');
@@ -249,14 +249,14 @@ Class model_parishsite extends CI_Model
 	}
 
 	function model_searchConfi($data) {
-		$this->db->select('parish.parish, parish.street, street.street,
+		$this->db->select('parish.parish, parish.street,
 						   parish.barangay, barangay.barangay, 
 						   parish.towncity, towncity.towncity,
 						   day.day, confirmation_schedule.time_start');
 		$this->db->from('confirmation_schedule');
 		
  		$this->db->join('parish', 'confirmation_schedule.id_parish = parish.id_parish');
- 		$this->db->join('street', 'parish.street = street.id_street');
+ 		// $this->db->join('street', 'parish.street = street.id_street');
 		$this->db->join('barangay', 'parish.barangay = barangay.id_barangay');
 		$this->db->join('towncity', 'parish.towncity = towncity.id_towncity');
 		$this->db->join('day', 'confirmation_schedule.day = day.id_day');

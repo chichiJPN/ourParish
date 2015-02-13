@@ -118,6 +118,23 @@ class generaladmin extends sessionController {
 	}
  }
  
+  public function getParDetails() {
+	$this->load->library('form_validation');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+	
+	if($this->form_validation->run() == FALSE) {
+		return;
+	} else {
+		$data = array(
+			'parish_id' => $this->input->post('parish_id')
+		);
+		
+		$details['details'] = $this->user->model_getParDetails($data);
+		
+		echo json_encode($details);
+	}
+  }
+ 
   public function readingsCalendar() {
  
 	$prefs = array (
@@ -241,8 +258,224 @@ class generaladmin extends sessionController {
 		}
 		fclose($fh);		
 		echo json_encode($data);
-	}
-  
+	}  
   }
+  
+  function editLocation() {
+	$this->load->library('form_validation');
+	$this->form_validation->set_rules('street', 'Street', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('barangay', 'Barangay', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('town', 'Town', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('tnumber', 'Tnumber', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
+	
+	if($this->form_validation->run() == FALSE) {
+		return;
+	} else {
+		$data = array(
+			'street' => $this->input->post('street'),
+			'barangay' => $this->input->post('barangay'), 
+			'towncity' => $this->input->post('town'),
+			'Tnumber' => $this->input->post('tnumber'),
+			'description' => $this->input->post('description')
+		);
+
+		$parish_id = $this->input->post('parish_id');
+		
+		if($this->user->model_editLocation($parish_id, $data)) {
+			echo json_encode('edit successful');		
+		} else {
+			echo json_encode('edit unsuccessful');		
+		}
+	}
+ }
+ 
+ function deleteBaptism() { $this->deleteData('baptism_schedule'); }
+ function deleteConfession() { $this->deleteData('confession_schedule'); }
+ function deleteConfirmation() { $this->deleteData('confirmation_schedule'); }
+ function deleteMass() { $this->deleteData('mass_schedule');}
+ 
+ //deletes data
+ function deleteData($database) {
+    $this->load->library('form_validation');
+   
+	$this->form_validation->set_rules('sched_id', 'Sched_id', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+	
+	if($this->form_validation->run() == FALSE) {
+		echo json_encode(validation_errors());
+    } 
+	else
+	{		
+		$data = array(
+			'id_'.$database => $this->input->post('sched_id'),
+			'id_parish' => $this->input->post('parish_id')
+			// 'id_parish' => $this->session->userdata['user_data']['id_parish']
+		);
+		if($this->user->model_deleteSched($database, $data))
+		{
+			echo json_encode('success');
+		}
+	}
+ }
+
+ function insertBaptism() {$this->insertData('baptism_schedule',false);} 
+ function insertConfession() {$this->insertData('confession_schedule',false);} 
+ function insertConfirmation() {$this->insertData('confirmation_schedule', false);} 
+ function insertMass() { $this->insertData('mass_schedule', true);}
+ 
+ //inserts data
+ function insertData($database, $boolean) {
+	$this->load->library('form_validation');
+
+	$this->form_validation->set_rules('day', 'Day', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('time_start', 'Time_start', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('time_end', 'Time_end', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+
+	if($boolean == TRUE) {
+		$this->form_validation->set_rules('language', 'Language', 'trim|required|xss_clean');
+	}
+	
+	if($this->form_validation->run() == FALSE) {
+		echo json_encode(validation_errors());
+	} else {
+		$data = array(
+			'id_parish' => $this->input->post('parish_id'),
+			// 'id_parish' => $this->session->userdata['user_data']['id_parish'],
+			'day' => $this->input->post('day'),
+			'time_start' => $this->input->post('time_start'), 
+			'time_end' => $this->input->post('time_end')
+		);
+		
+		if($boolean == TRUE) {
+			$data['language'] = $this->input->post('language');
+		}
+		
+		if($this->user->model_insert($data, $database)) {			
+			echo json_encode('insert Successful');
+		}
+	}
 }
+
+ function updateBaptism() { $this->updateData('baptism_schedule', false); }
+ function updateConfession() { $this->updateData('confession_schedule', false); }
+ function updateConfirmation() { $this->updateData('confirmation_schedule', false); }
+ function updateMass() { $this->updateData('mass_schedule', true); }
+ 
+ //updates data
+ function updateData($database, $boolean) {
+ 	$this->load->library('form_validation');
+	$this->form_validation->set_rules('day', 'Day', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('time_start', 'Time_start', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('time_end', 'Time_end', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('sched_id', 'Sched_id', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+
+	if($boolean == true) {
+		$this->form_validation->set_rules('language', 'Language', 'trim|required|xss_clean');		
+	}
+	
+	if($this->form_validation->run() == FALSE) {
+		echo json_encode(validation_errors());
+	} else {
+		$data = array(
+			'day' => $this->input->post('day'),
+			'time_start' => $this->input->post('time_start'),
+			'time_end' => $this->input->post('time_end')
+		);
+		
+		if($boolean == true) {
+			$data['language'] = $this->input->post('language');
+		}
+		
+		$ids= array(
+			'parish_id' => $this->input->post('parish_id'),
+			// 'parish_id' => $this->session->userdata['user_data']['id_parish'],
+			'sched_id' => $this->input->post('sched_id')
+		);
+	
+		
+		if($this->user->model_updateSched($ids, $data, $database)) {
+			echo json_encode('update success');
+		} else {
+			echo json_encode('update fail');
+		}
+	}
+ }
+ 
+  function updateCover() {
+    $msg = "";
+    $file_element_name = 'imageUpload';
+	$imageID = $_POST['imageID'];
+	$parish_id = $_POST['parish_id'];
+	// $parish_id = $this->session->userdata['user_data']['id_parish'];
+	$failure = TRUE;
+
+	$config['upload_path'] ='./html_attrib/parishStyles/images/parishcovers/';
+	$config['allowed_types'] = 'jpg|jpeg|png|gif';
+	$config['max_size'] = 1024 * 8;
+	$config['encrypt_name'] = TRUE; //encrypts the filename
+	
+	$this->load->library('upload', $config);
+
+	//adds picture to folder
+	if (!$this->upload->do_upload($file_element_name)) {
+		$msg = $this->upload->display_errors('', '');
+	} else {
+		$data = $this->upload->data();
+
+		$fileArray = explode(".", $data['file_name']);
+
+		$fileNeim = array(
+			'filename'      => $fileArray[0],
+			'ext'           => $fileArray[1]
+		);
+		
+		// if picture is default
+		if($imageID == 1) {
+			// insert image name into db		
+			if($this->user->model_insertImg($fileNeim))
+			{
+				$msg = $msg.'uploaded '.$fileArray[0].$fileArray[1].' to db';
+				$id = $this->user->model_getMaxImgID(); // gets Id of most recent image entry
+
+				// update image ID column in 'parish' table
+				if($this->user->model_updateParishImgID($id, $parish_id)) {
+					$msg = $msg." updated parish id to ".$id;	
+					$failure = false;
+				}
+			}
+		// if picture was already changed and you want to change it aggain	
+		} else {
+			$query = $this->user->model_getImageName($imageID);
+			
+			//deletes picture in folder
+			$path = "./html_attrib/parishStyles/images/parishcovers/".$query[0]->filename.'.'.$query[0]->ext;
+						
+			if(unlink($path)) {
+				$msg = $msg.'deleted file '.$query[0]->filename.'.'.$query[0]->ext;
+				//updates name of parishes current image
+				if($this->user->model_updateImgName($fileNeim, $imageID)) {
+					// $msg = $msg.' updated image ID '.$imageID.' to '.$fileArray[0].$fileArray[1].' in db function 2';
+					$msg = 'Save successful!';
+					$failure = false;
+				}
+			}			
+		}
+		
+		if($failure == TRUE) {
+			unlink($data['full_path']);
+			$msg = "Something went wrong when saving the file, please try again.";			
+		}
+	}
+	@unlink($_FILES[$file_element_name]);
+
+    echo json_encode($msg);	
+ }
+  
+ 
+ 
+ }
 ?>

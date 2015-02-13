@@ -12,6 +12,7 @@ $(document).ready(function(){
   $("#flip").click(function(){
   
 	var base_url = $("#init").data('base_url');
+	console.log($("#bapt_form").serialize());
 	$.ajax({
 		type: "POST",
 		url: base_url + "index.php/p_functs/search_baptSched",

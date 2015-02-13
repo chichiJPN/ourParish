@@ -21,7 +21,7 @@ class parishadmin extends sessionController {
     $this->load->library('form_validation');
    
 	$this->form_validation->set_rules('sched_id', 'Sched_id', 'trim|required|xss_clean');
-	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+	// $this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
 	
 	if($this->form_validation->run() == FALSE) {
 		echo json_encode(validation_errors());
@@ -30,7 +30,8 @@ class parishadmin extends sessionController {
 	{		
 		$data = array(
 			'id_'.$database => $this->input->post('sched_id'),
-			'id_parish' => $this->input->post('parish_id')
+			// 'id_parish' => $this->input->post('parish_id')
+			'id_parish' => $this->session->userdata['user_data']['id_parish']
 		);
 		if($this->user->model_deleteSched($database, $data))
 		{
@@ -53,7 +54,7 @@ class parishadmin extends sessionController {
 	$this->form_validation->set_rules('day', 'Day', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('time_start', 'Time_start', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('time_end', 'Time_end', 'trim|required|xss_clean');
-	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+	// $this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
 
 	if($boolean == TRUE) {
 		$this->form_validation->set_rules('language', 'Language', 'trim|required|xss_clean');
@@ -63,7 +64,8 @@ class parishadmin extends sessionController {
 		echo json_encode(validation_errors());
 	} else {
 		$data = array(
-			'id_parish' => $this->input->post('parish_id'),
+			// 'id_parish' => $this->input->post('parish_id'),
+			'id_parish' => $this->session->userdata['user_data']['id_parish'],
 			'day' => $this->input->post('day'),
 			'time_start' => $this->input->post('time_start'), 
 			'time_end' => $this->input->post('time_end')
@@ -91,7 +93,7 @@ class parishadmin extends sessionController {
 	$this->form_validation->set_rules('time_start', 'Time_start', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('time_end', 'Time_end', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('sched_id', 'Sched_id', 'trim|required|xss_clean');
-	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+	// $this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
 
 	if($boolean == true) {
 		$this->form_validation->set_rules('language', 'Language', 'trim|required|xss_clean');		
@@ -111,7 +113,8 @@ class parishadmin extends sessionController {
 		}
 		
 		$ids= array(
-			'parish_id' => $this->input->post('parish_id'),
+			// 'parish_id' => $this->input->post('parish_id'),
+			'parish_id' => $this->session->userdata['user_data']['id_parish'],
 			'sched_id' => $this->input->post('sched_id')
 		);
 	
@@ -161,7 +164,7 @@ class parishadmin extends sessionController {
  
   function getLocations() {
 	$data['barangay'] = $this->user->model_getLocations('barangay');
-	$data['street'] = $this->user->model_getLocations('street');
+	// $data['street'] = $this->user->model_getLocations('street');
 	$data['towncity'] = $this->user->model_getLocations('towncity');
 	echo json_encode($data);	
  }
@@ -172,7 +175,7 @@ class parishadmin extends sessionController {
 	$this->form_validation->set_rules('barangay', 'Barangay', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('town', 'Town', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('tnumber', 'Tnumber', 'trim|required|xss_clean');
-	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+	// $this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
 	
 	if($this->form_validation->run() == FALSE) {
@@ -186,7 +189,7 @@ class parishadmin extends sessionController {
 			'description' => $this->input->post('description')
 		);
 
-		$parish_id = $this->input->post('parish_id');
+		$parish_id = $this->session->userdata['user_data']['id_parish'];
 		
 		if($this->user->model_editLocation($parish_id, $data)) {
 			echo json_encode('edit successful');		
@@ -200,7 +203,8 @@ class parishadmin extends sessionController {
     $msg = "";
     $file_element_name = 'imageUpload';
 	$imageID = $_POST['imageID'];
-	$parish_id = $_POST['parish_id'];
+	// $parish_id = $_POST['parish_id'];
+	$parish_id = $this->session->userdata['user_data']['id_parish'];
 	$failure = TRUE;
 
 	$config['upload_path'] ='./html_attrib/parishStyles/images/parishcovers/';
@@ -268,20 +272,15 @@ class parishadmin extends sessionController {
  
  //asddsasdadaas
  function getParDetails() {
-	$this->load->library('form_validation');
-	$this->form_validation->set_rules('parish_id', 'Parish ID', 'trim|required|xss_clean');
+
+	$data = array(
+		'parish_id' => $this->session->userdata['user_data']['id_parish']
+	);
 	
-	if($this->form_validation->run() == FALSE) {
-		return;
-	} else {
-		$data = array(
-			'parish_id' => $this->input->post('parish_id')
-		);
-		
-		$details['details'] = $this->user->model_getParDetails($data);
-		
-		echo json_encode($details);
-	}
+	$details['details'] = $this->user->model_getParDetails($data);
+	
+	echo json_encode($details);
+ 
  }
  
  

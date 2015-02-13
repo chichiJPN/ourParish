@@ -90,9 +90,8 @@
 				<td>
 				<div>
 					<select class="form-control" name="language">
-							<option value='01'>English</option>
-							<option value='02'>Tagalog</option>
-							<option value='03'>Cebuano</option>
+							<option value='1'>English</option>
+							<option value='2'>Cebuano</option>
 					</select>	
 				</div>
 				</td>

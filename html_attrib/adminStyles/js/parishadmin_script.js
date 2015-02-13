@@ -84,6 +84,7 @@ $(document).ready(function(){
 		data:  $(this).serialize(),
 		success:
 			  function(data) {
+				alert(data);
 					console.log(data);					
 			  },
 						
@@ -109,7 +110,9 @@ $(document).ready(function(){
 		},
 		success : function (data)
 		{
+			
 			editLocation();
+			alert('update success');
 			console.log(data);
 		}
 	});
@@ -129,9 +132,9 @@ $(document).ready(function(){
 					$("<option />", {value: value.id_barangay, text: value.barangay}).appendTo($("#barangay"));			
 				});
 				
-				$.each( data.street, function( key, value ) {
-					$("<option />", {value: value.id_street, text: value.street}).appendTo($("#street"));			
-				});
+				// $.each( data.street, function( key, value ) {
+					// $("<option />", {value: value.id_street, text: value.street}).appendTo($("#street"));			
+				// });
 				
 				$.each( data.towncity, function( key, value ) {
 					$("<option />", {value: value.id_towncity, text: value.towncity}).appendTo($("#towncity"));			
@@ -164,11 +167,6 @@ $(document).ready(function(){
 					document.getElementById('towncity').value = data.details[0].towncity;
 					document.getElementById('description').value = data.details[0].description;
 					document.getElementById('tnumber').value = data.details[0].tnumber;
-					console.log('street ' +data.details[0].street);
-					console.log('barnagay ' +data.details[0].barangay);
-					console.log('towncity ' +data.details[0].towncity);
-					console.log('image id is ' + data.details[0].image);
-					console.log(data.details[0].tnumber);
 					
 				},
 						
@@ -203,7 +201,7 @@ $(document).ready(function(){
   $("#getConfe").click(function(){
 	var parish_id = $(this).data('id');
     $("#modalbody").load(base_url + "index.php/admin/confession/"+ parish_id, function() {
-		getSchedules(parish_id,'Confession')
+		getSchedules(parish_id,'Confession');
 		$("#addConfeSched_Form").on("submit", addSched);
 		$("#updateConfeSched_Form").on("submit", updateSched);	
 	});
@@ -212,7 +210,7 @@ $(document).ready(function(){
   $("#getConfi").click(function(){
   	var parish_id = $(this).data('id');
     $("#modalbody").load(base_url + "index.php/admin/confirmation/"+ parish_id, function() {
-		getSchedules(parish_id,'Confirmation')
+		getSchedules(parish_id,'Confirmation');
 		$("#addConfiSched_Form").on("submit", addSched);
 		$("#updateConfiSched_Form").on("submit", updateSched);		
 	});
@@ -220,8 +218,9 @@ $(document).ready(function(){
   
   $("#getMass").click(function(){
   	var parish_id = $(this).data('id');
+	console.log('parish id '+parish_id);
     $("#modalbody").load(base_url + "index.php/admin/mass/"+ parish_id, function() {
-		getSchedules(parish_id,'Mass')
+		getSchedules(parish_id,'Mass');
 		$("#addMassSched_Form").on("submit", addSched);
 		$("#updateMassSched_Form").on("submit", updateSched);			
 	});
@@ -243,10 +242,11 @@ $(document).ready(function(){
 		type: "POST",
 		url: base_url + "index.php/parishadmin/insert" + table,
 		dataType: "json",
-		data: $(this).serialize(),
+		data: $(this).serialize() + "&parish_id=" + parish_id,
 		success:
 			  function(data) {
-					console.log(data);
+					alert(data);
+					
 					getSchedules(parish_id, table);
 				},
 						
@@ -266,10 +266,11 @@ $(document).ready(function(){
 		type: "POST",
 		url: base_url + "index.php/parishadmin/update" + table,
 		dataType: "json",
-		data: $(this).serialize() + "&sched_id=" + sched_id,
+		data: $(this).serialize() + "&sched_id=" + sched_id + "&parish_id=" + parish_id,
 		success:
 			  function(data) {
 					console.log(data);
+					alert(data);
 					getSchedules(parish_id, table, sched_id);
 				},
 						
@@ -286,6 +287,8 @@ $(document).ready(function(){
 			type: "POST",
 			url: base_url + "index.php/parishadmin/schedules" + type,
 			dataType: "json",
+			data: "parish_id=" + parish_id,
+
 			success:
 				  function(data) {
 						$("#schedules_" + type).html('');
@@ -389,10 +392,10 @@ $(document).ready(function(){
 		type: "POST",
 		url: base_url + "index.php/parishadmin/delete" + sched,
 		dataType: "json",
-		data: "sched_id=" + $(this).attr('value'),
+		data: "sched_id=" + $(this).attr('value') ,
 		success:
 			  function(data) {
-			  
+					alert(data);
 					console.log(data);
 					getSchedules(parish_id, sched);
 				},

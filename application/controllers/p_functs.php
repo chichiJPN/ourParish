@@ -15,7 +15,7 @@ class p_functs extends CI_Controller {
 	$this->form_validation->set_rules('parish', 'Parish', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('day', 'Day', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('time_start', 'Time_start', 'trim|required|xss_clean');
-	$this->form_validation->set_rules('street', 'Street', 'trim|required|xss_clean');
+	$this->form_validation->set_rules('street', 'Street', 'trim|xss_clean');
 	$this->form_validation->set_rules('barangay', 'Barangay', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('towncity', 'Towncity', 'trim|required|xss_clean');
 	$this->form_validation->set_rules('mass-language', 'Mass-Language', 'trim|required|xss_clean');
@@ -33,8 +33,7 @@ class p_functs extends CI_Controller {
 			'towncity' => $this->input->post('towncity'),
 			'language' => $this->input->post('mass-language')
 		);
-		
-		
+				
 		$searched = $this->model_parishsite->model_searchMass($data);
 		echo json_encode($searched);
 	}

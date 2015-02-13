@@ -10,6 +10,7 @@
 $(document).ready(function(){
   $("#flip").click(function(){
 		var base_url = $("#init").data('base_url');
+		console.log($("#mass_form").serialize());
 		$.ajax({
 			type: "POST",
 			url: base_url + "index.php/p_functs/search_massSched",
@@ -17,23 +18,24 @@ $(document).ready(function(){
 			data:  $("#mass_form").serialize(),
 			success:
 				  function(data) {
-            document.getElementById("table_id_info").innerHTML = "";
-            a.eraseAll();
-            $.each( data, function( key, value )
-            {
-            a.push_back(
-              new ParishSched(
-                value.parish,
-                value.street+' '+value.barangay+', '+value.towncity,
-                value.day,
-                value.time_start,
-                value.language
-              )
-            );
-            a.sort();
+					console.log(data);
+					document.getElementById("table_id_info").innerHTML = "";
+					a.eraseAll();
+					$.each( data, function( key, value )
+					{
+						a.push_back(
+						  new ParishSched(
+							value.parish,
+							value.street+' '+value.barangay+', '+value.towncity,
+							value.day,
+							value.time_start,
+							value.language
+						  )
+						);
+						a.sort();
 
-            });
-            b.set(b.invokeMassSched);
+					});
+					b.set(b.invokeMassSched);
           },
 							
 			error: function(data){
@@ -120,16 +122,8 @@ min-height: 300px;
       <div class="form-group1"> 
         <label class="col-sm-5 control-label">Street</label>
         <div class= "col-sm-4">
-          <select class="form-control1" name="street" >
-			<option value="0">Any</option>
-			<?php
-				foreach($street as $value) 
-				{
-					?><option value="<?php echo $value->id_street; ?>"><?php echo $value->street; ?></option>
-			<?php				
-				}			
-			?>
-          </select>
+		  <input name="street" class="form-control">
+          
         </div>
       </div> 
       <div class="form-group1">
@@ -184,7 +178,6 @@ min-height: 300px;
          <div id="temp" class="radio">
             <label> 
             <input type="radio" id="langButton" name="mass-language" value="2">Cebuano</label> 
-           
          </div>     
         </div>
       </div>

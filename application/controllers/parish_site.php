@@ -121,7 +121,7 @@ class parish_site extends CI_Controller {
 			break;
 		case 'bapt':
 			$data['parish'] = $this->model_parishsite->model_getParishNameID();
-			$this->load->view('ourParish/services/baptSched', $data);  			
+			$this->load->view('ourParish/services/baptSched', $data);
 			break;
 		case 'confess':
 			$data['parish'] = $this->model_parishsite->model_getParishNameID();

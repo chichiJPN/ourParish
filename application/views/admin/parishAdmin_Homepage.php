@@ -143,8 +143,7 @@
         <div><h4 style="margin-left:180px;">Locations</h4></div>
 		<div class="form-group">
 	      <label for="labelparishadd">Street</label>
-	      <select class="form-control" name="street" id="street">
-          </select> 
+		  <input class="form-control" id="street" name="street" placeholder="">
 	    </div>
 		<div class="form-group">
 			<label for="labelforcity">Barangay</label>
